@@ -211,11 +211,11 @@ object QuickApp {
      * @param directRequest used to either check directly the version name or get the value stored in the shared preference
      * @return String value
      */
-    fun getVersionName(directRequest: Boolean, context: Context): String? {
+    fun getVersionName(directRequest: Boolean): String? {
         if (directRequest) {
             return try {
-                val version = context
-                    .packageManager.getPackageInfo(context.packageName, 0).versionName
+                val version = Injectable.applicationContext()
+                    .packageManager.getPackageInfo(Injectable.applicationContext().packageName, 0).versionName
                 version.addWithId(QuickVariables.VERSION_NAME)
                 version
             } catch (e: Exception) {
@@ -225,12 +225,10 @@ object QuickApp {
         return Injectable.shPrefUtils().get(QuickVariables.VERSION_NAME)
     }
 
-
-
-    fun backgrounded(context: Context): Boolean {
+    fun backgrounded(): Boolean {
         var isInBackground = true
         var tasksList: List<*>? = null
-        val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val activityManager = Injectable.applicationContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
 
         if (Build.VERSION.SDK_INT > 20) {
             tasksList = activityManager.runningAppProcesses
@@ -251,7 +249,7 @@ object QuickApp {
                     for (processInfo in runningProcesses) {
                         if (processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
                             for (activeProcess in processInfo.pkgList) {
-                                if (activeProcess == context.packageName) {
+                                if (activeProcess == Injectable.applicationContext().packageName) {
                                     isInBackground = false
                                 }
                             }
@@ -261,11 +259,11 @@ object QuickApp {
                 }
                 Build.VERSION.SDK_INT > 20 -> {
                     val packageName = activityManager.runningAppProcesses[0].processName
-                    return packageName != context.packageName
+                    return packageName != Injectable.applicationContext().packageName
                 }
                 else -> {
                     @Suppress("DEPRECATION") val topActivity = activityManager.getRunningTasks(1)[0].topActivity
-                    return topActivity.packageName != context.packageName
+                    return topActivity.packageName != Injectable.applicationContext().packageName
                 }
             }
         } else {
@@ -321,10 +319,10 @@ object QuickUtils {
             .subscribe()
     }
 
-    fun cancelPendingNotifications(context: Context, notificationId: String) {
+    fun cancelPendingNotifications(notificationId: String) {
 
         try {
-            val mNotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val mNotificationManager = Injectable.applicationContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             mNotificationManager.cancel(notificationId.hashCode())
         }
@@ -375,9 +373,9 @@ object QuickUtils {
         return matchedString
     }
 
-    fun getFileURI(context: Context, file: File): Uri {
+    fun getFileURI(file: File): Uri {
 
-        return if (Build.VERSION.SDK_INT >= 24) FileProvider.getUriForFile(context, context.applicationContext.packageName + ".provider", file) else Uri.fromFile(file)
+        return if (Build.VERSION.SDK_INT >= 24) FileProvider.getUriForFile(Injectable.applicationContext(), Injectable.applicationContext().applicationContext.packageName + ".provider", file) else Uri.fromFile(file)
     }
 
     fun fromHtml(html: String): Spanned {
@@ -479,7 +477,7 @@ object QuickUtils {
      * @param context     the context
      * @param withNoMedia the with no media
      */
-    fun createDirectory(path: String, context: Context, withNoMedia: Boolean): String {
+    fun createDirectory(path: String, withNoMedia: Boolean): String {
         val folder = File(path)
         var success = true
         if (!folder.exists())
@@ -487,7 +485,7 @@ object QuickUtils {
 
         if (success) {
 
-            val noMedia = File(path + "/" + context.resources.getString(R.string.NO_MEDIA))
+            val noMedia = File(path + "/" + Injectable.applicationContext().resources.getString(R.string.NO_MEDIA))
 
             if (!noMedia.exists() && withNoMedia) {
                 try {
@@ -553,24 +551,22 @@ object QuickDBUtils {
      * @param context the context
      * @return the boolean
      */
-    fun databaseExist(context: Context): Boolean {
+    fun databaseExist(): Boolean {
 
         val dbName = "Database.db"
-        val dbFile = context.getDatabasePath(dbName)
+        val dbFile = Injectable.applicationContext().getDatabasePath(dbName)
         return if (dbFile.exists())
             true
         else {
-            if (!Arrays.asList(*context.assets.list("")).contains(dbName))
+            if (!Arrays.asList(*Injectable.applicationContext().assets.list("")).contains(dbName))
                 return false
 
             QuickUtils.createDirectory(
-                getDBPath(
-                    context
-                ), context, false
+                getDBPath(),  false
             )
 
-            val inputStream = context.assets.open(dbName)
-            val out = FileOutputStream(File(getDBPath(context) + dbName))
+            val inputStream = Injectable.applicationContext().assets.open(dbName)
+            val out = FileOutputStream(File(getDBPath() + dbName))
             val buf = ByteArray(1024)
             while (inputStream.read(buf) > 0) {
                 out.write(buf)
@@ -583,9 +579,9 @@ object QuickDBUtils {
         }
     }
 
-    fun copyDatabaseFromExternalDirectory(context: Context, dbExternalPath: String, downloadedDbName: String): Boolean {
+    fun copyDatabaseFromExternalDirectory(dbExternalPath: String, downloadedDbName: String): Boolean {
 
-        val outFileName = getDBPath(context) + downloadedDbName
+        val outFileName = getDBPath() + downloadedDbName
         val fileDirectory = File(File(outFileName).parent)
         if (!fileDirectory.exists()) {
             if (!fileDirectory.mkdirs()) {
@@ -593,9 +589,7 @@ object QuickDBUtils {
             }
         }
         QuickUtils.createDirectory(
-            getDBPath(
-                context
-            ), context, false
+            getDBPath(), false
         )
 
         val inputStream = FileInputStream(dbExternalPath + downloadedDbName)
@@ -617,8 +611,8 @@ object QuickDBUtils {
      * @param context the context
      * @return the string
      */
-    fun getDBPath(context: Context): String {
+    fun getDBPath(): String {
 
-        return context.applicationInfo.dataDir + "/databases/"
+        return Injectable.applicationContext().applicationInfo.dataDir + "/databases/"
     }
 }
