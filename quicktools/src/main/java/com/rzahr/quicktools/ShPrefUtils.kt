@@ -110,7 +110,7 @@ class ShPrefUtils @Inject constructor(val context: Context) {
      * @return the string
      */
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    fun get(id: String): String? {
+    fun get(id: String): String {
         return PreferenceManager.getDefaultSharedPreferences(context).getString(id, "")
     }
 
@@ -120,7 +120,7 @@ class ShPrefUtils @Inject constructor(val context: Context) {
      * @return the string
      */
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    fun getInt(id: String): Int? {
+    fun getInt(id: String): Int {
         return PreferenceManager.getDefaultSharedPreferences(context).getInt(id, -1)
     }
 
@@ -129,7 +129,7 @@ class ShPrefUtils @Inject constructor(val context: Context) {
      * @param id the id
      * @return the boolean
      */
-    fun getBoolean(id: String): Boolean? {
+    fun getBoolean(id: String): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(id, false)
     }
 }
