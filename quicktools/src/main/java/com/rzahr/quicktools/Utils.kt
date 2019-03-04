@@ -24,8 +24,8 @@ import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
-import com.rzahr.quicktools.Variables.ARABIC_LANG_KEY
-import com.rzahr.quicktools.Variables.ENGLISH_LANG_KEY
+import com.rzahr.quicktools.QuickVariables.ARABIC_LANG_KEY
+import com.rzahr.quicktools.QuickVariables.ENGLISH_LANG_KEY
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -39,15 +39,14 @@ import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.parsers.ParserConfigurationException
 
-object Variables {
+object QuickVariables {
     var UUID = ""
     const val VERSION_NAME: String = "versionname"
     const val ARABIC_LANG_KEY = "A"
     const val ENGLISH_LANG_KEY = "L"
 }
 
-
-object App {
+object QuickApp {
 
 
     /**
@@ -201,12 +200,12 @@ object App {
      */
     @SuppressLint("HardwareIds")
     fun getUUID(): String {
-        if (Variables.UUID == "")
-            Variables.UUID = Settings.Secure.getString(
+        if (QuickVariables.UUID == "")
+            QuickVariables.UUID = Settings.Secure.getString(
                 Injectable.applicationContext().contentResolver,
                 Settings.Secure.ANDROID_ID
             )
-        return Variables.UUID
+        return QuickVariables.UUID
     }
 
     /**
@@ -219,13 +218,13 @@ object App {
             return try {
                 val version = context
                     .packageManager.getPackageInfo(context.packageName, 0).versionName
-                version.addWithId(Variables.VERSION_NAME)
+                version.addWithId(QuickVariables.VERSION_NAME)
                 version
             } catch (e: Exception) {
                 ""
             }
         }
-        return Injectable.shPrefUtils().get(Variables.VERSION_NAME)
+        return Injectable.shPrefUtils().get(QuickVariables.VERSION_NAME)
     }
 
 
@@ -278,7 +277,7 @@ object App {
 
 }
 
-object Utils {
+object QuickUtils {
 
     fun roundNumber(value: Double, places: Int): Double {
 
@@ -508,8 +507,7 @@ object Utils {
 
 }
 
-
-object DBUtils {
+object QuickDBUtils {
 
     fun createSimpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
 
@@ -567,7 +565,7 @@ object DBUtils {
             if (!Arrays.asList(*context.assets.list("")).contains(dbName))
                 return false
 
-            Utils.createDirectory(
+            QuickUtils.createDirectory(
                 getDBPath(
                     context
                 ), context, false
@@ -596,7 +594,7 @@ object DBUtils {
                 return false
             }
         }
-        Utils.createDirectory(
+        QuickUtils.createDirectory(
             getDBPath(
                 context
             ), context, false

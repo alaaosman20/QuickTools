@@ -21,12 +21,12 @@ class BaseClass {
 
         fun createSimpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
 
-            return DBUtils.createSimpleSelect(columns, table, whereClause, groupByClause, orderByClause)
+            return QuickDBUtils.createSimpleSelect(columns, table, whereClause, groupByClause, orderByClause)
         }
 
         fun createDistinctSelect(columns: String, table: String, whereClause: String = ""): String {
 
-            return DBUtils.createDistinctSelect(columns, table, whereClause)
+            return QuickDBUtils.createDistinctSelect(columns, table, whereClause)
         }
 
         fun delete(table: String, where: String = ""): String {
