@@ -48,7 +48,6 @@ object QuickVariables {
 
 object QuickApp {
 
-
     /**
      * checks if the device is connected to a wifi or 3g
      * @return Boolean value
