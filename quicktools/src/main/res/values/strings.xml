@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="close">Close</string>
+    <string name="NO_MEDIA" translatable="false">.nomedia</string>
+</resources>
