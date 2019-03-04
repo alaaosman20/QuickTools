@@ -55,9 +55,9 @@ object App {
      * @return Boolean value
      */
     @SuppressLint("MissingPermission")
-    fun isOnline(context: Context): Boolean {
+    fun isOnline(): Boolean {
 
-        val networkInfo = (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo
+        val networkInfo = (Injectable.applicationContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
     }
 
@@ -68,7 +68,7 @@ object App {
      */
 
 
-    fun getBatteryLevel(context: Context): Int {
+    fun getBatteryLevel(): Int {
 
         var battery: Int
 
@@ -77,7 +77,7 @@ object App {
             val batteryLevel: Int
             val batteryScale: Int
 
-            val batteryIntent = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+            val batteryIntent = Injectable.applicationContext().registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
             batteryLevel = batteryIntent?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
 
@@ -105,11 +105,11 @@ object App {
 
     }
 
-    fun isPluggedIn(context: Context): Boolean {
+    fun isPluggedIn(): Boolean {
 
         try {
 
-            val plugged = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))?.getIntExtra(
+            val plugged = Injectable.applicationContext().registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))?.getIntExtra(
                 BatteryManager.EXTRA_PLUGGED, -1) ?: -1
 
             return plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB || plugged == BatteryManager.BATTERY_PLUGGED_WIRELESS
@@ -126,11 +126,11 @@ object App {
     /**
      * returns the current language symbol
      */
-    fun getLanguageIdentifier(context: Context): String {
+    fun getLanguageIdentifier(): String {
 
         @Suppress("DEPRECATION") val locale: Locale = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-            context.resources.configuration.locales.get(0)
-        else context.resources.configuration.locale
+            Injectable.applicationContext().resources.configuration.locales.get(0)
+        else Injectable.applicationContext().resources.configuration.locale
 
         val lang: String
         lang = if (locale.toString() == "l" || locale.toString() == "en_US" || locale.toString().contains("en", true))
@@ -140,25 +140,25 @@ object App {
         return lang
     }
 
-    fun isInDozeWhiteList(context: Context): Boolean? {
+    fun isInDozeWhiteList(): Boolean? {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
             return true
-        val powerManager = context.getSystemService(PowerManager::class.java)
-        return powerManager.isIgnoringBatteryOptimizations(context.packageName)
+        val powerManager = Injectable.applicationContext().getSystemService(PowerManager::class.java)
+        return powerManager.isIgnoringBatteryOptimizations(Injectable.applicationContext().packageName)
     }
 
-    fun isPowerSaverOn(context: Context): Boolean {
+    fun isPowerSaverOn(): Boolean {
 
-        val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
+        val powerManager = Injectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && powerManager.isPowerSaveMode) {
             return true
         }
         return false
     }
 
-    fun isScreenOn(context: Context): Boolean {
+    fun isScreenOn(): Boolean {
 
-        val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
+        val powerManager = Injectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager
         @Suppress("DEPRECATION")
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH &&
                 powerManager.isInteractive || Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT_WATCH &&
@@ -200,10 +200,10 @@ object App {
      * @return String value
      */
     @SuppressLint("HardwareIds")
-    fun getUUID(context: Context): String {
+    fun getUUID(): String {
         if (Variables.UUID == "")
             Variables.UUID = Settings.Secure.getString(
-                context.contentResolver,
+                Injectable.applicationContext().contentResolver,
                 Settings.Secure.ANDROID_ID
             )
         return Variables.UUID
