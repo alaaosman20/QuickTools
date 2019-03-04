@@ -48,7 +48,7 @@ object QuickVariables {
 
 object QuickApp {
 
-    /**
+    /**7
      * checks if the device is connected to a wifi or 3g
      * @return Boolean value
      */
@@ -61,7 +61,6 @@ object QuickApp {
 
     /**
      * Get current custom date string.
-     * @param english the english
      * @return the string
      */
 
