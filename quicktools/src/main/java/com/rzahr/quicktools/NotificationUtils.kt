@@ -13,28 +13,23 @@ import androidx.core.app.NotificationCompat
 import javax.inject.Inject
 import kotlin.random.Random
 
-
-//val ALERT_CHANNEL_NAME = "ALERT CHANNEL"
-const val NOTIFICATION_CHANNEL_NAME = "FT FFMS NOTIFICATION CHANNEL"
-const val ALERT_CHANNEL_NAME = "FT FFMS ALERT CHANNEL"
-
-class NotificationUtils @Inject constructor(val context: Context, val channelId: String, val channelName: String, val channelDescription: String, val enableLight: Boolean = true, val enableVibration: Boolean = true, val lockScreenVisibility: Int = Notification.VISIBILITY_PUBLIC, val importance: Int = NotificationManager.IMPORTANCE_DEFAULT) : ContextWrapper(context) {
+class NotificationUtils @Inject constructor(val context: Context) : ContextWrapper(context) {
 
     private var mManager: NotificationManager? = null
 
-    init {
+    fun initializer(channelId: String, channelName: String, channelDescription: String, enableLight: Boolean = true, enableVibration: Boolean = true, lockScreenVisibility: Int = Notification.VISIBILITY_PUBLIC, importance: Int = NotificationManager.IMPORTANCE_DEFAULT) {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) createChannel()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) createChannel(channelId, channelName, channelDescription, enableLight, enableVibration, lockScreenVisibility, importance)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun createChannel() {
+    private fun createChannel(channelId: String, channelName: String, channelDescription: String, enableLight: Boolean, enableVibration: Boolean, lockScreenVisibility: Int, importance: Int) {
 
         if (getManager()!!.getNotificationChannel(channelId) != null) {
             return
         }
         // create notification channel
-        val notificationChannel = NotificationChannel(channelId, NOTIFICATION_CHANNEL_NAME, importance)
+        val notificationChannel = NotificationChannel(channelId, channelName, importance)
 
         notificationChannel.description = channelDescription
         notificationChannel.setShowBadge(false)
@@ -47,7 +42,6 @@ class NotificationUtils @Inject constructor(val context: Context, val channelId:
 
         getManager()!!.createNotificationChannel(notificationChannel)
     }
-
 
     fun setSoundAndVibrate(builder: NotificationCompat.Builder) {
 

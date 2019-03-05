@@ -211,7 +211,7 @@ object QuickApp {
      * @param directRequest used to either check directly the version name or get the value stored in the shared preference
      * @return String value
      */
-    fun getVersionName(directRequest: Boolean): String? {
+    fun getVersionName(directRequest: Boolean): String {
         if (directRequest) {
             return try {
                 val version = Injectable.applicationContext()
