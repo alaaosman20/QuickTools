@@ -100,7 +100,7 @@ object QuickApp {
 
         catch (exc: Exception) {
 
-            LogWriter.errorLogging("Error in getBatteryLevel:", exc.toString())
+            QuickLogWriter.errorLogging("Error in getBatteryLevel:", exc.toString())
 
             battery = 0
 
@@ -121,7 +121,7 @@ object QuickApp {
 
         catch (exc: Exception) {
 
-            LogWriter.errorLogging("Error in isPluggedIn:", exc.toString())
+            QuickLogWriter.errorLogging("Error in isPluggedIn:", exc.toString())
         }
 
         return false
@@ -540,7 +540,7 @@ object QuickUtils {
                 try {
                     noMedia.createNewFile()
                 } catch (e: IOException) {
-                    LogWriter.printStackTrace(e)
+                    QuickLogWriter.printStackTrace(e)
                 }
             }
 
@@ -564,7 +564,7 @@ object QuickDBUtils {
 
         if (orderByClause.isNotEmpty()) query+= " ORDER BY $orderByClause"
 
-        LogWriter.debugLogging(query)
+        QuickLogWriter.debugLogging(query)
 
         return query
     }
@@ -579,7 +579,7 @@ object QuickDBUtils {
 
         if (groupByClause.isNotEmpty()) query+= "GROUP BY $groupByClause"
 
-        LogWriter.debugLogging(query)
+        QuickLogWriter.debugLogging(query)
 
         return query
     }
@@ -590,7 +590,7 @@ object QuickDBUtils {
 
         if (whereClause.isNotEmpty()) query += " WHERE $whereClause"
 
-        LogWriter.debugLogging(query)
+        QuickLogWriter.debugLogging(query)
 
         return query
     }

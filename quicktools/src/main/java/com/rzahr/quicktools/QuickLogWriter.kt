@@ -10,10 +10,9 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-object LogWriter {
+object QuickLogWriter {
 
-
-    const val TAG = "QuickTools_LogWriter"
+   const val TAG = "QuickTools_LogWriter"
 
     /**
      * get caller class string [ ].
