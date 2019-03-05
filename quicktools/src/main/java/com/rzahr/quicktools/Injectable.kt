@@ -6,7 +6,7 @@ import android.content.Context
 import javax.inject.Inject
 
 
-class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils) {
+class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrottle: CodeThrottle) {
 
     val mActivityLifecycleCallbacks = ActivityLifeCycleCallbacks()
     lateinit var mApplication: Application
@@ -32,6 +32,11 @@ class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils) {
         fun shPrefUtils() : ShPrefUtils {
 
             return instance!!.shPrefUtils
+        }
+
+        fun codeThrottle() : CodeThrottle {
+
+            return instance!!.codeThrottle
         }
 
         fun currentActivity(): Activity? {

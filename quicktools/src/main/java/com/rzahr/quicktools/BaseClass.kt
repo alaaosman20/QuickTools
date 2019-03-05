@@ -116,10 +116,9 @@ class BaseClass {
     abstract class QuickAbstractActivity : AppCompatActivity(), QuickBaseViewInterface {
 
         @Inject lateinit var mCodeThrottle: CodeThrottle
-        @Inject lateinit var shPrefUtils: ShPrefUtils
 
         override fun attachBaseContext(newBase: Context?) {
-            super.attachBaseContext(MyContextWrapper.wrap(newBase,shPrefUtils.get("Language")))
+            super.attachBaseContext(MyContextWrapper.wrap(newBase,Injectable.shPrefUtils().get("Language")))
         }
 
         override fun onCreate(savedInstanceState: Bundle?) {
