@@ -44,7 +44,7 @@ object QuickLogWriter {
         appendContents("$logFileNameTemp.txt", "Activity: " + callingMethod[1] + "         Method: " + callingMethod[2] + " Line Number: " + callingMethod[0] + " Msg: " + msg +error+ " \n",true, folderName, deleteFileIfExist)
     }
 
-    internal fun logFromSourceClass(logName: String, message: String, deleteFileIfExist: Boolean, folderName: String) {
+    fun logFromSourceClass(logName: String, message: String, deleteFileIfExist: Boolean, folderName: String) {
 
         try {
 
