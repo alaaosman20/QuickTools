@@ -493,23 +493,23 @@ fun showAlert(builder: AlertDialog.Builder): AlertDialog? {
  * @param withNavigation boolean value specifying if the activity supports back
  * @param withLogo boolean value specifying if the activity has a logo
  */
-fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle: String, withNavigation: Boolean?, withLogo: Boolean?, backgroundColorId: Int, id: Int = R.id.toolbar, icon: Int? =null) {
+fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle: String, withNavigation: Boolean?, withLogo: Boolean?, backgroundColorId: Int, toolbarId: Int,titleId: Int, subtitleId: Int, logoImage: Int, icon: Int? =null) {
 
-    val toolbar = appCompatActivity.findViewById(id) as Toolbar
+    val toolbar = appCompatActivity.findViewById(toolbarId) as Toolbar
     appCompatActivity.setSupportActionBar(toolbar)
 
     toolbar.setBackgroundColor(backgroundColorId)
 
     if (title.isNotEmpty()) {
 
-        val titleTextView = toolbar.findViewById(R.id.title_tv) as TextView
+        val titleTextView = toolbar.findViewById(titleId) as TextView
         titleTextView.text = title
         titleTextView.visibility = View.VISIBLE
     }
 
     if (subTitle.isNotEmpty()) {
 
-        val subTitleTextView = toolbar.findViewById(R.id.sub_title_tv) as TextView
+        val subTitleTextView = toolbar.findViewById(subtitleId) as TextView
         subTitleTextView.text = subTitle
         subTitleTextView.visibility = View.VISIBLE
     }
@@ -518,7 +518,7 @@ fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle:
 
     if (withLogo!!) {
 
-        val imageLogo = toolbar.findViewById(R.id.logo_image) as ImageView
+        val imageLogo = toolbar.findViewById(logoImage) as ImageView
 
         if (appCompatActivity.supportActionBar != null) appCompatActivity.supportActionBar!!.setDisplayShowTitleEnabled(false)
 
