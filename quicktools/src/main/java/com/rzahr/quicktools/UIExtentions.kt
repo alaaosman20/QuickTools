@@ -179,8 +179,6 @@ fun View.rzClickListener(mCodeThrottle: CodeThrottle, action: () -> Unit) {
     }
 }
 
-
-
 fun showBubbles(showCases: Array<BubbleShowCaseBuilder>) {
 
     val bubbleSequence =  BubbleShowCaseSequence()
@@ -326,8 +324,7 @@ private fun createCustomAlert(title: String, message: Spanned, cancelable: Boole
     return arrayOf(builder, dialogView, alert)
 }
 
-fun createAlert(title: String, message: String, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit,
-                negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
+fun quickCreateAlert(title: String, message: String, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
 
     val a = createCustomAlert(title, message, cancelable, context)
     // create the alert dialog and set it to cancellable or not depending on what was supplied
@@ -403,9 +400,7 @@ fun createAlert(title: String, message: String, negativeButtonText: String, posi
 }
 
 
-
-
-fun createAlert(title: String, message: Spanned, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit,
+fun quickCreateAlert(title: String, message: Spanned, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit,
                 negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
 
     val a = createCustomAlert(title, message, cancelable, context)
@@ -477,7 +472,7 @@ fun createAlert(title: String, message: Spanned, negativeButtonText: String, pos
     }
 }
 
-fun showAlert(builder: AlertDialog.Builder): AlertDialog? {
+fun quickShowAlert(builder: AlertDialog.Builder): AlertDialog? {
 
         val dialog: AlertDialog = builder.create()
         dialog.show()
@@ -493,12 +488,12 @@ fun showAlert(builder: AlertDialog.Builder): AlertDialog? {
  * @param withNavigation boolean value specifying if the activity supports back
  * @param withLogo boolean value specifying if the activity has a logo
  */
-fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle: String, withNavigation: Boolean?, withLogo: Boolean?, backgroundColorId: Int, toolbarId: Int,titleId: Int, subtitleId: Int, logoImage: Int, icon: Int? =null) {
+fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle: String, withNavigation: Boolean?, withLogo: Boolean?, backgroundColorId: Int? = null, toolbarId: Int,titleId: Int, subtitleId: Int, logoImage: Int, icon: Int? =null) {
 
     val toolbar = appCompatActivity.findViewById(toolbarId) as Toolbar
     appCompatActivity.setSupportActionBar(toolbar)
 
-    toolbar.setBackgroundResource(backgroundColorId)
+    backgroundColorId?.let { toolbar.setBackgroundResource(it) }
 
     if (title.isNotEmpty()) {
 

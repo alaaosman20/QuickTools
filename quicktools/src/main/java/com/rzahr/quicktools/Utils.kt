@@ -505,7 +505,7 @@ object QuickUtils {
 
 object QuickDBUtils {
 
-    fun createSimpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
+    fun simpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
 
         var query = "SELECT $columns FROM $table"
 
@@ -520,7 +520,7 @@ object QuickDBUtils {
         return query
     }
 
-    fun createComplexSelect(columns: String, table: String, joins: Array<String>, whereClause: String = "", groupByClause: String = ""): String {
+    fun complexSelect(columns: String, table: String, joins: Array<String>, whereClause: String = "", groupByClause: String = ""): String {
 
         var query = "SELECT $columns FROM $table "
 
@@ -535,7 +535,7 @@ object QuickDBUtils {
         return query
     }
 
-    fun createDistinctSelect(columns: String, table: String, whereClause: String = ""): String {
+    fun distinctSelect(columns: String, table: String, whereClause: String = ""): String {
 
         var query = "SELECT DISTINCT $columns FROM $table"
 
