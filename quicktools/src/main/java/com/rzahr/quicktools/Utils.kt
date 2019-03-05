@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.ActivityManager
 import android.app.NotificationManager
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
@@ -47,6 +48,12 @@ object QuickVariables {
 }
 
 object QuickApp {
+
+    fun getWrapper(newBase: Context?): ContextWrapper? {
+
+        return MyContextWrapper.wrap(newBase, Injectable.shPrefUtils().get("Language"))
+    }
+
 
     /**7
      * checks if the device is connected to a wifi or 3g
@@ -274,6 +281,48 @@ object QuickApp {
 }
 
 object QuickUtils {
+
+    /**
+     * Safe close buffered writer.
+     * @param bufferedWriter the buffered writer
+     */
+    fun safeCloseBufferedWriter(bufferedWriter: BufferedWriter?) {
+
+        if (bufferedWriter != null) {
+
+            bufferedWriter.flush()
+            bufferedWriter.close()
+        }
+    }
+
+    fun removeIllegalSQLChars(value: String): String {
+
+        @Suppress("NAME_SHADOWING") var value = value
+        value = value.replace("'", " ")
+        value = value.replace("&", "")
+        value = value.replace("#", "")
+        value = value.replace("\"", "")
+        value = value.replace("^", "")
+
+        return value
+    }
+
+    fun openAttachment(attachmentName: String, context: Context, activity: Activity, file: File, mimeType: String) {
+
+        if (attachmentName.isNotEmpty() && attachmentName != "-") {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+            val extension =
+                android.webkit.MimeTypeMap.getFileExtensionFromUrl(getFileURI(file).toString())
+            if (extension.equals("", ignoreCase = true))
+                intent.setDataAndType(getFileURI(file), "text/*")
+            else
+                intent.setDataAndType(getFileURI(file), mimeType.toLowerCase(Locale.ENGLISH))
+
+            activity.startActivity(Intent.createChooser(intent, context.getString(R.string.choose_an_app)))
+        }
+    }
+
 
     fun roundNumber(value: Double, places: Int): Double {
 

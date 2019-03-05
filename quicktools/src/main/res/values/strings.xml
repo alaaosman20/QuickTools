@@ -2,4 +2,5 @@
 
     <string name="close">Close</string>
     <string name="NO_MEDIA" translatable="false">.nomedia</string>
+    <string name="choose_an_app">Choose an Application</string>
 </resources>
