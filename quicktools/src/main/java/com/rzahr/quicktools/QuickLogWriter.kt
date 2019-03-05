@@ -30,8 +30,33 @@ object QuickLogWriter {
         } catch (e: Exception) {
             arrayOf("", "", "")
         }
-
     }
+
+    fun logErrorHelper(callingMethod: Array<String>, msg: String, logFileNameTemp: String, error: String, folderName: String, deleteFileIfExist: Boolean) {
+
+        Log.e(callingMethod[1] + " (" + callingMethod[0] + ")", "Method: " + callingMethod[2] + " Msg: " + msg + " //**//Error: " + error)
+        appendContents(Injectable.shPrefUtils().get(logFileNameTemp) + ".txt", "Activity: " + callingMethod[1] + "         Method: " + callingMethod[2] + " Line Number: " + callingMethod[0] + " Msg: " + msg + " //**//Error: " + error + " \n",true, folderName, deleteFileIfExist)
+    }
+
+    fun logHelper(callingMethod: Array<String>, msg: String, logFileNameTemp: String, error: String, folderName: String, deleteFileIfExist: Boolean) {
+
+        Log.d(callingMethod[1] + " (" + callingMethod[0] + ")", "Method: " + callingMethod[2] + " Msg: " + msg)
+        appendContents("$logFileNameTemp.txt", "Activity: " + callingMethod[1] + "         Method: " + callingMethod[2] + " Line Number: " + callingMethod[0] + " Msg: " + msg +error+ " \n",true, folderName, deleteFileIfExist)
+    }
+
+    internal fun logFromSourceClass(logName: String, message: String, deleteFileIfExist: Boolean, folderName: String) {
+
+        try {
+
+            val callingMethod = getCallerClass(3)
+            appendContents(
+                Injectable.shPrefUtils().get(logName) + ".txt",
+                "Activity: " + callingMethod[1] + "         Method: " + callingMethod[2] + " Line Number: " + callingMethod[0] + " Msg: " + message + " \n"
+                ,true, folderName, deleteFileIfExist)
+        } catch (ignored: Exception) {
+        }
+    }
+
 
     /**
      * Print stack trace.
