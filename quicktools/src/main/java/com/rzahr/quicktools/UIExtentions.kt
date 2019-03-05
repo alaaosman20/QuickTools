@@ -498,7 +498,7 @@ fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle:
     val toolbar = appCompatActivity.findViewById(toolbarId) as Toolbar
     appCompatActivity.setSupportActionBar(toolbar)
 
-    toolbar.setBackgroundColor(backgroundColorId)
+    toolbar.setBackgroundResource(backgroundColorId)
 
     if (title.isNotEmpty()) {
 
