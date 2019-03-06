@@ -9,7 +9,7 @@ import javax.inject.Inject
 @Suppress("unused")
 class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrottle: CodeThrottle) {
 
-    val mActivityLifecycleCallbacks = ActivityLifeCycleCallbacks()
+    val mQuickActivityLifecycleCallbacks = QuickActivityLifeCycleCallbacks()
     lateinit var mApplication: Application
 
     init { instance = this }
@@ -18,7 +18,7 @@ class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrot
 
         setApplication(application)
 
-        application.registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks)
+        application.registerActivityLifecycleCallbacks(mQuickActivityLifecycleCallbacks)
     }
 
     private fun setApplication(application: Application) {
@@ -42,7 +42,7 @@ class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrot
 
         fun currentActivity(): Activity? {
 
-            return instance!!.mActivityLifecycleCallbacks.currentActivity
+            return instance!!.mQuickActivityLifecycleCallbacks.currentActivity
         }
 
         fun applicationContext() : Context {

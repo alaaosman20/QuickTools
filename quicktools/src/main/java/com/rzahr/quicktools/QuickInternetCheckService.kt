@@ -5,19 +5,13 @@ import android.content.Intent
 import android.os.Binder
 import android.os.IBinder
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.rzahr.quicktools.InternetCheckServiceUtils.Companion.CONNECTION_CHECKER_BROAD_CAST_KEY
-import com.rzahr.quicktools.InternetCheckServiceUtils.Companion.IS_ONLINE_KEY
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
-import javax.inject.Inject
-import javax.inject.Singleton
 
-class InternetCheckService : Service() {
+class QuickInternetCheckService : Service() {
 
-    @Inject
-    lateinit var mUtils: InternetCheckServiceUtils
     private var mOnlineTemp: Boolean = true
 
     // Binder given to clients
@@ -30,13 +24,13 @@ class InternetCheckService : Service() {
     inner class LocalBinder : Binder() {
 
         // Return this instance of LocalService so clients can call public methods
-        fun getService(): InternetCheckService = this@InternetCheckService
+        fun getService(): QuickInternetCheckService = this@QuickInternetCheckService
         fun startCheck() {
             sTimer = Timer()
 
             val task = object : TimerTask() {
                 override fun run() {
-                    setConnectionState(mUtils.performChecks(sTimer!!, this@InternetCheckService), this@InternetCheckService)
+                    setConnectionState(performChecks(sTimer!!, this@QuickInternetCheckService), this@QuickInternetCheckService)
                 }
             }
 
@@ -66,28 +60,7 @@ class InternetCheckService : Service() {
     companion object {
 
         var sTimer: Timer? = null
-    }
 
-    override fun onBind(intent: Intent): IBinder? {
-
-        return mBinder
-    }
-
-    /**
-     * cancel the timer task
-     */
-    override fun onDestroy() {
-        super.onDestroy()
-
-        if (sTimer != null) sTimer!!.cancel()
-    }
-}
-
-
-@Singleton
-public class InternetCheckServiceUtils @Inject constructor() {
-
-    companion object {
         const val IS_ONLINE_KEY = "isOnline"
         const val ONLINE_SINCE_KEY = "onlineSince"
         const val OFFLINE_SINCE_KEY = "offlineSince"
@@ -108,6 +81,21 @@ public class InternetCheckServiceUtils @Inject constructor() {
             return Injectable.shPrefUtils().get(OFFLINE_SINCE_KEY)
         }
     }
+
+    override fun onBind(intent: Intent): IBinder? {
+
+        return mBinder
+    }
+
+    /**
+     * cancel the timer task
+     */
+    override fun onDestroy() {
+        super.onDestroy()
+
+        if (sTimer != null) sTimer!!.cancel()
+    }
+
 
     private fun cancel(timer: Timer?, service: Service) {
 

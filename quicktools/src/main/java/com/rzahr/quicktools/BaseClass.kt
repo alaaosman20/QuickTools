@@ -16,9 +16,9 @@ import java.lang.ref.WeakReference
 import javax.inject.Inject
 
 @Suppress("unused")
-class BaseClass {
+class QuickBaseClass {
 
-    abstract class QuickBaseModel {
+    abstract class BaseModel {
 
         fun simpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
 
@@ -37,7 +37,7 @@ class BaseClass {
         }
     }
 
-    open class QuickBasePresenter<V : QuickBaseViewInterface, M: QuickBaseModel> @Inject constructor(): QuickBasePresenterInterface<V>, LifecycleObserver {
+    open class BasePresenter<V : BaseViewInterface, M: BaseModel> @Inject constructor(): BasePresenterInterface<V>, LifecycleObserver {
 
         @Inject lateinit var model: M
         @Inject lateinit var mContext: Context
@@ -95,12 +95,12 @@ class BaseClass {
             get() = weakReference != null && weakReference!!.get() != null
     }
 
-    interface QuickBaseViewInterface {
+    interface BaseViewInterface {
 
-        fun setPresenter(presenter: QuickBasePresenter<*,*>)
+        fun setPresenter(presenter: BasePresenter<*,*>)
     }
 
-    interface QuickBasePresenterInterface<V : QuickBaseViewInterface> {
+    interface BasePresenterInterface<V : BaseViewInterface> {
 
         fun attachView(view: V)
         fun detachView()
@@ -111,7 +111,7 @@ class BaseClass {
         fun getStateBundle(): Bundle?
     }
 
-    abstract class QuickAbstractActivity : AppCompatActivity(), QuickBaseViewInterface {
+    abstract class AbstractActivity : AppCompatActivity(), BaseViewInterface {
 
         @Inject lateinit var mCodeThrottle: CodeThrottle
 
@@ -128,9 +128,9 @@ class BaseClass {
         protected abstract fun onActivityInject()
     }
 
-    abstract class QuickAbstractFragment : Fragment(), QuickBaseViewInterface {
+    abstract class AbstractFragment : Fragment(), BaseViewInterface {
 
-        private var presenter: QuickBasePresenter<*,*>? = null
+        private var presenter: BasePresenter<*,*>? = null
 
         override fun onActivityCreated(savedInstanceState: Bundle?) {
             super.onActivityCreated(savedInstanceState)
@@ -140,7 +140,7 @@ class BaseClass {
 
         protected abstract fun onActivityInject()
 
-        override fun setPresenter(presenter: QuickBasePresenter<*,*>) {
+        override fun setPresenter(presenter: BasePresenter<*,*>) {
 
             this.presenter = presenter
         }
@@ -153,9 +153,9 @@ class BaseClass {
         }
     }
 
-    abstract class QuickAbstractDialogFragment : DialogFragment(), QuickBaseViewInterface {
+    abstract class AbstractDialogFragment : DialogFragment(), BaseViewInterface {
 
-        private var presenter: QuickBasePresenter<*,*>? = null
+        private var presenter: BasePresenter<*,*>? = null
 
         override fun onActivityCreated(savedInstanceState: Bundle?) {
             super.onActivityCreated(savedInstanceState)
@@ -165,7 +165,7 @@ class BaseClass {
 
         protected abstract fun onActivityInject()
 
-        override fun setPresenter(presenter: QuickBasePresenter<*,*>) {
+        override fun setPresenter(presenter: BasePresenter<*,*>) {
 
             this.presenter = presenter
         }
@@ -178,11 +178,11 @@ class BaseClass {
         }
     }
 
-    abstract class QuickBaseActivity<P : QuickBasePresenterInterface<*>>: QuickAbstractActivity() {
+    abstract class BaseActivity<P : BasePresenterInterface<*>>: AbstractActivity() {
 
         @Inject lateinit var mPresenter: P
 
-        private var presenter: QuickBasePresenter<*,*>? = null
+        private var presenter: BasePresenter<*,*>? = null
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
@@ -190,7 +190,7 @@ class BaseClass {
             onActivityInject()
         }
 
-        override fun setPresenter(presenter: QuickBasePresenter<*,*>) {
+        override fun setPresenter(presenter: BasePresenter<*,*>) {
 
             this.presenter = presenter
         }
@@ -203,7 +203,7 @@ class BaseClass {
         }
     }
 
-    abstract class QuickBaseViewModel constructor(val context: Context) : ViewModel(), LifecycleObserver {
+    abstract class BaseViewModel constructor(val context: Context) : ViewModel(), LifecycleObserver {
 
         // used to show or hide the progress bar
         val mutableProgressBarViewState = MutableLiveData<Int>()
@@ -231,7 +231,7 @@ class BaseClass {
         }
     }
 
-    abstract class QuickMVVMFragment<VM : QuickBaseViewModel> constructor(private val layoutId: Int, private val lockOrientation: Boolean = false, private val hideToolbar: Boolean = true) : BottomSheetDialogFragment(), QuickBaseViewInterface { //dialogfragment
+    abstract class MVVMFragment<VM : BaseViewModel> constructor(private val layoutId: Int, private val lockOrientation: Boolean = false, private val hideToolbar: Boolean = true) : BottomSheetDialogFragment(), BaseViewInterface { //dialogfragment
 
         @Inject
         lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -239,7 +239,7 @@ class BaseClass {
 
         @Inject lateinit var mCodeThrottle: CodeThrottle
 
-        override fun setPresenter(presenter: QuickBasePresenter<*,*>) {
+        override fun setPresenter(presenter: BasePresenter<*,*>) {
         }
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -257,7 +257,7 @@ class BaseClass {
             if (triggerRestoreState) (mViewModel)?.restoreState(savedInstanceState)
         }
 
-        fun getViewModel(): QuickBaseViewModel? {
+        fun getViewModel(): BaseViewModel? {
 
             return mViewModel
         }
@@ -288,7 +288,7 @@ class BaseClass {
         }
     }
 
-    abstract class QuickMVPFragment<P : QuickBasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : QuickAbstractFragment() {
+    abstract class MVPFragment<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractFragment() {
 
         @Inject lateinit var mCodeThrottle: CodeThrottle
 
@@ -318,7 +318,7 @@ class BaseClass {
         }
     }
 
-    abstract class QuickMVPFragmentDialog<P : QuickBasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : QuickAbstractDialogFragment() {
+    abstract class MVPFragmentDialog<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractDialogFragment() {
 
         @Inject lateinit var mCodeThrottle: CodeThrottle
         @Inject lateinit var mPresenter: P

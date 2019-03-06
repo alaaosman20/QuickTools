@@ -4,7 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 
-class ActivityLifeCycleCallbacks : Application.ActivityLifecycleCallbacks {
+class QuickActivityLifeCycleCallbacks : Application.ActivityLifecycleCallbacks {
 
     var currentActivity: Activity? = null
 
