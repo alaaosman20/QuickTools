@@ -5,7 +5,6 @@ package com.rzahr.quicktools
 import android.content.Context
 import android.os.Bundle
 import android.os.Parcelable
-import android.view.View
 import java.util.*
 
 
@@ -95,7 +94,7 @@ fun Bundle?.getStateOf(id: String, default: Boolean = false): Boolean {
  */
 fun Int.addWithId(id: String) {
 
-    Injectable.shPrefUtils().setIntValue(id, this)
+    QuickInjectable.quickPref().setIntValue(id, this)
 }
 
 /**
@@ -103,7 +102,7 @@ fun Int.addWithId(id: String) {
  */
 fun String.addWithId(id: String) {
 
-    Injectable.shPrefUtils().setString(id, this)
+    QuickInjectable.quickPref().setString(id, this)
 }
 
 
@@ -112,7 +111,7 @@ fun String.addWithId(id: String) {
  */
 fun Double.addWithId(id: String) {
 
-    Injectable.shPrefUtils().setString(id, this.toString())
+    QuickInjectable.quickPref().setString(id, this.toString())
 }
 
 /**
@@ -120,7 +119,7 @@ fun Double.addWithId(id: String) {
  */
 fun Long.addWithId(id: String) {
 
-    Injectable.shPrefUtils().setLong(id, this)
+    QuickInjectable.quickPref().setLong(id, this)
 }
 
 /**
@@ -128,7 +127,7 @@ fun Long.addWithId(id: String) {
  */
 fun Boolean.addWithId(id: String) {
 
-    Injectable.shPrefUtils().setBoolean(id, this)
+    QuickInjectable.quickPref().setBoolean(id, this)
 }
 
 /**
@@ -136,7 +135,7 @@ fun Boolean.addWithId(id: String) {
  */
 fun String.addAsDefaultWithId(id: String) {
 
-    Injectable.shPrefUtils().setStringDefault(id, this)
+    QuickInjectable.quickPref().setStringDefault(id, this)
 }
 
 /**
@@ -152,7 +151,7 @@ fun Int.get(context: Context): String {
  */
 fun Long.addAsDefaultWithId(id: String) {
 
-    Injectable.shPrefUtils().setLongDefault(id, this)
+    QuickInjectable.quickPref().setLongDefault(id, this)
 }
 
 /**
@@ -166,12 +165,4 @@ fun ArrayList<String>.removeDuplicates(): ArrayList<String> {
     for (i in 0 until end) set.add(this[i])
 
     return set
-}
-
-@Suppress("unused")
-fun View.rzClickGuard(mCodeThrottle: CodeThrottle, action: () -> Unit) {
-    // used to eliminate fast taps on the same row
-    mCodeThrottle.throttle {
-        action()
-    }
 }

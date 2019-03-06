@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 
 @Suppress("unused")
-class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrottle: CodeThrottle) {
+class QuickInjectable @Inject constructor(var quickPref: QuickPref, val quickRapidIdler: QuickRapidIdler) {
 
     val mQuickActivityLifecycleCallbacks = QuickActivityLifeCycleCallbacks()
     lateinit var mApplication: Application
@@ -28,16 +28,16 @@ class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrot
 
     companion object {
 
-        private var instance: Injectable? = null
+        private var instance: QuickInjectable? = null
 
-        fun shPrefUtils() : ShPrefUtils {
+        fun quickPref() : QuickPref {
 
-            return instance!!.shPrefUtils
+            return instance!!.quickPref
         }
 
-        fun codeThrottle() : CodeThrottle {
+        fun codeThrottle() : QuickRapidIdler {
 
-            return instance!!.codeThrottle
+            return instance!!.quickRapidIdler
         }
 
         fun currentActivity(): Activity? {

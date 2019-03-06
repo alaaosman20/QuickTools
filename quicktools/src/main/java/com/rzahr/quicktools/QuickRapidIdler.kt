@@ -2,7 +2,7 @@ package com.rzahr.quicktools
 
 import javax.inject.Inject
 
-class CodeThrottle @Inject constructor() {
+class QuickRapidIdler @Inject constructor() {
     companion object {
         const val MIN_INTERVAL = 800
     }

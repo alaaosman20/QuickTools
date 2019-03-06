@@ -5,7 +5,7 @@ import android.preference.PreferenceManager
 import javax.inject.Inject
 
 @Suppress("unused")
-class ShPrefUtils @Inject constructor(val context: Context) {
+class QuickPref @Inject constructor(val context: Context) {
 
     /**
      * Set shared boolean value.

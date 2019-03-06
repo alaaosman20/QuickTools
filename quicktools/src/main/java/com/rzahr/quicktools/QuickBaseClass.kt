@@ -113,10 +113,10 @@ class QuickBaseClass {
 
     abstract class AbstractActivity : AppCompatActivity(), BaseViewInterface {
 
-        @Inject lateinit var mCodeThrottle: CodeThrottle
+        @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
 
         override fun attachBaseContext(newBase: Context?) {
-            super.attachBaseContext(MyContextWrapper.wrap(newBase,Injectable.shPrefUtils().get("Language")))
+            super.attachBaseContext(QuickContextWrapper.wrap(newBase,QuickInjectable.quickPref().get("Language")))
         }
 
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -237,7 +237,7 @@ class QuickBaseClass {
         lateinit var viewModelFactory: ViewModelProvider.Factory
         var mViewModel: VM? = null
 
-        @Inject lateinit var mCodeThrottle: CodeThrottle
+        @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
 
         override fun setPresenter(presenter: BasePresenter<*,*>) {
         }
@@ -290,7 +290,7 @@ class QuickBaseClass {
 
     abstract class MVPFragment<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractFragment() {
 
-        @Inject lateinit var mCodeThrottle: CodeThrottle
+        @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
 
         @Inject lateinit var mPresenter: P
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -320,7 +320,7 @@ class QuickBaseClass {
 
     abstract class MVPFragmentDialog<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractDialogFragment() {
 
-        @Inject lateinit var mCodeThrottle: CodeThrottle
+        @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
         @Inject lateinit var mPresenter: P
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

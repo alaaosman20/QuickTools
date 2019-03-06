@@ -43,7 +43,7 @@ class QuickBottomSheet {
         }
     }
 
-    class Viewer @Inject constructor(@Suppress("MemberVisibilityCanBePrivate") val codeThrottle: CodeThrottle) {
+    class Viewer @Inject constructor(@Suppress("MemberVisibilityCanBePrivate") val QuickRapidIdler: QuickRapidIdler) {
 
         //todo needs revision
         private lateinit var sheetBehavior: BottomSheetBehavior<LinearLayout>
@@ -51,7 +51,7 @@ class QuickBottomSheet {
         fun create(linearLayout: LinearLayout) {
 
             sheetBehavior = BottomSheetBehavior.from<LinearLayout>(linearLayout)
-            linearLayout.rzClickListener(codeThrottle) { expandCloseSheet() }
+            linearLayout.rzClickListener(QuickRapidIdler) { expandCloseSheet() }
         }
 
         fun dismiss() {

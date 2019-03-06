@@ -9,9 +9,9 @@ import java.util.*;
  * create two independent arrays and editing one of them will automatically edit the second
  */
 @SuppressWarnings("ALL")
-public class DeepClone {
+public class QuickDeepClone {
 
-    private DeepClone(){}
+    private QuickDeepClone(){}
 
     public static <X> X deepClone(final X input) {
         if (input == null) {

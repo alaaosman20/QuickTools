@@ -14,7 +14,7 @@ import javax.inject.Inject
 import kotlin.random.Random
 
 @Suppress("unused")
-class NotificationUtils @Inject constructor(val context: Context) : ContextWrapper(context) {
+class QuickNotificationUtils @Inject constructor(val context: Context) : ContextWrapper(context) {
 
     private var mManager: NotificationManager? = null
 
