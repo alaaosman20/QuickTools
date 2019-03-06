@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 14
-        versionName "1.13"
+        versionCode 15
+        versionName "1.14"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -51,7 +51,7 @@ dependencies {
 
     //========================================================rx
     //https://github.com/ReactiveX/RxJava
-//    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"/*2.0.2*/
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"/*2.0.2*/
     implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'/*2.2.0*/
 
     //========================================================retrofit
