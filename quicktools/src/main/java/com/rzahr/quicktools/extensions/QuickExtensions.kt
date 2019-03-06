@@ -2,10 +2,22 @@
 
 package com.rzahr.quicktools.extensions
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
+import androidx.core.content.FileProvider
 import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.R
+import com.rzahr.quicktools.utils.QuickUtils
+import java.io.File
 import java.util.*
 
 /**
@@ -59,6 +71,59 @@ fun Parcelable.saveStateOf(id: String, outState: Bundle?) {
 fun <T : Parcelable> Bundle?.getStateOf(id: String): ArrayList<T>? {
 
     return this?.getParcelableArrayList(id)
+}
+
+/**
+ * returns the file URI
+ */
+fun File.getFileURI(): Uri {
+
+    return if (Build.VERSION.SDK_INT >= 24) FileProvider.getUriForFile(QuickInjectable.applicationContext(), QuickInjectable.applicationContext().applicationContext.packageName + ".provider", this) else Uri.fromFile(this)
+}
+
+/**
+ * converts drawable to bitmap
+ *
+ * @return the bitmap
+ */
+fun Drawable.toBitmap(): Bitmap {
+
+    if (this is BitmapDrawable) return this.bitmap
+
+    var width = this.intrinsicWidth
+    width = if (width > 0) width else 96
+
+    var height = this.intrinsicHeight
+    height = if (height > 0) height else 96
+
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    this.setBounds(0, 0, canvas.width, canvas.height)
+    this.draw(canvas)
+    return bitmap
+}
+
+/**
+ * opens a file if applicable
+ * @param attachmentName: the attachment name
+ * @param context: the context
+ * @param activity: the activity
+ * @param mimeType: the mime type
+ */
+fun File.openAttachment(attachmentName: String, context: Context, activity: Activity, mimeType: String) {
+
+    if (attachmentName.isNotEmpty() && attachmentName != "-") {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+        val extension =
+            android.webkit.MimeTypeMap.getFileExtensionFromUrl(this.getFileURI().toString())
+        if (extension.equals("", ignoreCase = true))
+            intent.setDataAndType(this.getFileURI(), "text/*")
+        else
+            intent.setDataAndType(this.getFileURI(), mimeType.toLowerCase(Locale.ENGLISH))
+
+        activity.startActivity(Intent.createChooser(intent, context.getString(R.string.choose_an_app)))
+    }
 }
 
 /**
@@ -182,13 +247,28 @@ fun Long.addAsDefaultWithId(id: String) {
 
 /**
  * removes duplicates from an array list
+ *
+ * @return a duplicate free array list
  */
-fun ArrayList<String>.removeDuplicates(): ArrayList<String> {
+/*fun ArrayList<String>.removeDuplicates(): ArrayList<String> {
 
     val end = this.size
-    val set = ArrayList<String>()
-
+    val set = HashSet<String>()
     for (i in 0 until end) set.add(this[i])
 
+    return set
+}*/
+
+/**
+ * removes duplicates from an array list
+ *
+ * @return a duplicate free array list
+ */
+fun ArrayList<String>.removeDuplicates(arrayList: ArrayList<String>): Set<String> {
+    val end = arrayList.size
+    val set = HashSet<String>()
+    for (i in 0 until end) {
+        set.add(arrayList[i])
+    }
     return set
 }

@@ -66,25 +66,26 @@ object QuickUIUtils {
         return colorAnimation
     }
 
-    fun sendNotification(title: String, message: String, mQuickNotificationUtils: QuickNotificationUtils, context: Context, key: String = title + message, smallIcon: Int, id: String, logo: Int, defaultActivity: Class<Any>) {
+    /**
+     * sends a push notification
+     * @param title: the push notification title
+     * @param message: the push notification message
+     * @param utils: the notification utils class
+     * @param context: the context
+     * @param key: the notification key id
+     * @param smallIcon: the notification small icon
+     * @param id: the notification channel id
+     * @param logo: the logo
+     * @param defaultActivity: the default activity that needs to be opened
+     */
+    fun sendNotification(title: String, message: String, utils: QuickNotificationUtils, context: Context, key: String = title + message, smallIcon: Int,
+                         id: String, logo: Int, defaultActivity: Class<Any>) {
 
-        val mNotificationCompatBuilder = mQuickNotificationUtils.getNotificationBuilder(
-            title,
-            message,
-            false,
-            smallIcon,
-            id,
-            logo
-        )
-        mNotificationCompatBuilder.setStyle(NotificationCompat.BigTextStyle().bigText(message))
-
-        mQuickNotificationUtils.openTopActivityOnClick(mNotificationCompatBuilder, context,
-            QuickInjectable.currentActivity(), defaultActivity)
-        mQuickNotificationUtils.setSoundAndVibrate(mNotificationCompatBuilder)
-
-        val mNotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
-        mNotificationManager.notify(key.hashCode(), mNotificationCompatBuilder.build())
+        val notificationCompatBuilder = utils.getNotificationBuilder(title, message, false, smallIcon, id, logo)
+        notificationCompatBuilder.setStyle(NotificationCompat.BigTextStyle().bigText(message))
+        utils.openTopActivityOnClick(notificationCompatBuilder, context, QuickInjectable.currentActivity(), defaultActivity)
+        utils.setSoundAndVibrate(notificationCompatBuilder)
+        (context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).notify(key.hashCode(), notificationCompatBuilder.build())
     }
 
     @SuppressLint("InflateParams")
@@ -165,7 +166,21 @@ object QuickUIUtils {
         return arrayOf(builder, dialogView, alert)
     }
 
-    fun createQuickAlert(title: String, message: String, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
+    /**
+     * creates a quick custom alert dialog
+     * @param title: the alert title
+     * @param message: the alert message
+     * @param negativeButtonText: the alert negative button text
+     * @param positiveButtonText: the alert positive button text
+     * @param context: the context
+     * @param positiveAction: the action after positive button clicked
+     * @param negativeAction: the action after negative button clicked
+     * @param hasNegativeButton: boolean value representing if the negative button is available
+     * @param cancelable: boolean value representing if the alert dialog is cancellable
+     * @param logo: the optional logo icon
+     */
+    fun createQuickAlert(title: String, message: String, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit,
+                         hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
 
         val a = createCustomAlert(title, message, cancelable, context)
         // create the alert dialog and set it to cancellable or not depending on what was supplied
@@ -240,7 +255,21 @@ object QuickUIUtils {
         //showAlert(builder)
     }
 
-    fun createQuickAlert(title: String, message: Spanned, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
+    /**
+     * creates a quick custom alert dialog
+     * @param title: the alert title
+     * @param message: the alert message
+     * @param negativeButtonText: the alert negative button text
+     * @param positiveButtonText: the alert positive button text
+     * @param context: the context
+     * @param positiveAction: the action after positive button clicked
+     * @param negativeAction: the action after negative button clicked
+     * @param hasNegativeButton: boolean value representing if the negative button is available
+     * @param cancelable: boolean value representing if the alert dialog is cancellable
+     * @param logo: the optional logo icon
+     */
+    fun createQuickAlert(title: String, message: Spanned, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit,
+                         hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
 
         val a = createCustomAlert(title, message, cancelable, context)
         val dialogView = a[1] as View

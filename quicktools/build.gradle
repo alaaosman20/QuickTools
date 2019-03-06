@@ -1,16 +1,16 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'org.jetbrains.dokka-android'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'org.jetbrains.dokka-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
 
-    dokka {
+/*    dokka {
         outputFormat = 'html'
 //        outputDirectory = "$buildDir/javadoc"
         outputDirectory = "C:\\Users\\RZahr\\Desktop\\New folder(4)"
-    }
+    }*/
 
     compileSdkVersion 28
 

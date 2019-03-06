@@ -40,7 +40,7 @@ import javax.xml.parsers.ParserConfigurationException
 object QuickUtils {
 
     /**
-     * Safe close buffered writer.
+     * safe close buffered writer.
      * @param bufferedWriter the buffered writer
      */
     fun safeCloseBufferedWriter(bufferedWriter: BufferedWriter?) {
@@ -54,6 +54,9 @@ object QuickUtils {
 
     /**
      * remove illegal sql characters
+     * @param value the value
+     *
+     * @return pure value
      */
     fun removeIllegalSQLChars(value: String): String {
 
@@ -68,25 +71,6 @@ object QuickUtils {
     }
 
     /**
-     * opens a file if applicable
-     */
-    fun openAttachment(attachmentName: String, context: Context, activity: Activity, file: File, mimeType: String) {
-
-        if (attachmentName.isNotEmpty() && attachmentName != "-") {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-            val extension =
-                android.webkit.MimeTypeMap.getFileExtensionFromUrl(getFileURI(file).toString())
-            if (extension.equals("", ignoreCase = true))
-                intent.setDataAndType(getFileURI(file), "text/*")
-            else
-                intent.setDataAndType(getFileURI(file), mimeType.toLowerCase(Locale.ENGLISH))
-
-            activity.startActivity(Intent.createChooser(intent, context.getString(R.string.choose_an_app)))
-        }
-    }
-
-    /**
      * rounds a number
      */
     fun roundNumber(value: Double, places: Int): Double {
@@ -97,31 +81,6 @@ object QuickUtils {
         value *= factor
         val tmp = Math.round(value)
         return tmp.toDouble() / factor
-    }
-
-
-    /**
-     * converts drawable to bitmap
-     *
-     * @param drawable the drawable
-     * @return the bitmap
-     */
-    fun drawableToBitmap(drawable: Drawable): Bitmap {
-
-        if (drawable is BitmapDrawable) return drawable.bitmap
-
-        var width = drawable.intrinsicWidth
-        width = if (width > 0) width else 96
-
-        var height = drawable.intrinsicHeight
-        height = if (height > 0) height else 96
-
-        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
-        drawable.setBounds(0, 0, canvas.width, canvas.height)
-        drawable.draw(canvas)
-        return bitmap
-
     }
 
     /**
@@ -205,7 +164,7 @@ object QuickUtils {
     }
 
     /**
-     * rregular expression search
+     * regular expression search
      */
     fun regEx(patternString: String, word: String): String {
 
@@ -215,14 +174,6 @@ object QuickUtils {
         while (matcher.find()) matchedString = matcher.group()
 
         return matchedString
-    }
-
-    /**
-     * returns the file URI
-     */
-    fun getFileURI(file: File): Uri {
-
-        return if (Build.VERSION.SDK_INT >= 24) FileProvider.getUriForFile(QuickInjectable.applicationContext(), QuickInjectable.applicationContext().applicationContext.packageName + ".provider", file) else Uri.fromFile(file)
     }
 
     /**
@@ -247,6 +198,7 @@ object QuickUtils {
      * request a certain permission
      */
     fun requestPermission(currentActivity: Activity, manifestPermission: String, permissionIdentifier: Int) {
+
         ActivityCompat.requestPermissions(
             currentActivity,
             arrayOf(manifestPermission),
@@ -260,6 +212,7 @@ object QuickUtils {
      * @param dateFormat the format
      */
     fun getDateString(date: Date, dateFormat: String): String {
+
         val calendar = Calendar.getInstance()
         calendar.time = date
         return SimpleDateFormat(dateFormat, Locale.ENGLISH).format(calendar.time)
@@ -267,6 +220,7 @@ object QuickUtils {
 
     @SuppressLint("SimpleDateFormat")
     fun getCurrentDate(english: Boolean, format: String = "yyyy-MM-dd HH:mm:ss"): String {
+
         val now = Date()
         return if (english)
             SimpleDateFormat(format, Locale.ENGLISH).format(now)
@@ -337,6 +291,7 @@ object QuickUtils {
      * @param withNoMedia the with no media
      */
     fun createDirectory(path: String, withNoMedia: Boolean): String {
+
         val folder = File(path)
         var success = true
         if (!folder.exists())
