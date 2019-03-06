@@ -24,7 +24,7 @@ import com.elconfidencial.bubbleshowcase.BubbleShowCaseListener
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseSequence
 import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
-class QuickUIUtils {
+object QuickUIUtils {
 
     fun showBubbles(showCases: Array<BubbleShowCaseBuilder>) {
 
@@ -171,7 +171,7 @@ class QuickUIUtils {
         return arrayOf(builder, dialogView, alert)
     }
 
-    fun quickCreateAlert(title: String, message: String, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
+    fun createQuickAlert(title: String, message: String, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
 
         val a = createCustomAlert(title, message, cancelable, context)
         // create the alert dialog and set it to cancellable or not depending on what was supplied
@@ -246,7 +246,7 @@ class QuickUIUtils {
         //showAlert(builder)
     }
 
-    fun quickCreateAlert(title: String, message: Spanned, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
+    fun createQuickAlert(title: String, message: Spanned, negativeButtonText: String, positiveButtonText: String, context: Context, positiveAction: () -> Unit, negativeAction: () -> Unit, hasNegativeButton: Boolean = true, cancelable: Boolean = true, logo: Drawable? = null) {
 
         val a = createCustomAlert(title, message, cancelable, context)
         val dialogView = a[1] as View
@@ -317,7 +317,7 @@ class QuickUIUtils {
         }
     }
 
-    fun quickShowAlert(builder: AlertDialog.Builder): AlertDialog? {
+    fun showQuickAlert(builder: AlertDialog.Builder): AlertDialog? {
 
         val dialog: AlertDialog = builder.create()
         dialog.show()

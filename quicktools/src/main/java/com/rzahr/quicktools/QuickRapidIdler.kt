@@ -2,6 +2,9 @@ package com.rzahr.quicktools
 
 import javax.inject.Inject
 
+/**
+ * prevents multi rapid clicks
+ */
 class QuickRapidIdler @Inject constructor() {
     companion object {
         const val MIN_INTERVAL = 800
