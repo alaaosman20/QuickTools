@@ -1,10 +1,11 @@
 @file:Suppress("unused")
 
-package com.rzahr.quicktools
+package com.rzahr.quicktools.extensions
 
 import android.content.Context
 import android.os.Bundle
 import android.os.Parcelable
+import com.rzahr.quicktools.QuickInjectable
 import java.util.*
 
 

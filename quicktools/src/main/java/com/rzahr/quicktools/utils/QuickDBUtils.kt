@@ -1,5 +1,9 @@
-package com.rzahr.quicktools
+@file:Suppress("unused")
 
+package com.rzahr.quicktools.utils
+
+import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.QuickLogWriter
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -62,7 +66,7 @@ object QuickDBUtils {
                 return false
 
             QuickUtils.createDirectory(
-                getDBPath(),  false
+                getDBPath(), false
             )
 
             val inputStream = QuickInjectable.applicationContext().assets.open(dbName)

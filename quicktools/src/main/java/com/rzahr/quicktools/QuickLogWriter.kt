@@ -1,10 +1,11 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
 package com.rzahr.quicktools
 
 import android.annotation.SuppressLint
 import android.os.Environment
 import android.util.Log
+import com.rzahr.quicktools.utils.QuickUtils
 import java.io.BufferedWriter
 import java.io.File
 import java.io.FileWriter

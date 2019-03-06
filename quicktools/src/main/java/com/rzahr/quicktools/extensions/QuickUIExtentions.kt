@@ -1,40 +1,25 @@
 @file:Suppress("unused")
 
-package com.rzahr.quicktools
+package com.rzahr.quicktools.extensions
 
-import android.animation.ValueAnimator
 import android.app.Activity
-import android.app.NotificationManager
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
-import android.text.Spanned
-import android.view.*
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.TransitionManager
-import com.elconfidencial.bubbleshowcase.BubbleShowCase
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseBuilder
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseListener
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseSequence
 import com.google.android.material.button.MaterialButton
-import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
-
+import com.rzahr.quicktools.QuickRapidIdler
 
 fun Activity.setFullScreen() {
 

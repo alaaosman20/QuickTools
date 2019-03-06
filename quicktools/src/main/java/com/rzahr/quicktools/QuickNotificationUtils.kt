@@ -1,5 +1,6 @@
 package com.rzahr.quicktools
 
+import android.annotation.SuppressLint
 import android.app.*
 import android.content.Context
 import android.content.ContextWrapper
@@ -18,7 +19,9 @@ class QuickNotificationUtils @Inject constructor(val context: Context) : Context
 
     private var mManager: NotificationManager? = null
 
-    fun initializer(channelId: String, channelName: String, channelDescription: String, enableLight: Boolean = true, enableVibration: Boolean = true, lockScreenVisibility: Int = Notification.VISIBILITY_PUBLIC, importance: Int = NotificationManager.IMPORTANCE_DEFAULT) {
+    fun initializer(channelId: String, channelName: String, channelDescription: String, enableLight: Boolean = true, enableVibration: Boolean = true, @SuppressLint(
+        "InlinedApi"
+    ) lockScreenVisibility: Int = Notification.VISIBILITY_PUBLIC, @SuppressLint("InlinedApi") importance: Int = NotificationManager.IMPORTANCE_DEFAULT) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) createChannel(channelId, channelName, channelDescription, enableLight, enableVibration, lockScreenVisibility, importance)
     }

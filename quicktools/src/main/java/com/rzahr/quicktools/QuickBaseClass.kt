@@ -12,6 +12,11 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.rzahr.quicktools.extensions.get
+import com.rzahr.quicktools.extensions.lockOrientation
+import com.rzahr.quicktools.extensions.showToolbar
+import com.rzahr.quicktools.extensions.unLockOrientation
+import com.rzahr.quicktools.utils.QuickDBUtils
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 
@@ -203,6 +208,7 @@ class QuickBaseClass {
         }
     }
 
+    @Suppress("MemberVisibilityCanBePrivate")
     abstract class BaseViewModel constructor(val context: Context) : ViewModel(), LifecycleObserver {
 
         // used to show or hide the progress bar
@@ -231,6 +237,7 @@ class QuickBaseClass {
         }
     }
 
+    @Suppress("MemberVisibilityCanBePrivate")
     abstract class MVVMFragment<VM : BaseViewModel> constructor(private val layoutId: Int, private val lockOrientation: Boolean = false, private val hideToolbar: Boolean = true) : BottomSheetDialogFragment(), BaseViewInterface { //dialogfragment
 
         @Inject

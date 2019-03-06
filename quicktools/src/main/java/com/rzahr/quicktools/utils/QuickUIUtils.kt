@@ -1,6 +1,9 @@
-package com.rzahr.quicktools
+@file:Suppress("unused")
+
+package com.rzahr.quicktools.utils
 
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.NotificationManager
 import android.content.Context
@@ -22,6 +25,11 @@ import com.elconfidencial.bubbleshowcase.BubbleShowCase
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseBuilder
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseListener
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseSequence
+import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.QuickNotificationUtils
+import com.rzahr.quicktools.R
+import com.rzahr.quicktools.extensions.rzSetVisibilityInvisible
+import com.rzahr.quicktools.extensions.rzSetVisible
 import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
 object QuickUIUtils {
@@ -87,7 +95,8 @@ object QuickUIUtils {
         )
         mNotificationCompatBuilder.setStyle(NotificationCompat.BigTextStyle().bigText(message))
 
-        mQuickNotificationUtils.openTopActivityOnClick(mNotificationCompatBuilder, context, QuickInjectable.currentActivity(), defaultActivity)
+        mQuickNotificationUtils.openTopActivityOnClick(mNotificationCompatBuilder, context,
+            QuickInjectable.currentActivity(), defaultActivity)
         mQuickNotificationUtils.setSoundAndVibrate(mNotificationCompatBuilder)
 
         val mNotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -95,6 +104,7 @@ object QuickUIUtils {
         mNotificationManager.notify(key.hashCode(), mNotificationCompatBuilder.build())
     }
 
+    @SuppressLint("InflateParams")
     private fun createCustomAlert(title: String, message: String, cancelable: Boolean, context: Context): Array<Any> {
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -133,6 +143,7 @@ object QuickUIUtils {
         return arrayOf(builder, dialogView, alert)
     }
 
+    @SuppressLint("InflateParams")
     private fun createCustomAlert(title: String, message: Spanned, cancelable: Boolean, context: Context): Array<Any> {
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)

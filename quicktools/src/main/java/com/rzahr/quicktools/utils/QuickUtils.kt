@@ -1,4 +1,6 @@
-package com.rzahr.quicktools
+@file:Suppress("unused", "MemberVisibilityCanBePrivate")
+
+package com.rzahr.quicktools.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -18,6 +20,9 @@ import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
+import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.QuickLogWriter
+import com.rzahr.quicktools.R
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -47,6 +52,9 @@ object QuickUtils {
         }
     }
 
+    /**
+     * remove illegal sql characters
+     */
     fun removeIllegalSQLChars(value: String): String {
 
         @Suppress("NAME_SHADOWING") var value = value
@@ -59,6 +67,9 @@ object QuickUtils {
         return value
     }
 
+    /**
+     * opens a file if applicable
+     */
     fun openAttachment(attachmentName: String, context: Context, activity: Activity, file: File, mimeType: String) {
 
         if (attachmentName.isNotEmpty() && attachmentName != "-") {
@@ -75,6 +86,9 @@ object QuickUtils {
         }
     }
 
+    /**
+     * rounds a number
+     */
     fun roundNumber(value: Double, places: Int): Double {
 
         @Suppress("NAME_SHADOWING") var value = value
@@ -110,6 +124,9 @@ object QuickUtils {
 
     }
 
+    /**
+     * uses rxjava to perform a background task
+     */
     fun backgroundUpdater(backgroundFunction: () -> Any?, ForegroundFunction: (it: Any?) -> Unit, ErrorFunction: (it: Throwable) -> Unit?) {
 
         Single.fromCallable { backgroundFunction() }
@@ -120,6 +137,9 @@ object QuickUtils {
             .subscribe()
     }
 
+    /**
+     * uses rxjava to perform a background task
+     */
     class RZBackgroundUpdater<T> constructor (backgroundFunction: () -> T?, foregroundFunction: (it: T?) -> Unit, errorFunction: (it: Throwable) -> Unit?, subscribeOn: Scheduler = Schedulers.io(), observeOn: Scheduler = AndroidSchedulers.mainThread()) {
 
         init {
@@ -324,7 +344,9 @@ object QuickUtils {
 
         if (success) {
 
-            val noMedia = File(path + "/" + QuickInjectable.applicationContext().resources.getString(R.string.NO_MEDIA))
+            val noMedia = File(path + "/" + QuickInjectable.applicationContext().resources.getString(
+                R.string.NO_MEDIA
+            ))
 
             if (!noMedia.exists() && withNoMedia) {
                 try {

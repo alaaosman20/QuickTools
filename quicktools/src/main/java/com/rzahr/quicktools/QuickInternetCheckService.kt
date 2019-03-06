@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Binder
 import android.os.IBinder
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.rzahr.quicktools.extensions.addWithId
+import com.rzahr.quicktools.utils.QuickUtils
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL

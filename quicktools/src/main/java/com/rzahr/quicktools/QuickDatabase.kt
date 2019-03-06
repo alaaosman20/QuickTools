@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import javax.inject.Inject
 
+@Suppress("unused")
 class QuickDatabase @Inject constructor(val context: Context) {
 
     private var myDataBase: SQLiteDatabase? = null

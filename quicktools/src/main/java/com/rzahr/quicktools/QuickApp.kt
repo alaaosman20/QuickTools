@@ -11,8 +11,11 @@ import android.os.BatteryManager
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
+import com.rzahr.quicktools.extensions.addWithId
+import com.rzahr.quicktools.utils.QuickUtils
 import java.util.*
 
+@Suppress("unused")
 object QuickApp {
 
     /**

@@ -6,8 +6,10 @@ import android.view.View
 import android.widget.LinearLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.rzahr.quicktools.extensions.rzClickListener
 import javax.inject.Inject
 
+@Suppress("unused")
 class QuickBottomSheet {
 
     class DialogViewer @Inject constructor(val context: Context, val activity: Activity) {

@@ -4,7 +4,7 @@ import android.content.Context
 import android.preference.PreferenceManager
 import javax.inject.Inject
 
-@Suppress("unused")
+@Suppress("unused", "MemberVisibilityCanBePrivate")
 class QuickPref @Inject constructor(val context: Context) {
 
     /**

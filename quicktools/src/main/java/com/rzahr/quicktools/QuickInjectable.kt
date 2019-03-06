@@ -2,6 +2,8 @@ package com.rzahr.quicktools
 
 import android.app.Activity
 import android.app.Application
+import android.app.IntentService
+import android.app.Service
 import android.content.Context
 import javax.inject.Inject
 
@@ -47,6 +49,21 @@ class QuickInjectable @Inject constructor(var quickPref: QuickPref, val quickRap
 
         fun applicationContext() : Context {
             return instance!!.mApplication
+        }
+
+        fun get(activity: Activity): Application {
+
+            return activity.application
+        }
+
+        fun get(service: IntentService): Application {
+
+            return service.application
+        }
+
+        fun get(service: Service): Application {
+
+            return service.application
         }
     }
 }
