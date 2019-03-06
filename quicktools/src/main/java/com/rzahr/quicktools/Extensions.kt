@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.rzahr.quicktools
 
 import android.content.Context

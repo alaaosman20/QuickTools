@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.rzahr.quicktools
 
 import android.annotation.SuppressLint
@@ -27,20 +29,25 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import com.rzahr.quicktools.QuickVariables.ARABIC_LANG_KEY
 import com.rzahr.quicktools.QuickVariables.ENGLISH_LANG_KEY
+import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import org.w3c.dom.Document
 import org.xml.sax.InputSource
 import org.xml.sax.SAXException
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.parsers.ParserConfigurationException
 
 object QuickVariables {
+
     var UUID = ""
     const val VERSION_NAME: String = "versionname"
     const val ARABIC_LANG_KEY = "A"
@@ -49,13 +56,15 @@ object QuickVariables {
 
 object QuickApp {
 
+    /**
+     * used in base classes to change language on demand
+     */
     fun getWrapper(newBase: Context?): ContextWrapper? {
 
         return MyContextWrapper.wrap(newBase, Injectable.shPrefUtils().get("Language"))
     }
 
-
-    /**7
+    /**
      * checks if the device is connected to a wifi or 3g
      * @return Boolean value
      */
@@ -67,11 +76,8 @@ object QuickApp {
     }
 
     /**
-     * Get current custom date string.
-     * @return the string
+     * returns the battery level
      */
-
-
     fun getBatteryLevel(): Int {
 
         var battery: Int
@@ -109,6 +115,9 @@ object QuickApp {
 
     }
 
+    /**
+     * boolean value representing if the device is plugged in or not
+     */
     fun isPluggedIn(): Boolean {
 
         try {
@@ -144,13 +153,18 @@ object QuickApp {
         return lang
     }
 
+    /**
+     * boolean value identifying if the application is white-listed
+     */
     fun isInDozeWhiteList(): Boolean? {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
-            return true
-        val powerManager = Injectable.applicationContext().getSystemService(PowerManager::class.java)
-        return powerManager.isIgnoringBatteryOptimizations(Injectable.applicationContext().packageName)
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return true
+        return Injectable.applicationContext().getSystemService(PowerManager::class.java).isIgnoringBatteryOptimizations(Injectable.applicationContext().packageName)
     }
 
+    /**
+     * boolean value representing if the power saver is enabled
+     */
     fun isPowerSaverOn(): Boolean {
 
         val powerManager = Injectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager
@@ -160,6 +174,9 @@ object QuickApp {
         return false
     }
 
+    /**
+     * boolean value representing if the screen is turned on
+     */
     fun isScreenOn(): Boolean {
 
         val powerManager = Injectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager
@@ -170,8 +187,7 @@ object QuickApp {
     }
 
     /**
-     * checks the device name
-     * @return String value
+     * returns the device name
      */
     fun getDeviceName(): String {
         return try {
@@ -188,8 +204,7 @@ object QuickApp {
     }
 
     /**
-     * checks the operating system name
-     * @return String value
+     * returns the operating system name
      */
     fun getOSName(): String {
         return try {
@@ -200,8 +215,7 @@ object QuickApp {
     }
 
     /**
-     * gets the unique identifier used to identify the device
-     * @return String value
+     * returns the unique identifier
      */
     @SuppressLint("HardwareIds")
     fun getUUID(): String {
@@ -356,9 +370,10 @@ object QuickUtils {
         drawable.setBounds(0, 0, canvas.width, canvas.height)
         drawable.draw(canvas)
         return bitmap
+
     }
 
-    fun backgroundUpdater(backgroundFunction: () -> Any?, ForegroundFunction: (it: Any?) -> Unit, ErrorFunction: (it: Throwable) -> Unit) {
+    fun backgroundUpdater(backgroundFunction: () -> Any?, ForegroundFunction: (it: Any?) -> Unit, ErrorFunction: (it: Throwable) -> Unit?) {
 
         Single.fromCallable { backgroundFunction() }
             .subscribeOn(Schedulers.io())
@@ -368,12 +383,23 @@ object QuickUtils {
             .subscribe()
     }
 
+    class RZBackgroundUpdater<T> constructor (backgroundFunction: () -> T?, foregroundFunction: (it: T?) -> Unit, errorFunction: (it: Throwable) -> Unit?, subscribeOn: Scheduler = Schedulers.io(), observeOn: Scheduler = AndroidSchedulers.mainThread()) {
+
+        init {
+            Single.fromCallable { backgroundFunction() }
+                .subscribeOn(subscribeOn)
+                .observeOn(observeOn)
+                .doAfterSuccess { foregroundFunction(it) }
+                .doOnError { errorFunction(it) }
+                .subscribe()
+        }
+    }
+
     fun cancelPendingNotifications(notificationId: String) {
 
         try {
-            val mNotificationManager = Injectable.applicationContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-            mNotificationManager.cancel(notificationId.hashCode())
+            (Injectable.applicationContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).cancel(notificationId.hashCode())
         }
 
         catch (e:Exception) { }
@@ -384,6 +410,9 @@ object QuickUtils {
         return activity.packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).size > 0
     }
 
+    /**
+     * opens google map application if available
+     */
     fun openGoogleMapsApp(uri: String, activity: Activity) {
 
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
@@ -394,11 +423,17 @@ object QuickUtils {
         else Toast.makeText(activity.applicationContext, "Please Install Google Navigation", Toast.LENGTH_LONG).show()
     }
 
+    /**
+     * changes the time to string
+     */
     fun changeTimeToString(lastLocationDate: Long, format: String = "dd/MM/yyyy hh:mm:ss a"): String {
 
         return SimpleDateFormat(format, Locale.ENGLISH).format(java.util.Date(lastLocationDate).time)
     }
 
+    /**
+     * returns the file mipmap
+     */
     fun getFileMipMap(fileURi: Uri): String {
 
         val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(fileURi.toString()))
@@ -412,6 +447,9 @@ object QuickUtils {
         return mimeType.toLowerCase()
     }
 
+    /**
+     * rregular expression search
+     */
     fun regEx(patternString: String, word: String): String {
 
         val matcher =  Pattern.compile(patternString).matcher(word)
@@ -422,23 +460,35 @@ object QuickUtils {
         return matchedString
     }
 
+    /**
+     * returns the file URI
+     */
     fun getFileURI(file: File): Uri {
 
         return if (Build.VERSION.SDK_INT >= 24) FileProvider.getUriForFile(Injectable.applicationContext(), Injectable.applicationContext().applicationContext.packageName + ".provider", file) else Uri.fromFile(file)
     }
 
+    /**
+     * string to html
+     */
     fun fromHtml(html: String): Spanned {
 
         @Suppress("DEPRECATION")
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(html)
     }
 
+    /**
+     * delete file
+     */
     fun deleteFile(path: String) {
         val fileToDelete = File(path)
 
         if (fileToDelete.exists()) fileToDelete.delete()
     }
 
+    /**
+     * request a certain permission
+     */
     fun requestPermission(currentActivity: Activity, manifestPermission: String, permissionIdentifier: Int) {
         ActivityCompat.requestPermissions(
             currentActivity,
@@ -467,7 +517,11 @@ object QuickUtils {
             SimpleDateFormat(format).format(now)
     }
 
+    /**
+     * delete a complete directory
+     */
     fun deleteDirectory(path: String) {
+
         val directoryToDelete = File(path)
         if (directoryToDelete.exists() && directoryToDelete.isDirectory) {
             if (directoryToDelete.list().isEmpty())
@@ -523,7 +577,6 @@ object QuickUtils {
     /**
      * Create directory.
      * @param path        the path
-     * @param context     the context
      * @param withNoMedia the with no media
      */
     fun createDirectory(path: String, withNoMedia: Boolean): String {
@@ -549,7 +602,6 @@ object QuickUtils {
 
         else return "Failure"
     }
-
 }
 
 object QuickDBUtils {
@@ -596,9 +648,7 @@ object QuickDBUtils {
     }
 
     /**
-     * Database exist boolean.
-     * @param context the context
-     * @return the boolean
+     * boolean value representing if the database exist
      */
     fun databaseExist(): Boolean {
 
@@ -628,6 +678,9 @@ object QuickDBUtils {
         }
     }
 
+    /**
+     * copies the database to the internal application directory
+     */
     fun copyDatabaseFromExternalDirectory(dbExternalPath: String, downloadedDbName: String): Boolean {
 
         val outFileName = getDBPath() + downloadedDbName
@@ -657,11 +710,25 @@ object QuickDBUtils {
 
     /**
      * Get db path string.
-     * @param context the context
-     * @return the string
      */
     fun getDBPath(): String {
 
         return Injectable.applicationContext().applicationInfo.dataDir + "/databases/"
+    }
+}
+
+object QuickRetrofit {
+
+    /**
+     * initializes and returns the okHttpClient
+     */
+    fun getOkHTTPClient(time: Int, interceptor: Interceptor): OkHttpClient {
+
+        return OkHttpClient.Builder()
+            .connectTimeout(time.toLong(), TimeUnit.SECONDS)
+            .writeTimeout(time.toLong(), TimeUnit.SECONDS)
+            .readTimeout(time.toLong(), TimeUnit.SECONDS)
+            .addInterceptor(interceptor)
+            .build()
     }
 }

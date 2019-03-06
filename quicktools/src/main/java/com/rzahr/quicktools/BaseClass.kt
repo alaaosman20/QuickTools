@@ -15,6 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 
+@Suppress("unused")
 class BaseClass {
 
     abstract class QuickBaseModel {
@@ -85,8 +86,6 @@ class BaseClass {
             weakReference?.clear()
 
             weakReference = null
-
-            //  disposable.clear()
         }
 
         val view: V?
@@ -105,7 +104,6 @@ class BaseClass {
 
         fun attachView(view: V)
         fun detachView()
-
         fun attachLifecycle(lifecycle: Lifecycle)
         fun onPresenterCreated()
         fun detachLifecycle(lifecycle: Lifecycle)
@@ -242,7 +240,6 @@ class BaseClass {
         @Inject lateinit var mCodeThrottle: CodeThrottle
 
         override fun setPresenter(presenter: QuickBasePresenter<*,*>) {
-            //
         }
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -350,5 +347,4 @@ class BaseClass {
             }
         }
     }
-
 }

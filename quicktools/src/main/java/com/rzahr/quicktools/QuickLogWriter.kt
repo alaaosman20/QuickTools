@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.rzahr.quicktools
 
 import android.annotation.SuppressLint
@@ -128,6 +130,5 @@ object QuickLogWriter {
         }
         catch (ignored: java.lang.Exception){}
     }
-
 
 }

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.rzahr.quicktools
 
 import android.animation.ValueAnimator
@@ -522,3 +524,5 @@ fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle:
         icon?.let { imageLogo.setBackgroundResource(it) }
     }
 }
+
+

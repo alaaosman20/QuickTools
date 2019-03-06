@@ -4,6 +4,7 @@ import android.content.Context
 import android.preference.PreferenceManager
 import javax.inject.Inject
 
+@Suppress("unused")
 class ShPrefUtils @Inject constructor(val context: Context) {
 
     /**

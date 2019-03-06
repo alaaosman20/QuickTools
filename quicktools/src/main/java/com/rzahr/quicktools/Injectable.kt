@@ -6,6 +6,7 @@ import android.content.Context
 import javax.inject.Inject
 
 
+@Suppress("unused")
 class Injectable @Inject constructor(var shPrefUtils: ShPrefUtils, val codeThrottle: CodeThrottle) {
 
     val mActivityLifecycleCallbacks = ActivityLifeCycleCallbacks()
