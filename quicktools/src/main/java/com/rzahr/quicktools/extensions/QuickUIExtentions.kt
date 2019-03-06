@@ -33,7 +33,6 @@ import com.rzahr.quicktools.QuickRapidIdler
  * @author Rashad Zahr
  */
 
-
 /**
  * used to set the activity to full screen
  */

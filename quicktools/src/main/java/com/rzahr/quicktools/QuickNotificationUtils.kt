@@ -10,6 +10,7 @@ import android.graphics.Color
 import android.media.RingtoneManager
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.annotation.RequiresFeature
 import androidx.core.app.NotificationCompat
 import javax.inject.Inject
 import kotlin.random.Random
@@ -19,6 +20,9 @@ class QuickNotificationUtils @Inject constructor(val context: Context) : Context
 
     private var mManager: NotificationManager? = null
 
+    /**
+     * initializer function required for the class to function
+     */
     fun initializer(channelId: String, channelName: String, channelDescription: String, enableLight: Boolean = true, enableVibration: Boolean = true, @SuppressLint(
         "InlinedApi"
     ) lockScreenVisibility: Int = Notification.VISIBILITY_PUBLIC, @SuppressLint("InlinedApi") importance: Int = NotificationManager.IMPORTANCE_DEFAULT) {
@@ -47,43 +51,8 @@ class QuickNotificationUtils @Inject constructor(val context: Context) : Context
         getManager()!!.createNotificationChannel(notificationChannel)
     }
 
-    fun setSoundAndVibrate(builder: NotificationCompat.Builder) {
-
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) builder.priority = NotificationManager.IMPORTANCE_HIGH
-
-        else  builder.priority = Notification.PRIORITY_HIGH
-
-        builder.priority = NotificationCompat.PRIORITY_HIGH   // heads-up
-
-        val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-        builder.setSound(alarmSound)
-        builder.setLights(Color.GREEN, 3000, 3000)
-        builder.setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
-
-        builder.setDefaults(Notification.DEFAULT_ALL)
-    }
-
-    fun openTopActivityOnClick(builder: NotificationCompat.Builder, context: Context, currentActivity: Activity?, defaultActivity: Class<Any>?) {
-
-        var resultIntent: Intent? = null
-
-        currentActivity?.let { resultIntent= Intent(context, it::class.java) }
-
-        if (currentActivity == null && defaultActivity!= null) resultIntent= Intent(context, defaultActivity)
-
-        if (resultIntent != null) {
-
-            resultIntent?.action = Intent.ACTION_MAIN
-            resultIntent?.addCategory(Intent.CATEGORY_LAUNCHER)
-
-            val pendingIntent = PendingIntent.getActivity(context, Random.nextInt(), resultIntent, 0)
-
-            builder.setContentIntent(pendingIntent)
-        }
-    }
-
     private fun getManager(): NotificationManager? {
+
         if (mManager == null) mManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         return mManager

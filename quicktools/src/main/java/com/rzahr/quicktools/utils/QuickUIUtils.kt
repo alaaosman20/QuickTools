@@ -4,7 +4,6 @@ package com.rzahr.quicktools.utils
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.NotificationManager
 import android.content.Context
 import android.graphics.Color
@@ -14,22 +13,16 @@ import android.text.Spanned
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat
-import com.elconfidencial.bubbleshowcase.BubbleShowCase
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseBuilder
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseListener
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseSequence
-import com.rzahr.quicktools.QuickInjectable
 import com.rzahr.quicktools.QuickNotificationUtils
 import com.rzahr.quicktools.R
+import com.rzahr.quicktools.extensions.openTopActivityOnClick
 import com.rzahr.quicktools.extensions.rzSetVisibilityInvisible
 import com.rzahr.quicktools.extensions.rzSetVisible
+import com.rzahr.quicktools.extensions.setSoundAndVibrate
 import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
 /**
@@ -83,8 +76,8 @@ object QuickUIUtils {
 
         val notificationCompatBuilder = utils.getNotificationBuilder(title, message, false, smallIcon, id, logo)
         notificationCompatBuilder.setStyle(NotificationCompat.BigTextStyle().bigText(message))
-        utils.openTopActivityOnClick(notificationCompatBuilder, context, QuickInjectable.currentActivity(), defaultActivity)
-        utils.setSoundAndVibrate(notificationCompatBuilder)
+        notificationCompatBuilder.openTopActivityOnClick(context, defaultActivity)
+        notificationCompatBuilder.setSoundAndVibrate()
         (context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).notify(key.hashCode(), notificationCompatBuilder.build())
     }
 

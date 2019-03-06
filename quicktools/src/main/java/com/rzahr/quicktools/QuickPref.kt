@@ -4,11 +4,16 @@ import android.content.Context
 import android.preference.PreferenceManager
 import javax.inject.Inject
 
+/**
+ * @author Rashad Zahr
+ *
+ * class used for shared preference
+ */
 @Suppress("unused", "MemberVisibilityCanBePrivate")
 class QuickPref @Inject constructor(val context: Context) {
 
     /**
-     * Set shared boolean value.
+     * set shared boolean value.
      * @param id    the id
      * @param value the value
      */
@@ -20,7 +25,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Set shared long value.
+     * set shared long value.
      * @param id    the id
      * @param value the value
      */
@@ -32,7 +37,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Get shared long value long.
+     * get shared long value long.
      * @param id the id
      * @return the long
      */
@@ -42,7 +47,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Set shared string value.
+     * set shared string value.
      * @param id    the id
      * @param value the value
      */
@@ -54,7 +59,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Check shared pref value if exist boolean.
+     * check shared pref value if exist boolean.
      * @param value the value
      * @return the boolean
      */
@@ -69,7 +74,7 @@ class QuickPref @Inject constructor(val context: Context) {
 
 
     /**
-     * Set shared string default value.
+     * set shared string default value.
      * @param id    the id
      * @param value the value
      */
@@ -85,7 +90,7 @@ class QuickPref @Inject constructor(val context: Context) {
 
 
     /**
-     * Set shared long default value.
+     * set shared long default value.
      * @param id    the id
      * @param value the value
      */
@@ -106,7 +111,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Get shared string value string.
+     * get shared string value string.
      * @param id the id
      * @return the string
      */
@@ -116,7 +121,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Get shared string value string.
+     * get shared string value string.
      * @param id the id
      * @return the string
      */
@@ -126,7 +131,7 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * Get shared boolean value boolean.
+     * get shared boolean value boolean.
      * @param id the id
      * @return the boolean
      */
