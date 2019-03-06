@@ -3,6 +3,11 @@ package com.rzahr.quicktools.models
 import android.os.Parcel
 import android.os.Parcelable
 
+/**
+ * @author Rashad Zahr
+ *
+ * This class is used with retrofit to return an object response from the web-service of this form
+ */
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "unused")
 class QuickServiceResponse(parcel: Parcel) : Parcelable {
 

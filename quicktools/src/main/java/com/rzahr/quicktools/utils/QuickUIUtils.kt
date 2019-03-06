@@ -32,8 +32,17 @@ import com.rzahr.quicktools.extensions.rzSetVisibilityInvisible
 import com.rzahr.quicktools.extensions.rzSetVisible
 import kotlinx.android.synthetic.main.custom_alert_dialog.view.*
 
+/**
+ * @author Rashad Zahr
+ *
+ * object used as a helper to build common UI views
+ */
 object QuickUIUtils {
 
+    /**
+     * shows a bubble on view as a hint to what it does with the help of a third party library: com.elconfidencial.bubbleshowcase:bubbleshowcase
+     * @param showCases: an array of @BubbleShowCaseBuilder which is created using addShowCase
+     */
     fun showBubbles(showCases: Array<BubbleShowCaseBuilder>) {
 
         val bubbleSequence =  BubbleShowCaseSequence()
@@ -43,6 +52,10 @@ object QuickUIUtils {
         bubbleSequence.show()
     }
 
+    /**
+     * used to animate a background view with colors
+     * use example: QuickUIUtils.animateBackgroundWithColors(ValueAnimator.ofObject(ArgbEvaluator(), color1, color3, color4, color1), this)
+     */
     fun animateBackgroundWithColors(colorAnimation: ValueAnimator, vararg views: View): ValueAnimator {
 
         colorAnimation.duration = 10850 // milliseconds
@@ -51,36 +64,6 @@ object QuickUIUtils {
         colorAnimation.repeatCount = ValueAnimator.INFINITE
 
         return colorAnimation
-    }
-
-    fun addShowCase(title: String, id: String, activity: Activity, target: View, description: String = "", backgroundColorId: Int): BubbleShowCaseBuilder {
-
-        val aas:List<BubbleShowCase.ArrowPosition> = emptyList()
-        return BubbleShowCaseBuilder(activity) //Activity instance
-            .title(title) //Any title for the bubble view
-            .description(description)
-            .arrowPosition(aas)
-            .showOnce(id) //Id to show only once the BubbleShowCase
-            .listener(object: BubbleShowCaseListener {
-
-                override fun onBackgroundDimClick(bubbleShowCase: BubbleShowCase) {
-                    bubbleShowCase.dismiss()
-                }
-
-                override fun onBubbleClick(bubbleShowCase: BubbleShowCase) {
-                    bubbleShowCase.dismiss()
-                }
-
-                override fun onCloseActionImageClick(bubbleShowCase: BubbleShowCase) {
-                    bubbleShowCase.dismiss()
-                }
-
-                override fun onTargetClick(bubbleShowCase: BubbleShowCase) {
-                    bubbleShowCase.dismiss()
-                }
-            })
-            .targetView(target) //View to point out
-            .backgroundColor(ContextCompat.getColor(activity, backgroundColorId))
     }
 
     fun sendNotification(title: String, message: String, mQuickNotificationUtils: QuickNotificationUtils, context: Context, key: String = title + message, smallIcon: Int, id: String, logo: Int, defaultActivity: Class<Any>) {
@@ -325,57 +308,6 @@ object QuickUIUtils {
 
                 alert.cancel()
             }
-        }
-    }
-
-    fun showQuickAlert(builder: AlertDialog.Builder): AlertDialog? {
-
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-        return dialog
-    }
-
-    /**
-     * creates the activity toolbar
-     *
-     * @param appCompatActivity the activity
-     * @param title the toolbar title
-     * @param subTitle the toolbar subtitle
-     * @param withNavigation boolean value specifying if the activity supports back
-     * @param withLogo boolean value specifying if the activity has a logo
-     */
-    fun createToolbar(appCompatActivity: AppCompatActivity, title: String, subTitle: String, withNavigation: Boolean?, withLogo: Boolean?, backgroundColorId: Int? = null, toolbarId: Int, titleId: Int, subtitleId: Int, logoImage: Int, icon: Int? =null) {
-
-        val toolbar = appCompatActivity.findViewById(toolbarId) as Toolbar
-        appCompatActivity.setSupportActionBar(toolbar)
-
-        backgroundColorId?.let { toolbar.setBackgroundResource(it) }
-
-        if (title.isNotEmpty()) {
-
-            val titleTextView = toolbar.findViewById(titleId) as TextView
-            titleTextView.text = title
-            titleTextView.visibility = View.VISIBLE
-        }
-
-        if (subTitle.isNotEmpty()) {
-
-            val subTitleTextView = toolbar.findViewById(subtitleId) as TextView
-            subTitleTextView.text = subTitle
-            subTitleTextView.visibility = View.VISIBLE
-        }
-
-        if (withNavigation!! && appCompatActivity.supportActionBar != null) appCompatActivity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
-        if (withLogo!!) {
-
-            val imageLogo = toolbar.findViewById(logoImage) as ImageView
-
-            if (appCompatActivity.supportActionBar != null) appCompatActivity.supportActionBar!!.setDisplayShowTitleEnabled(false)
-
-            imageLogo.visibility = View.VISIBLE
-
-            icon?.let { imageLogo.setBackgroundResource(it) }
         }
     }
 }

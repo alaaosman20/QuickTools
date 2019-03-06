@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
 package com.rzahr.quicktools.utils
 
@@ -9,8 +9,23 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.util.*
 
+/**
+ * @author Rashad Zahr
+ *
+ * object used as a helper to build queries and to copy the database to the internal application directory
+ */
 object QuickDBUtils {
 
+    /**
+     * a simple SQL query select helper
+     * @param columns: the columns selected
+     * @param table: the table selected from
+     * @param whereClause: the optional where clause
+     * @param groupByClause: the optional group by clause
+     * @param orderByClause: the optional order by clause
+     *
+     * @return a query string from the provided attributes
+     */
     fun simpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
 
         var query = "SELECT $columns FROM $table"
@@ -26,6 +41,16 @@ object QuickDBUtils {
         return query
     }
 
+    /**
+     * a complex SQL query select helper
+     * @param columns: the columns selected
+     * @param table: the table selected from
+     * @param joins: the joins between the various tables
+     * @param whereClause: the optional where clause
+     * @param groupByClause: the optional group by clause
+     *
+     * @return a query string from the provided attributes
+     */
     fun complexSelect(columns: String, table: String, joins: Array<String>, whereClause: String = "", groupByClause: String = ""): String {
 
         var query = "SELECT $columns FROM $table "
@@ -41,6 +66,14 @@ object QuickDBUtils {
         return query
     }
 
+    /**
+     * a simple distinct SQL query select helper
+     * @param columns: the columns selected
+     * @param table: the table selected from
+     * @param whereClause: the optional where clause
+     *
+     * @return a query string from the provided attributes
+     */
     fun distinctSelect(columns: String, table: String, whereClause: String = ""): String {
 
         var query = "SELECT DISTINCT $columns FROM $table"
@@ -53,7 +86,8 @@ object QuickDBUtils {
     }
 
     /**
-     * boolean value representing if the database exist
+     * @return boolean value representing if the database exist
+     *
      */
     fun databaseExist(): Boolean {
 
@@ -85,6 +119,10 @@ object QuickDBUtils {
 
     /**
      * copies the database to the internal application directory
+     * @param dbExternalPath: the file path that will be copied
+     * @param downloadedDbName: the file name
+     *
+     * @return boolean value representing a successful copy of the database
      */
     fun copyDatabaseFromExternalDirectory(dbExternalPath: String, downloadedDbName: String): Boolean {
 
@@ -114,7 +152,7 @@ object QuickDBUtils {
     }
 
     /**
-     * Get db path string.
+     * @return db path
      */
     fun getDBPath(): String {
 

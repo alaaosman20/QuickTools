@@ -8,9 +8,14 @@ import android.os.Parcelable
 import com.rzahr.quicktools.QuickInjectable
 import java.util.*
 
+/**
+ * @author Rashad Zahr
+ */
 
 /**
  * saves instance state of a string
+ * @param id: the id pointing to this string value
+ * @param outState: the bundle where the value is saved in
  */
 fun String.saveStateOf(id: String, outState: Bundle?) {
 
@@ -19,6 +24,8 @@ fun String.saveStateOf(id: String, outState: Bundle?) {
 
 /**
  * saves instance state of a boolean
+ * @param id: the id pointing to this boolean value
+ * @param outState: the bundle where the value is saved in
  */
 fun Boolean.saveStateOf(id: String, outState: Bundle?) {
 
@@ -27,6 +34,8 @@ fun Boolean.saveStateOf(id: String, outState: Bundle?) {
 
 /**
  * saves instance state of a parcelable array list
+ * @param id: the id pointing to this array list value
+ * @param outState: the bundle where the value is saved in
  */
 fun ArrayList<out Parcelable>.saveStateOf(id: String, outState: Bundle?) {
 
@@ -35,6 +44,8 @@ fun ArrayList<out Parcelable>.saveStateOf(id: String, outState: Bundle?) {
 
 /**
  * saves instance state of a parcelable
+ * @param id: the id pointing to this parcelable value
+ * @param outState: the bundle where the value is saved in
  */
 fun Parcelable.saveStateOf(id: String, outState: Bundle?) {
 
@@ -43,6 +54,7 @@ fun Parcelable.saveStateOf(id: String, outState: Bundle?) {
 
 /**
  * gets the saved instance state of a parcelable array list
+ * @param id: the id pointing to this object value
  */
 fun <T : Parcelable> Bundle?.getStateOf(id: String): ArrayList<T>? {
 
@@ -52,6 +64,8 @@ fun <T : Parcelable> Bundle?.getStateOf(id: String): ArrayList<T>? {
 /**
  * gets the saved instance state of a parcelable
  * the parcelable attribute is needed to differentiate between this method and the one for the array list of parcelable
+ * @param id: the id pointing to this object value
+ * @param parcelable: unused parameter
  */
 fun <T : Parcelable> Bundle?.getStateOf(id: String, @Suppress("UNUSED_PARAMETER") parcelable: Int): T? {
 
@@ -60,6 +74,8 @@ fun <T : Parcelable> Bundle?.getStateOf(id: String, @Suppress("UNUSED_PARAMETER"
 
 /**
  * gets the saved instance state of a string
+ * @param id: the id pointing to this string value
+ * @param default: the default value of the string if it does not exist
  */
 fun Bundle?.getStateOf(id: String, default: String = ""): String {
 
@@ -76,6 +92,8 @@ fun Bundle?.getStateOf(id: String, default: String = ""): String {
 
 /**
  * gets the saved instance state of a boolean
+ * @param id: the id pointing to this boolean value
+ * @param default: the default value of the boolean if it does not exist
  */
 fun Bundle?.getStateOf(id: String, default: Boolean = false): Boolean {
 
@@ -92,6 +110,7 @@ fun Bundle?.getStateOf(id: String, default: Boolean = false): Boolean {
 
 /**
  * saves integer in shared preference
+ * @param id: the id pointing to this integer value
  */
 fun Int.addWithId(id: String) {
 
@@ -100,15 +119,16 @@ fun Int.addWithId(id: String) {
 
 /**
  * saves string in shared preference
+ * @param id: the id pointing to this string value
  */
 fun String.addWithId(id: String) {
 
     QuickInjectable.quickPref().setString(id, this)
 }
 
-
 /**
  * saves double in shared preference
+ * @param id: the id pointing to this double value
  */
 fun Double.addWithId(id: String) {
 
@@ -117,6 +137,7 @@ fun Double.addWithId(id: String) {
 
 /**
  * saves long in shared preference
+ * @param id: the id pointing to this long value
  */
 fun Long.addWithId(id: String) {
 
@@ -125,6 +146,7 @@ fun Long.addWithId(id: String) {
 
 /**
  * saves boolean in shared preference
+ * @param id: the id pointing to this boolean value
  */
 fun Boolean.addWithId(id: String) {
 
@@ -133,6 +155,7 @@ fun Boolean.addWithId(id: String) {
 
 /**
  * saves string in shared preference as default
+ * @param id: the id pointing to this string value
  */
 fun String.addAsDefaultWithId(id: String) {
 
@@ -141,14 +164,16 @@ fun String.addAsDefaultWithId(id: String) {
 
 /**
  * gets string from strings.xml
+ * @param context: the context used to get the string value. in case the value is not passed then the application context is provided
  */
-fun Int.get(context: Context): String {
+fun Int.get(context: Context = QuickInjectable.applicationContext()): String {
 
     return context.getString(this)
 }
 
 /**
  * saves long in shared preference as default
+ * @param id: the id pointing to this string value
  */
 fun Long.addAsDefaultWithId(id: String) {
 
