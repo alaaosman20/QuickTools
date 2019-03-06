@@ -23,7 +23,6 @@ object QuickDBUtils {
      * @param whereClause: the optional where clause
      * @param groupByClause: the optional group by clause
      * @param orderByClause: the optional order by clause
-     *
      * @return a query string from the provided attributes
      */
     fun simpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
@@ -48,7 +47,6 @@ object QuickDBUtils {
      * @param joins: the joins between the various tables
      * @param whereClause: the optional where clause
      * @param groupByClause: the optional group by clause
-     *
      * @return a query string from the provided attributes
      */
     fun complexSelect(columns: String, table: String, joins: Array<String>, whereClause: String = "", groupByClause: String = ""): String {
@@ -71,7 +69,6 @@ object QuickDBUtils {
      * @param columns: the columns selected
      * @param table: the table selected from
      * @param whereClause: the optional where clause
-     *
      * @return a query string from the provided attributes
      */
     fun distinctSelect(columns: String, table: String, whereClause: String = ""): String {
@@ -87,7 +84,6 @@ object QuickDBUtils {
 
     /**
      * @return boolean value representing if the database exist
-     *
      */
     fun databaseExist(): Boolean {
 
@@ -121,7 +117,6 @@ object QuickDBUtils {
      * copies the database to the internal application directory
      * @param dbExternalPath: the file path that will be copied
      * @param downloadedDbName: the file name
-     *
      * @return boolean value representing a successful copy of the database
      */
     fun copyDatabaseFromExternalDirectory(dbExternalPath: String, downloadedDbName: String): Boolean {

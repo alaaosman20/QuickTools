@@ -27,8 +27,7 @@ object QuickApp {
     }
 
     /**
-     * checks if the device is connected to a wifi or 3g
-     * @return Boolean value
+     * @return if the device is connected to a wifi or 3g
      */
     @SuppressLint("MissingPermission")
     fun isOnline(): Boolean {
@@ -38,7 +37,7 @@ object QuickApp {
     }
 
     /**
-     * returns the battery level
+     * @return the battery level
      */
     fun getBatteryLevel(): Int {
 
@@ -58,7 +57,7 @@ object QuickApp {
     }
 
     /**
-     * boolean value representing if the device is plugged in or not
+     * @return boolean value representing if the device is plugged in or not
      */
     fun isPluggedIn(): Boolean {
 
@@ -79,7 +78,7 @@ object QuickApp {
     }
 
     /**
-     * returns the current language symbol
+     * @returns the current language symbol
      */
     fun getLanguageIdentifier(): String {
 
@@ -93,7 +92,7 @@ object QuickApp {
     }
 
     /**
-     * boolean value identifying if the application is white-listed
+     * @return boolean value identifying if the application is white-listed
      */
     fun isInDozeWhiteList(): Boolean? {
 
@@ -101,7 +100,7 @@ object QuickApp {
     }
 
     /**
-     * boolean value representing if the power saver is enabled
+     * @return boolean value representing if the power saver is enabled
      */
     fun isPowerSaverOn(): Boolean {
 
@@ -110,7 +109,7 @@ object QuickApp {
     }
 
     /**
-     * boolean value representing if the screen is turned on
+     * @return boolean value representing if the screen is turned on
      */
     fun isScreenOn(): Boolean {
 
@@ -122,7 +121,7 @@ object QuickApp {
     }
 
     /**
-     * returns the device name
+     * @return the device name
      */
     fun getDeviceName(): String {
 
@@ -140,7 +139,7 @@ object QuickApp {
     }
 
     /**
-     * returns the operating system name
+     * @return the operating system name
      */
     fun getOSName(): String {
 
@@ -152,7 +151,7 @@ object QuickApp {
     }
 
     /**
-     * returns the unique identifier
+     * @return the unique identifier
      */
     @SuppressLint("HardwareIds")
     fun getUUID(): String {
@@ -168,7 +167,7 @@ object QuickApp {
     /**
      * checks the current application version name
      * @param directRequest used to either check directly the version name or get the value stored in the shared preference
-     * @return String value
+     * @return the version name
      */
     fun getVersionName(directRequest: Boolean): String {
 
@@ -185,6 +184,9 @@ object QuickApp {
         return QuickInjectable.quickPref().get(QuickVariables.VERSION_NAME)
     }
 
+    /**
+     * @return if the application is in the background
+     */
     fun backgrounded(): Boolean {
 
         var isInBackground = true

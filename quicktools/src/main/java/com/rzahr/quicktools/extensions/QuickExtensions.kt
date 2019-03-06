@@ -16,7 +16,6 @@ import android.os.Parcelable
 import androidx.core.content.FileProvider
 import com.rzahr.quicktools.QuickInjectable
 import com.rzahr.quicktools.R
-import com.rzahr.quicktools.utils.QuickUtils
 import java.io.File
 import java.util.*
 

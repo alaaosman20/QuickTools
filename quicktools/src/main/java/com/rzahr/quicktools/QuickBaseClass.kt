@@ -23,6 +23,10 @@ import javax.inject.Inject
 @Suppress("unused")
 class QuickBaseClass {
 
+    /**
+     * @author Rashad Zahr
+     * base model class helper for performing SQLITE queries
+     */
     abstract class BaseModel {
 
         fun simpleSelect(columns: String, table: String, whereClause: String = "", groupByClause: String = "", orderByClause: String = ""): String {
@@ -42,6 +46,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base presenter class
+     */
     open class BasePresenter<V : BaseViewInterface, M: BaseModel> @Inject constructor(): BasePresenterInterface<V>, LifecycleObserver {
 
         @Inject lateinit var model: M
@@ -100,11 +108,19 @@ class QuickBaseClass {
             get() = weakReference != null && weakReference!!.get() != null
     }
 
+    /**
+     * @author Rashad Zahr
+     * base view interface
+     */
     interface BaseViewInterface {
 
         fun setPresenter(presenter: BasePresenter<*,*>)
     }
 
+    /**
+     * @author Rashad Zahr
+     * base presenter interface
+     */
     interface BasePresenterInterface<V : BaseViewInterface> {
 
         fun attachView(view: V)
@@ -116,6 +132,10 @@ class QuickBaseClass {
         fun getStateBundle(): Bundle?
     }
 
+    /**
+     * @author Rashad Zahr
+     * base activity
+     */
     abstract class AbstractActivity : AppCompatActivity(), BaseViewInterface {
 
         @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
@@ -133,6 +153,10 @@ class QuickBaseClass {
         protected abstract fun onActivityInject()
     }
 
+    /**
+     * @author Rashad Zahr
+     * base fragment
+     */
     abstract class AbstractFragment : Fragment(), BaseViewInterface {
 
         private var presenter: BasePresenter<*,*>? = null
@@ -158,6 +182,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base dialog fragment
+     */
     abstract class AbstractDialogFragment : DialogFragment(), BaseViewInterface {
 
         private var presenter: BasePresenter<*,*>? = null
@@ -183,6 +211,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base activity
+     */
     abstract class BaseActivity<P : BasePresenterInterface<*>>: AbstractActivity() {
 
         @Inject lateinit var mPresenter: P
@@ -208,6 +240,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base view model
+     */
     @Suppress("MemberVisibilityCanBePrivate")
     abstract class BaseViewModel constructor(val context: Context) : ViewModel(), LifecycleObserver {
 
@@ -237,6 +273,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base MVVM structure fragment
+     */
     @Suppress("MemberVisibilityCanBePrivate")
     abstract class MVVMFragment<VM : BaseViewModel> constructor(private val layoutId: Int, private val lockOrientation: Boolean = false, private val hideToolbar: Boolean = true) : BottomSheetDialogFragment(), BaseViewInterface { //dialogfragment
 
@@ -295,6 +335,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base MVP structure fragment
+     */
     abstract class MVPFragment<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractFragment() {
 
         @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
@@ -325,6 +369,10 @@ class QuickBaseClass {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     * base MVP structure fragment dialog
+     */
     abstract class MVPFragmentDialog<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractDialogFragment() {
 
         @Inject lateinit var mQuickRapidIdler: QuickRapidIdler
