@@ -264,11 +264,9 @@ fun Long.addAsDefaultWithId(id: String) {
  *
  * @return a duplicate free array list
  */
-fun ArrayList<String>.removeDuplicates(arrayList: ArrayList<String>): Set<String> {
-    val end = arrayList.size
+fun ArrayList<String>.removeDuplicates(): Set<String> {
+
     val set = HashSet<String>()
-    for (i in 0 until end) {
-        set.add(arrayList[i])
-    }
+    for (i in 0 until this.size) set.add(this[i])
     return set
 }
