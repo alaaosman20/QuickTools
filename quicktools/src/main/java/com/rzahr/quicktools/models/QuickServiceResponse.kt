@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "unused")
-class ServiceResponse(parcel: Parcel) : Parcelable {
+class QuickServiceResponse(parcel: Parcel) : Parcelable {
 
     private var responseDetails = ""
     private var errorDetails = ""
@@ -38,12 +38,12 @@ class ServiceResponse(parcel: Parcel) : Parcelable {
         dest.writeInt(responseCode)
     }
 
-    companion object CREATOR : Parcelable.Creator<ServiceResponse> {
-        override fun createFromParcel(parcel: Parcel): ServiceResponse {
-            return ServiceResponse(parcel)
+    companion object CREATOR : Parcelable.Creator<QuickServiceResponse> {
+        override fun createFromParcel(parcel: Parcel): QuickServiceResponse {
+            return QuickServiceResponse(parcel)
         }
 
-        override fun newArray(size: Int): Array<ServiceResponse?> {
+        override fun newArray(size: Int): Array<QuickServiceResponse?> {
             return arrayOfNulls(size)
         }
     }
