@@ -15,12 +15,12 @@ class QuickBottomSheet {
     class DialogViewer @Inject constructor(val context: Context, val activity: Activity) {
 
         private var mBottomSheetDialog: BottomSheetDialog? = null
-        private lateinit var mLocationChangerReasonBottomSheetView: View
+        private lateinit var mBottomSheetView: View
 
         fun getView(layoutId: Int): View {
 
             create(layoutId)
-            return mLocationChangerReasonBottomSheetView
+            return mBottomSheetView
         }
 
         fun dismiss() {
@@ -33,8 +33,8 @@ class QuickBottomSheet {
             if (mBottomSheetDialog == null) {
 
                 mBottomSheetDialog = BottomSheetDialog(context)
-                mLocationChangerReasonBottomSheetView = activity.layoutInflater.inflate(layoutId, null)
-                mBottomSheetDialog?.setContentView(mLocationChangerReasonBottomSheetView)
+                mBottomSheetView = activity.layoutInflater.inflate(layoutId, null)
+                mBottomSheetDialog?.setContentView(mBottomSheetView)
             }
         }
 
@@ -45,7 +45,7 @@ class QuickBottomSheet {
         }
     }
 
-    class Viewer @Inject constructor(@Suppress("MemberVisibilityCanBePrivate") val QuickRapidIdler: QuickRapidIdler) {
+    class Viewer @Inject constructor(@Suppress("MemberVisibilityCanBePrivate") val quickRapidIdler: QuickRapidIdler) {
 
         //todo needs revision
         private lateinit var sheetBehavior: BottomSheetBehavior<LinearLayout>
@@ -53,7 +53,7 @@ class QuickBottomSheet {
         fun create(linearLayout: LinearLayout) {
 
             sheetBehavior = BottomSheetBehavior.from<LinearLayout>(linearLayout)
-            linearLayout.rzClickListener(QuickRapidIdler) { expandCloseSheet() }
+            linearLayout.rzClickListener(quickRapidIdler) { expandCloseSheet() }
         }
 
         fun dismiss() {

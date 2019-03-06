@@ -42,39 +42,19 @@ object QuickApp {
      */
     fun getBatteryLevel(): Int {
 
-        var battery: Int
-
-        try {
-
-            val batteryLevel: Int
-            val batteryScale: Int
+        return try {
 
             val batteryIntent = QuickInjectable.applicationContext().registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+            val batteryLevel = batteryIntent?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
+            val batteryScale = batteryIntent?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
 
-            batteryLevel = batteryIntent?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
+            if (batteryLevel == -1 || batteryScale == -1) Math.round(50f) else Math.round(batteryLevel.toFloat() / batteryScale.toFloat() * 100f)
 
-            batteryScale = batteryIntent?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
-
-            // Error checking that probably isn't needed but I added just in case.
-            if (batteryLevel == -1 || batteryScale == -1) {
-                battery = Math.round(50f)
-                return battery
-            }
-
-            battery = Math.round(batteryLevel.toFloat() / batteryScale.toFloat() * 100f)
-
-            return battery
-        }
-
-        catch (exc: Exception) {
+        } catch (exc: Exception) {
 
             QuickLogWriter.errorLogging("Error in getBatteryLevel:", exc.toString())
-
-            battery = 0
-
-            return battery
+            0
         }
-
     }
 
     /**
@@ -107,12 +87,9 @@ object QuickApp {
             QuickInjectable.applicationContext().resources.configuration.locales.get(0)
         else QuickInjectable.applicationContext().resources.configuration.locale
 
-        val lang: String
-        lang = if (locale.toString() == "l" || locale.toString() == "en_US" || locale.toString().contains("en", true))
+        return if (locale.toString() == "l" || locale.toString() == "en_US" || locale.toString().contains("en", true))
             QuickVariables.ENGLISH_LANG_KEY
         else QuickVariables.ARABIC_LANG_KEY
-
-        return lang
     }
 
     /**
@@ -120,8 +97,7 @@ object QuickApp {
      */
     fun isInDozeWhiteList(): Boolean? {
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return true
-        return QuickInjectable.applicationContext().getSystemService(PowerManager::class.java).isIgnoringBatteryOptimizations(QuickInjectable.applicationContext().packageName)
+        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) true else QuickInjectable.applicationContext().getSystemService(PowerManager::class.java).isIgnoringBatteryOptimizations(QuickInjectable.applicationContext().packageName)
     }
 
     /**
@@ -129,11 +105,8 @@ object QuickApp {
      */
     fun isPowerSaverOn(): Boolean {
 
-        val powerManager = QuickInjectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && powerManager.isPowerSaveMode) {
-            return true
-        }
-        return false
+      return  Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
+            (QuickInjectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager).isPowerSaveMode
     }
 
     /**
@@ -283,6 +256,5 @@ object QuickApp {
         } catch (e: Exception) {
             return false
         }
-
     }
 }
