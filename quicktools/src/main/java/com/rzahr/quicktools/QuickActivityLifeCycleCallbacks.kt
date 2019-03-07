@@ -4,6 +4,11 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 
+/**
+ * @author Rashad Zahr
+ *
+ * this class is used mainly to fetch the current activity displayed in the application
+ */
 class QuickActivityLifeCycleCallbacks : Application.ActivityLifecycleCallbacks {
 
     var currentActivity: Activity? = null

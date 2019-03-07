@@ -25,6 +25,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base model class helper for performing SQLITE queries
      */
     abstract class BaseModel {
@@ -48,6 +49,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base presenter class
      */
     open class BasePresenter<V : BaseViewInterface, M: BaseModel> @Inject constructor(): BasePresenterInterface<V>, LifecycleObserver {
@@ -110,6 +112,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base view interface
      */
     interface BaseViewInterface {
@@ -119,6 +122,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base presenter interface
      */
     interface BasePresenterInterface<V : BaseViewInterface> {
@@ -134,6 +138,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base activity
      */
     abstract class AbstractActivity : AppCompatActivity(), BaseViewInterface {
@@ -155,6 +160,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base fragment
      */
     abstract class AbstractFragment : Fragment(), BaseViewInterface {
@@ -184,6 +190,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base dialog fragment
      */
     abstract class AbstractDialogFragment : DialogFragment(), BaseViewInterface {
@@ -213,6 +220,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base activity
      */
     abstract class BaseActivity<P : BasePresenterInterface<*>>: AbstractActivity() {
@@ -242,6 +250,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base view model
      */
     @Suppress("MemberVisibilityCanBePrivate")
@@ -275,6 +284,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base MVVM structure fragment
      */
     @Suppress("MemberVisibilityCanBePrivate")
@@ -337,6 +347,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base MVP structure fragment
      */
     abstract class MVPFragment<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractFragment() {
@@ -371,6 +382,7 @@ class QuickBaseClass {
 
     /**
      * @author Rashad Zahr
+     *
      * base MVP structure fragment dialog
      */
     abstract class MVPFragmentDialog<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractDialogFragment() {

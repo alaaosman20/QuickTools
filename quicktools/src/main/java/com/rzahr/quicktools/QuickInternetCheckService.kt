@@ -1,7 +1,9 @@
 package com.rzahr.quicktools
 
 import android.app.Service
+import android.content.ComponentName
 import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Binder
 import android.os.IBinder
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
@@ -12,6 +14,11 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
 
+/**
+ * @author Rashad Zahr
+ *
+ * service used to check for a valid internet connection by calling a simple url call every 15 seconds
+ */
 @Suppress("unused")
 class QuickInternetCheckService : Service() {
 
@@ -37,7 +44,7 @@ class QuickInternetCheckService : Service() {
                 }
             }
 
-            sTimer!!.scheduleAtFixedRate(task, 0, 15000) // service executes task every 10 seconds
+            sTimer!!.scheduleAtFixedRate(task, 0, 15000) // service executes task every 15 seconds
         }
     }
 
@@ -68,6 +75,25 @@ class QuickInternetCheckService : Service() {
         const val ONLINE_SINCE_KEY = "onlineSince"
         const val OFFLINE_SINCE_KEY = "offlineSince"
         const val KEY = "com.rzahr.quciktools.CONNECTION_CHECKER_BROAD_CAST_IDENTIFIER"
+
+
+        fun initServiceConnection (onServiceConnected: (binder: LocalBinder) -> Unit, onServiceDisconnected: () -> Unit): ServiceConnection {
+
+            return object : ServiceConnection {
+
+                override fun onServiceConnected(className: ComponentName, service: IBinder) {
+
+                    val binder = service as LocalBinder
+                    binder.startCheck()
+                    onServiceConnected(binder)
+                }
+
+                override fun onServiceDisconnected(arg0: ComponentName) {
+
+                    onServiceDisconnected()
+                }
+            }
+        }
 
         fun getIsOnline(): Boolean {
 

@@ -7,7 +7,11 @@ import android.app.Service
 import android.content.Context
 import javax.inject.Inject
 
-
+/**
+ * @author Rashad Zahr
+ *
+ * this class is *required* to be created from the application class
+ */
 @Suppress("unused")
 class QuickInjectable @Inject constructor(var quickPref: QuickPref, val quickRapidIdler: QuickRapidIdler) {
 

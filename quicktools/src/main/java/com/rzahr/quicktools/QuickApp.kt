@@ -33,6 +33,7 @@ object QuickApp {
     fun isOnline(): Boolean {
 
         val networkInfo = (QuickInjectable.applicationContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo
+
         return networkInfo != null && networkInfo.isConnected
     }
 
@@ -104,8 +105,8 @@ object QuickApp {
      */
     fun isPowerSaverOn(): Boolean {
 
-      return  Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
-            (QuickInjectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager).isPowerSaveMode
+        return  Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
+                (QuickInjectable.applicationContext().getSystemService(Context.POWER_SERVICE) as PowerManager).isPowerSaveMode
     }
 
     /**
@@ -234,6 +235,9 @@ object QuickApp {
         }
     }
 
+    /**
+     * @return if the device has 3g and wifi enabled
+     */
     fun isNetworkAvailable(): Boolean {
 
         try {
