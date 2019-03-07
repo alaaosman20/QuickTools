@@ -15,6 +15,11 @@ import com.rzahr.quicktools.extensions.addWithId
 import com.rzahr.quicktools.utils.QuickUtils
 import java.util.*
 
+/**
+ * @author Rashad Zahr
+ *
+ * various function for the application about the device
+ */
 @Suppress("unused")
 object QuickApp {
 

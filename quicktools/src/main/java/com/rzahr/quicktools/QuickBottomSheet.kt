@@ -12,6 +12,9 @@ import javax.inject.Inject
 @Suppress("unused")
 class QuickBottomSheet {
 
+    /**
+     * @author Rashad Zahr
+     */
     class DialogViewer @Inject constructor(val context: Context, val activity: Activity) {
 
         private var mBottomSheetDialog: BottomSheetDialog? = null
@@ -45,6 +48,9 @@ class QuickBottomSheet {
         }
     }
 
+    /**
+     * @author Rashad Zahr
+     */
     class Viewer @Inject constructor(@Suppress("MemberVisibilityCanBePrivate") val quickRapidIdler: QuickRapidIdler) {
 
         //todo needs revision

@@ -76,7 +76,12 @@ class QuickInternetCheckService : Service() {
         const val OFFLINE_SINCE_KEY = "offlineSince"
         const val KEY = "com.rzahr.quciktools.CONNECTION_CHECKER_BROAD_CAST_IDENTIFIER"
 
-
+        /**
+         * initialize the service connection object
+         * @param onServiceConnected: on service connected function trigger
+         * @param onServiceDisconnected: on service disconnected function trigger
+         * @return service connection object
+         */
         fun initServiceConnection (onServiceConnected: (binder: LocalBinder) -> Unit, onServiceDisconnected: () -> Unit): ServiceConnection {
 
             return object : ServiceConnection {
@@ -95,16 +100,25 @@ class QuickInternetCheckService : Service() {
             }
         }
 
+        /**
+         * @return the saved shared preference boolean value if the device is online
+         */
         fun getIsOnline(): Boolean {
 
             return QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)
         }
 
+        /**
+         * @return the saved shared preference value of the date when the device gained internet
+         */
         fun getOnlineSince(): String {
 
             return QuickInjectable.quickPref().get(ONLINE_SINCE_KEY)
         }
 
+        /**
+         * @return the saved shared preference value of the date when the device became offline
+         */
         fun getOfflineSince(): String {
 
             return QuickInjectable.quickPref().get(OFFLINE_SINCE_KEY)
@@ -126,6 +140,9 @@ class QuickInternetCheckService : Service() {
     }
 
 
+    /**
+     * cancel the periodical timer trigger and stop the service
+     */
     private fun cancel(timer: Timer?, service: Service) {
 
         timer?.cancel()

@@ -8,6 +8,11 @@ import android.os.Build;
 
 import java.util.Locale;
 
+/**
+ * @author Rashad Zahr
+ *
+ * class used to change the interface language in an activity
+ */
 public class QuickContextWrapper extends ContextWrapper {
 
     public QuickContextWrapper(Context base) {
