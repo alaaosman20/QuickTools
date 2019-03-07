@@ -95,7 +95,7 @@ object QuickDBUtils {
             if (!Arrays.asList(*QuickInjectable.applicationContext().assets.list("")).contains(dbName))
                 return false
 
-            QuickUtils.createDirectory(
+            QuickFileUtils.createDirectory(
                 getDBPath(), false
             )
 
@@ -128,7 +128,7 @@ object QuickDBUtils {
                 return false
             }
         }
-        QuickUtils.createDirectory(
+        QuickFileUtils.createDirectory(
             getDBPath(), false
         )
 

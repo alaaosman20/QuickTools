@@ -8,6 +8,8 @@ import android.os.Binder
 import android.os.IBinder
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.rzahr.quicktools.extensions.addWithId
+import com.rzahr.quicktools.utils.QuickAppUtils
+import com.rzahr.quicktools.utils.QuickDateUtils
 import com.rzahr.quicktools.utils.QuickUtils
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -152,19 +154,19 @@ class QuickInternetCheckService : Service() {
     fun performChecks(timer: Timer, service: Service): Boolean {
 
         //In case the app brought to background, then stop the service because no need
-        if (QuickApp.backgrounded()) cancel(timer, service)
+        if (QuickAppUtils.backgrounded()) cancel(timer, service)
 
         else {
 
             //In case the wifi and 3g are off then no need to check because there wont be any internet
-            return if (!QuickApp.isOnline()) {
+            return if (!QuickAppUtils.isOnline()) {
 
                 if (!QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)) setOfflineSince(
-                    QuickUtils.getCurrentDate(true), true)
+                    QuickDateUtils.getCurrentDate(true), true)
 
-                else setOfflineSince(QuickUtils.getCurrentDate(true), false)
+                else setOfflineSince(QuickDateUtils.getCurrentDate(true), false)
 
-                setOnlineSince(QuickUtils.getCurrentDate(true), false)
+                setOnlineSince(QuickDateUtils.getCurrentDate(true), false)
 
                 false.addWithId(IS_ONLINE_KEY)
 
@@ -254,9 +256,9 @@ class QuickInternetCheckService : Service() {
         if (responseCode == 204) {
 
             if (QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)) setOnlineSince(
-                QuickUtils.getCurrentDate(true), true)
+                QuickDateUtils.getCurrentDate(true), true)
 
-            else setOnlineSince(QuickUtils.getCurrentDate(true), false)
+            else setOnlineSince(QuickDateUtils.getCurrentDate(true), false)
 
             setOfflineSince("", false)
 
@@ -268,9 +270,9 @@ class QuickInternetCheckService : Service() {
         else {
 
             if (!QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)) setOfflineSince(
-                QuickUtils.getCurrentDate(true), true)
+                QuickDateUtils.getCurrentDate(true), true)
 
-            else setOfflineSince(QuickUtils.getCurrentDate(true), false)
+            else setOfflineSince(QuickDateUtils.getCurrentDate(true), false)
 
             setOnlineSince("", false)
 
