@@ -55,7 +55,6 @@ object QuickUtils {
     /**
      * remove illegal sql characters
      * @param value the value
-     *
      * @return pure value
      */
     fun removeIllegalSQLChars(value: String): String {
@@ -84,7 +83,7 @@ object QuickUtils {
     }
 
     /**
-     * uses rxjava to perform a background task
+     * uses rx java to perform a background task
      */
     fun backgroundUpdater(backgroundFunction: () -> Any?, ForegroundFunction: (it: Any?) -> Unit, ErrorFunction: (it: Throwable) -> Unit?) {
 
@@ -97,7 +96,7 @@ object QuickUtils {
     }
 
     /**
-     * uses rxjava to perform a background task
+     * uses rx java to perform a background task
      */
     class RZBackgroundUpdater<T> constructor (backgroundFunction: () -> T?, foregroundFunction: (it: T?) -> Unit, errorFunction: (it: Throwable) -> Unit?, subscribeOn: Scheduler = Schedulers.io(), observeOn: Scheduler = AndroidSchedulers.mainThread()) {
 
@@ -140,30 +139,6 @@ object QuickUtils {
     }
 
     /**
-     * changes the time to string
-     */
-    fun changeTimeToString(lastLocationDate: Long, format: String = "dd/MM/yyyy hh:mm:ss a"): String {
-
-        return SimpleDateFormat(format, Locale.ENGLISH).format(java.util.Date(lastLocationDate).time)
-    }
-
-    /**
-     * returns the file mipmap
-     */
-    fun getFileMipMap(fileURi: Uri): String {
-
-        val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(fileURi.toString()))
-
-        if (mimeType == null) {
-
-            val mimRegex = regEx("[.].*", fileURi.toString())
-
-            return if (mimRegex.isNotEmpty()) "application/$mimRegex" else ""
-        }
-        return mimeType.toLowerCase()
-    }
-
-    /**
      * regular expression search
      */
     fun regEx(patternString: String, word: String): String {
@@ -186,15 +161,6 @@ object QuickUtils {
     }
 
     /**
-     * delete file
-     */
-    fun deleteFile(path: String) {
-        val fileToDelete = File(path)
-
-        if (fileToDelete.exists()) fileToDelete.delete()
-    }
-
-    /**
      * request a certain permission
      */
     fun requestPermission(currentActivity: Activity, manifestPermission: String, permissionIdentifier: Int) {
@@ -204,49 +170,6 @@ object QuickUtils {
             arrayOf(manifestPermission),
             permissionIdentifier
         )
-    }
-
-    /**
-     * returns a string date
-     * @param date the date
-     * @param dateFormat the format
-     */
-    fun getDateString(date: Date, dateFormat: String): String {
-
-        val calendar = Calendar.getInstance()
-        calendar.time = date
-        return SimpleDateFormat(dateFormat, Locale.ENGLISH).format(calendar.time)
-    }
-
-    @SuppressLint("SimpleDateFormat")
-    fun getCurrentDate(english: Boolean, format: String = "yyyy-MM-dd HH:mm:ss"): String {
-
-        val now = Date()
-        return if (english)
-            SimpleDateFormat(format, Locale.ENGLISH).format(now)
-        else
-            SimpleDateFormat(format).format(now)
-    }
-
-    /**
-     * delete a complete directory
-     */
-    fun deleteDirectory(path: String) {
-
-        val directoryToDelete = File(path)
-        if (directoryToDelete.exists() && directoryToDelete.isDirectory) {
-            if (directoryToDelete.list().isEmpty())
-                directoryToDelete.delete()
-            else {
-                for (file in directoryToDelete.list())
-                    deleteDirectory(directoryToDelete.path + "/" + file)
-
-                if (directoryToDelete.list().isEmpty())
-                    directoryToDelete.delete()
-            }
-        } else if (directoryToDelete.exists())
-            directoryToDelete.delete()
-
     }
 
     @Throws(ParserConfigurationException::class, IOException::class, SAXException::class)
@@ -283,37 +206,5 @@ object QuickUtils {
         }
 
         return stringBuilder.toString()
-    }
-
-    /**
-     * Create directory.
-     * @param path        the path
-     * @param withNoMedia the with no media
-     */
-    fun createDirectory(path: String, withNoMedia: Boolean): String {
-
-        val folder = File(path)
-        var success = true
-        if (!folder.exists())
-            success = folder.mkdir()
-
-        if (success) {
-
-            val noMedia = File(path + "/" + QuickInjectable.applicationContext().resources.getString(
-                R.string.NO_MEDIA
-            ))
-
-            if (!noMedia.exists() && withNoMedia) {
-                try {
-                    noMedia.createNewFile()
-                } catch (e: IOException) {
-                    QuickLogWriter.printStackTrace(e)
-                }
-            }
-
-            return "Success"
-        }
-
-        else return "Failure"
     }
 }
