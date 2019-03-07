@@ -2,27 +2,18 @@
 
 package com.rzahr.quicktools.utils
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
-import android.webkit.MimeTypeMap
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.content.FileProvider
 import com.rzahr.quicktools.QuickInjectable
-import com.rzahr.quicktools.QuickLogWriter
-import com.rzahr.quicktools.R
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -31,26 +22,11 @@ import org.w3c.dom.Document
 import org.xml.sax.InputSource
 import org.xml.sax.SAXException
 import java.io.*
-import java.text.SimpleDateFormat
-import java.util.*
 import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.parsers.ParserConfigurationException
 
 object QuickUtils {
-
-    /**
-     * safe close buffered writer.
-     * @param bufferedWriter the buffered writer
-     */
-    fun safeCloseBufferedWriter(bufferedWriter: BufferedWriter?) {
-
-        if (bufferedWriter != null) {
-
-            bufferedWriter.flush()
-            bufferedWriter.close()
-        }
-    }
 
     /**
      * remove illegal sql characters
@@ -206,5 +182,18 @@ object QuickUtils {
         }
 
         return stringBuilder.toString()
+    }
+
+    /**
+     * safe close buffered writer.
+     * @param bufferedWriter the buffered writer
+     */
+    fun safeCloseBufferedWriter(bufferedWriter: BufferedWriter?) {
+
+        if (bufferedWriter != null) {
+
+            bufferedWriter.flush()
+            bufferedWriter.close()
+        }
     }
 }
