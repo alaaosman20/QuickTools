@@ -2,6 +2,7 @@ package com.rzahr.quicktools
 
 import android.content.Context
 import android.preference.PreferenceManager
+import com.rzahr.quicktools.extensions.getPrefValue
 import javax.inject.Inject
 
 /**
@@ -37,16 +38,6 @@ class QuickPref @Inject constructor(val context: Context) {
     }
 
     /**
-     * get shared long value long.
-     * @param id the id
-     * @return the long
-     */
-    fun getLong(id: String): Long {
-
-      return  PreferenceManager.getDefaultSharedPreferences(context).getLong(id, 0)
-    }
-
-    /**
      * set shared string value.
      * @param id    the id
      * @param value the value
@@ -72,7 +63,6 @@ class QuickPref @Inject constructor(val context: Context) {
         return false
     }
 
-
     /**
      * set shared string default value.
      * @param id    the id
@@ -87,7 +77,6 @@ class QuickPref @Inject constructor(val context: Context) {
 
         }
     }
-
 
     /**
      * set shared long default value.
@@ -138,4 +127,15 @@ class QuickPref @Inject constructor(val context: Context) {
     fun getBoolean(id: String): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(id, false)
     }
+
+    /**
+     * get shared long value long.
+     * @param id the id
+     * @return the long
+     */
+    fun getLong(id: String): Long {
+
+        return  PreferenceManager.getDefaultSharedPreferences(context).getLong(id, 0)
+    }
 }
+

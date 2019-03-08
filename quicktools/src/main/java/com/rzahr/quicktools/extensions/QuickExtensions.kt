@@ -255,3 +255,55 @@ fun ArrayList<String>.removeDuplicates(): Set<String> {
     for (i in 0 until this.size) set.add(this[i])
     return set
 }
+
+/**
+ * get shared Long value.
+ * @return the Long
+ */
+fun String.getLongPrefValue(): Long {
+    return QuickInjectable.pref().getLong(this)
+}
+
+/**
+ * get shared boolean value boolean.
+ * @return the boolean
+ */
+fun String.getBoolPrefValue(): Boolean {
+    return QuickInjectable.pref().getBoolean(this)
+}
+
+/**
+ * get shared String value String.
+ * @return the String
+ */
+fun String.getStringPrefValue(): String {
+    return QuickInjectable.pref().get(this)
+}
+
+/**
+ * get shared Int value Int.
+ * @return the Int
+ */
+fun String.getIntPrefValue(): Int {
+    return QuickInjectable.pref().getInt(this)
+}
+
+
+/**
+ * get shared Int value Int.
+ * @return the Int
+ */
+@Suppress("UNCHECKED_CAST")
+fun <I>String.getPrefValue(): I {
+
+    val a: I? = null
+
+    return when (a) {
+
+        is String -> QuickInjectable.pref().get(this) as I
+        is Int -> QuickInjectable.pref().getInt(this) as I
+        is Boolean -> QuickInjectable.pref().getBoolean(this) as I
+        is Long -> QuickInjectable.pref().getLong(this) as I
+        else -> QuickInjectable.pref().get(this) as I
+    }
+}
