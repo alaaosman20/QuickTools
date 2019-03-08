@@ -9,7 +9,9 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.appcompat.widget.AppCompatImageView;
+import kotlin.Suppress;
 
+@SuppressWarnings("unused")
 public class QuickDrawableImageView extends AppCompatImageView implements View.OnTouchListener{
 
     float downX = 0;

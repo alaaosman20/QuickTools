@@ -101,7 +101,7 @@ object QuickFileUtils {
     /**
      * get the bitmap from the image file
      */
-    private fun decodeFile(f: String, width: Int, height: Int): Bitmap? {
+    fun decodeFile(f: String, width: Int, height: Int): Bitmap? {
 
         try {
 
@@ -124,7 +124,7 @@ object QuickFileUtils {
     }
 
     @Throws(Exception::class)
-    private fun getResizedBitmap(bitmap: Bitmap?, newHeight: Int, newWidth: Int, rotation: Int): Bitmap {
+    fun getResizedBitmap(bitmap: Bitmap?, newHeight: Int, newWidth: Int, rotation: Int): Bitmap {
 
         val width = bitmap!!.width
         val height = bitmap.height

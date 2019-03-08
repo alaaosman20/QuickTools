@@ -17,7 +17,10 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.OverScroller;
 import android.widget.Scroller;
 import androidx.appcompat.widget.AppCompatImageView;
+import kotlin.Suppress;
 
+
+@SuppressWarnings("unused")
 public class QuickTouchImageView extends AppCompatImageView
 {
 

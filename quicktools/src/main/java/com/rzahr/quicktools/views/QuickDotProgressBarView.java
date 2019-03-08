@@ -22,6 +22,7 @@ import com.rzahr.quicktools.R;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+@SuppressWarnings("unused")
 public class QuickDotProgressBarView  extends View {
     public static final int RIGHT_DIRECTION = 1;
     public static final int LEFT_DIRECTION = -1;

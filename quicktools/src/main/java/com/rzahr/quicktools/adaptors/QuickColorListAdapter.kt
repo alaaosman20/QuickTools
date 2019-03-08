@@ -10,11 +10,11 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.rzahr.quicktools.R
 
-class ColorListAdapter  constructor (clickHandler: ColorListAdapterOnClickHandler): RecyclerView.Adapter<ColorListAdapter.ViewHolder>() {
+class QuickColorListAdapter  constructor (clickHandler: QuickColorListAdapterOnClickHandler): RecyclerView.Adapter<QuickColorListAdapter.ViewHolder>() {
 
     companion object {
 
-        private var mClickHandler: ColorListAdapterOnClickHandler? = null
+        private var mClickHandler: QuickColorListAdapterOnClickHandler? = null
     }
 
     private val colors = intArrayOf(
@@ -59,7 +59,7 @@ class ColorListAdapter  constructor (clickHandler: ColorListAdapterOnClickHandle
     }
 }
 
-interface ColorListAdapterOnClickHandler {
+interface QuickColorListAdapterOnClickHandler {
 
     fun onColorSelected(color: Int)
 
