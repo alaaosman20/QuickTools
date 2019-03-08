@@ -294,7 +294,7 @@ fun String.getIntPrefValue(): Int {
  * @return the Int
  */
 @Suppress("UNCHECKED_CAST")
-inline fun <reified I>String.rzPrefVal(): I {
+fun <I>String.rzPrefVal(): I {
 
     return when (String::class.java.simpleName.toLowerCase(Locale.ENGLISH)) {
 
