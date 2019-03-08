@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import com.elconfidencial.bubbleshowcase.BubbleShowCase
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseBuilder
 import com.elconfidencial.bubbleshowcase.BubbleShowCaseListener
-import com.rzahr.quicktools.QuickRapidIdler
+import com.rzahr.quicktools.QuickClickGuard
 
 /**
  * @author Rashad Zahr
@@ -61,23 +61,23 @@ fun View.rzSetVisible() {
 /**
  * click listener with a guard to prevent rapid clicks
  */
-fun View.rzClickListener(quickRapidIdler: QuickRapidIdler, action: () -> Unit) {
+fun View.rzClickListener(quickClickGuard: QuickClickGuard, action: () -> Unit) {
 
     this.setOnClickListener {
 
-        quickRapidIdler.throttle { action() }
+        quickClickGuard.guard { action() }
     }
 }
 
 /**
  * used to guard from multiple rapid clicks on a view
- * @param quickRapidIdler: the class that prevents the rapid clicks
+ * @param quickClickGuard: the class that prevents the rapid clicks
  * @param action: passed function upon successful passed clicked
  */
 @Suppress("unused")
-fun View.rzClickGuard(quickRapidIdler: QuickRapidIdler, action: () -> Unit) {
+fun View.rzClickGuard(quickClickGuard: QuickClickGuard, action: () -> Unit) {
 
-    quickRapidIdler.throttle {
+    quickClickGuard.guard {
         action()
     }
 }

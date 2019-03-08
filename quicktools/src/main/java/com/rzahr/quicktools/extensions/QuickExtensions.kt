@@ -178,7 +178,7 @@ fun Bundle?.getStateOf(id: String, default: Boolean = false): Boolean {
  */
 fun Int.addWithId(id: String) {
 
-    QuickInjectable.quickPref().setIntValue(id, this)
+    QuickInjectable.pref().setIntValue(id, this)
 }
 
 /**
@@ -187,7 +187,7 @@ fun Int.addWithId(id: String) {
  */
 fun String.addWithId(id: String) {
 
-    QuickInjectable.quickPref().setString(id, this)
+    QuickInjectable.pref().setString(id, this)
 }
 
 /**
@@ -196,7 +196,7 @@ fun String.addWithId(id: String) {
  */
 fun Double.addWithId(id: String) {
 
-    QuickInjectable.quickPref().setString(id, this.toString())
+    QuickInjectable.pref().setString(id, this.toString())
 }
 
 /**
@@ -205,7 +205,7 @@ fun Double.addWithId(id: String) {
  */
 fun Long.addWithId(id: String) {
 
-    QuickInjectable.quickPref().setLong(id, this)
+    QuickInjectable.pref().setLong(id, this)
 }
 
 /**
@@ -214,7 +214,7 @@ fun Long.addWithId(id: String) {
  */
 fun Boolean.addWithId(id: String) {
 
-    QuickInjectable.quickPref().setBoolean(id, this)
+    QuickInjectable.pref().setBoolean(id, this)
 }
 
 /**
@@ -223,7 +223,7 @@ fun Boolean.addWithId(id: String) {
  */
 fun String.addAsDefaultWithId(id: String) {
 
-    QuickInjectable.quickPref().setStringDefault(id, this)
+    QuickInjectable.pref().setStringDefault(id, this)
 }
 
 /**
@@ -241,7 +241,7 @@ fun Int.get(context: Context = QuickInjectable.applicationContext()): String {
  */
 fun Long.addAsDefaultWithId(id: String) {
 
-    QuickInjectable.quickPref().setLongDefault(id, this)
+    QuickInjectable.pref().setLongDefault(id, this)
 }
 
 /**

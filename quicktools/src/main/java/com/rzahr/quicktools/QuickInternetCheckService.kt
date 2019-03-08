@@ -107,7 +107,7 @@ class QuickInternetCheckService : Service() {
          */
         fun getIsOnline(): Boolean {
 
-            return QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)
+            return QuickInjectable.pref().getBoolean(IS_ONLINE_KEY)
         }
 
         /**
@@ -115,7 +115,7 @@ class QuickInternetCheckService : Service() {
          */
         fun getOnlineSince(): String {
 
-            return QuickInjectable.quickPref().get(ONLINE_SINCE_KEY)
+            return QuickInjectable.pref().get(ONLINE_SINCE_KEY)
         }
 
         /**
@@ -123,7 +123,7 @@ class QuickInternetCheckService : Service() {
          */
         fun getOfflineSince(): String {
 
-            return QuickInjectable.quickPref().get(OFFLINE_SINCE_KEY)
+            return QuickInjectable.pref().get(OFFLINE_SINCE_KEY)
         }
     }
 
@@ -161,7 +161,7 @@ class QuickInternetCheckService : Service() {
             //In case the wifi and 3g are off then no need to check because there wont be any internet
             return if (!QuickAppUtils.isOnline()) {
 
-                if (!QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)) setOfflineSince(
+                if (!QuickInjectable.pref().getBoolean(IS_ONLINE_KEY)) setOfflineSince(
                     QuickDateUtils.getCurrentDate(true), true)
 
                 else setOfflineSince(QuickDateUtils.getCurrentDate(true), false)
@@ -189,7 +189,7 @@ class QuickInternetCheckService : Service() {
 
         if (checkIfNullOrEmpty) {
 
-            if (QuickInjectable.quickPref().get(OFFLINE_SINCE_KEY).isEmpty()) date.addWithId(
+            if (QuickInjectable.pref().get(OFFLINE_SINCE_KEY).isEmpty()) date.addWithId(
                 OFFLINE_SINCE_KEY)
         }
 
@@ -204,7 +204,7 @@ class QuickInternetCheckService : Service() {
      */
     private fun setOnlineSince(date: String, checkIfNullOrEmpty: Boolean) {
 
-        if (checkIfNullOrEmpty) if (QuickInjectable.quickPref().get(ONLINE_SINCE_KEY) == "") date.addWithId(
+        if (checkIfNullOrEmpty) if (QuickInjectable.pref().get(ONLINE_SINCE_KEY) == "") date.addWithId(
             ONLINE_SINCE_KEY)
 
         else date.addWithId(ONLINE_SINCE_KEY)
@@ -217,13 +217,13 @@ class QuickInternetCheckService : Service() {
     val now = Date()
     try {
     //Case when the value is reset or first time
-    if (QuickInjectable.quickPref().get(prefIdentifier) == "0") {
+    if (QuickInjectable.pref().get(prefIdentifier) == "0") {
     val timeSinceOffline = now.time - TaskListAndOptionsActivity.sDateSinceLogin.time // The current time minus the last time the check was made
 
     timeSinceOffline.toString().addWithId(prefIdentifier) //Set the time
     TaskListAndOptionsActivity.sDateSinceLogin.time = now.time //Set the last check time as the current time.
     } else {
-    val timeSinceOffline = java.lang.Long.parseLong(QuickInjectable.quickPref().get(prefIdentifier))
+    val timeSinceOffline = java.lang.Long.parseLong(QuickInjectable.pref().get(prefIdentifier))
     val sum = now.time - TaskListAndOptionsActivity.sDateSinceLogin.time + timeSinceOffline
     TaskListAndOptionsActivity.sDateSinceLogin.time = now.time
     sum.toString().addWithId(prefIdentifier) //Set the time
@@ -255,7 +255,7 @@ class QuickInternetCheckService : Service() {
         //Response code ok
         if (responseCode == 204) {
 
-            if (QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)) setOnlineSince(
+            if (QuickInjectable.pref().getBoolean(IS_ONLINE_KEY)) setOnlineSince(
                 QuickDateUtils.getCurrentDate(true), true)
 
             else setOnlineSince(QuickDateUtils.getCurrentDate(true), false)
@@ -269,7 +269,7 @@ class QuickInternetCheckService : Service() {
 
         else {
 
-            if (!QuickInjectable.quickPref().getBoolean(IS_ONLINE_KEY)) setOfflineSince(
+            if (!QuickInjectable.pref().getBoolean(IS_ONLINE_KEY)) setOfflineSince(
                 QuickDateUtils.getCurrentDate(true), true)
 
             else setOfflineSince(QuickDateUtils.getCurrentDate(true), false)

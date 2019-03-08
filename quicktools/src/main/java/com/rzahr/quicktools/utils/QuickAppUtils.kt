@@ -30,7 +30,7 @@ object QuickAppUtils {
 
         return QuickContextWrapper.wrap(
             newBase,
-            QuickInjectable.quickPref().get("Language")
+            QuickInjectable.pref().get("Language")
         )
     }
 
@@ -192,7 +192,7 @@ object QuickAppUtils {
                 ""
             }
         }
-        return QuickInjectable.quickPref()
+        return QuickInjectable.pref()
             .get(QuickVariables.VERSION_NAME)
     }
 
@@ -256,7 +256,7 @@ object QuickAppUtils {
 
             if (isOnline) {
 
-                if (QuickInjectable.quickPref().get(QuickInternetCheckService.ONLINE_SINCE_KEY) == "") QuickDateUtils.getCurrentDate(true).addWithId(
+                if (QuickInjectable.pref().get(QuickInternetCheckService.ONLINE_SINCE_KEY) == "") QuickDateUtils.getCurrentDate(true).addWithId(
                     QuickInternetCheckService.ONLINE_SINCE_KEY
                 )
 
@@ -265,7 +265,7 @@ object QuickAppUtils {
 
             else {
 
-                if (QuickInjectable.quickPref().get(QuickInternetCheckService.OFFLINE_SINCE_KEY) == "") QuickDateUtils.getCurrentDate(true).addWithId(
+                if (QuickInjectable.pref().get(QuickInternetCheckService.OFFLINE_SINCE_KEY) == "") QuickDateUtils.getCurrentDate(true).addWithId(
                     QuickInternetCheckService.OFFLINE_SINCE_KEY
                 )
 

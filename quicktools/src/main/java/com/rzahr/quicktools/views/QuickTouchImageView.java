@@ -17,9 +17,10 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.OverScroller;
 import android.widget.Scroller;
 import androidx.appcompat.widget.AppCompatImageView;
-import kotlin.Suppress;
 
-
+/**
+ * this class is used to enable zooming and panning in an image view
+ */
 @SuppressWarnings("unused")
 public class QuickTouchImageView extends AppCompatImageView
 {

@@ -9,7 +9,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.appcompat.widget.AppCompatImageView;
-import kotlin.Suppress;
+
+/**
+ * this class is used to enable drawing on top of an image view
+ */
 
 @SuppressWarnings("unused")
 public class QuickDrawableImageView extends AppCompatImageView implements View.OnTouchListener{

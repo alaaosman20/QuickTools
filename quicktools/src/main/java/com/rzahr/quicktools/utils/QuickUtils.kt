@@ -3,6 +3,7 @@
 package com.rzahr.quicktools.utils
 
 import android.app.Activity
+import android.app.ActivityManager
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
@@ -13,7 +14,9 @@ import android.text.Html
 import android.text.Spanned
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.util.LogWriter
 import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.QuickLogWriter
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -22,6 +25,8 @@ import org.w3c.dom.Document
 import org.xml.sax.InputSource
 import org.xml.sax.SAXException
 import java.io.*
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.parsers.ParserConfigurationException
@@ -195,5 +200,41 @@ object QuickUtils {
             bufferedWriter.flush()
             bufferedWriter.close()
         }
+    }
+
+    @Throws(Exception::class)
+    private fun isMyServiceRunning(serviceClass: Class<*>, context: Context): Boolean {
+
+            @Suppress("DEPRECATION")
+            for (service in (context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager).getRunningServices(
+                Integer.MAX_VALUE
+            ))
+                if (serviceClass.name.toLowerCase(Locale.ENGLISH).contains(
+                        service.service.className.toLowerCase(
+                            Locale.ENGLISH
+                        )
+                    )
+                ) return true
+
+        return false
+    }
+
+    /**
+     * gets the current date in a specific format
+     */
+    fun getDate(): String {
+        return try {
+            SimpleDateFormat("dd/MM/yyyy hh:mm:ss a", Locale.ENGLISH).format(java.util.Date())
+        } catch (exx: Exception) {
+            QuickLogWriter.errorLogging("Error in getTodayDateAndTime:", exx.toString())
+            ""
+        }
+    }
+
+    fun changeTimeToGMT(lastLocationDate: Long): String {
+
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy hh:mm:ss a", Locale.ENGLISH)
+        simpleDateFormat.timeZone = TimeZone.getTimeZone("GMT")
+        return simpleDateFormat.format(java.util.Date(lastLocationDate).time)
     }
 }

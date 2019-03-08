@@ -7,7 +7,7 @@ import javax.inject.Inject
  *
  * prevents multi rapid clicks
  */
-class QuickRapidIdler @Inject constructor() {
+class QuickClickGuard @Inject constructor() {
 
     companion object {
         const val MIN_INTERVAL = 800
@@ -16,7 +16,7 @@ class QuickRapidIdler @Inject constructor() {
     private var lastEventTime = System.currentTimeMillis()
     private var initialized = false
 
-    fun throttle(code: () -> Unit) {
+    fun guard(code: () -> Unit) {
 
         val eventTime = System.currentTimeMillis()
 
