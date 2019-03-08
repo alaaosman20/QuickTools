@@ -294,16 +294,16 @@ fun String.getIntPrefValue(): Int {
  * @return the Int
  */
 @Suppress("UNCHECKED_CAST")
-fun <I>String.rzPrefVal(): I {
+inline fun <reified I>String.rzPrefVal(): I {
 
-    val a: I? = null
+    return when (String::class.java.simpleName.toLowerCase(Locale.ENGLISH)) {
 
-    return when (a) {
-
-        is String -> QuickInjectable.pref().get(this) as I
-        is Int -> QuickInjectable.pref().getInt(this) as I
-        is Boolean -> QuickInjectable.pref().getBoolean(this) as I
-        is Long -> QuickInjectable.pref().getLong(this) as I
+         "string" -> QuickInjectable.pref().get(this) as I
+         "int" -> QuickInjectable.pref().getInt(this) as I
+         "integer" -> QuickInjectable.pref().getInt(this) as I
+         "boolean" -> QuickInjectable.pref().getBoolean(this) as I
+         "bool" -> QuickInjectable.pref().getBoolean(this) as I
+         "long" -> QuickInjectable.pref().getLong(this) as I
         else -> QuickInjectable.pref().get(this) as I
     }
 }
