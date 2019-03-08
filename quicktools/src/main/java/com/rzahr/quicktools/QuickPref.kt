@@ -2,7 +2,6 @@ package com.rzahr.quicktools
 
 import android.content.Context
 import android.preference.PreferenceManager
-import com.rzahr.quicktools.extensions.getPrefValue
 import javax.inject.Inject
 
 /**
