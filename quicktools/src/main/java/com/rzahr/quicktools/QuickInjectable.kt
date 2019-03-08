@@ -13,7 +13,7 @@ import javax.inject.Inject
  * this class is *required* to be created from the application class
  */
 @Suppress("unused")
-class QuickInjectable @Inject constructor(var quickPref: QuickPref, val quickClickGuard: QuickClickGuard, application: Application) {
+class QuickInjectable @Inject constructor(var quickPref: QuickPref, val clickGuard: QuickClickGuard, application: Application) {
 
     val mQuickActivityLifecycleCallbacks = QuickActivityLifeCycleCallbacks()
     lateinit var mApplication: Application
@@ -46,7 +46,7 @@ class QuickInjectable @Inject constructor(var quickPref: QuickPref, val quickCli
 
         fun clickGuard() : QuickClickGuard {
 
-            return instance!!.quickClickGuard
+            return instance!!.clickGuard
         }
 
         fun currentActivity(): Activity? {

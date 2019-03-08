@@ -61,11 +61,11 @@ fun View.rzSetVisible() {
 /**
  * click listener with a guard to prevent rapid clicks
  */
-fun View.rzClickListener(quickClickGuard: QuickClickGuard, action: () -> Unit) {
+fun View.rzClickListener(clickGuard: QuickClickGuard, action: () -> Unit) {
 
     this.setOnClickListener {
 
-        quickClickGuard.guard { action() }
+        clickGuard.guard { action() }
     }
 }
 
@@ -75,9 +75,9 @@ fun View.rzClickListener(quickClickGuard: QuickClickGuard, action: () -> Unit) {
  * @param action: passed function upon successful passed clicked
  */
 @Suppress("unused")
-fun View.rzClickGuard(quickClickGuard: QuickClickGuard, action: () -> Unit) {
+fun View.rzClickGuard(clickGuard: QuickClickGuard, action: () -> Unit) {
 
-    quickClickGuard.guard {
+    clickGuard.guard {
         action()
     }
 }

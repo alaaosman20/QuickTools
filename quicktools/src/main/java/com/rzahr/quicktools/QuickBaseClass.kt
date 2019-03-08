@@ -143,7 +143,7 @@ class QuickBaseClass {
      */
     abstract class AbstractActivity : AppCompatActivity(), BaseViewInterface {
 
-        @Inject lateinit var mQuickClickGuard: QuickClickGuard
+        @Inject lateinit var mClickGuard: QuickClickGuard
 
         override fun attachBaseContext(newBase: Context?) {
             super.attachBaseContext(QuickContextWrapper.wrap(newBase,QuickInjectable.pref().get("Language")))
@@ -294,7 +294,7 @@ class QuickBaseClass {
         lateinit var viewModelFactory: ViewModelProvider.Factory
         var mViewModel: VM? = null
 
-        @Inject lateinit var mQuickClickGuard: QuickClickGuard
+        @Inject lateinit var mClickGuard: QuickClickGuard
 
         override fun setPresenter(presenter: BasePresenter<*,*>) {
         }
@@ -352,7 +352,7 @@ class QuickBaseClass {
      */
     abstract class MVPFragment<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractFragment() {
 
-        @Inject lateinit var mQuickClickGuard: QuickClickGuard
+        @Inject lateinit var mClickGuard: QuickClickGuard
 
         @Inject lateinit var mPresenter: P
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -387,7 +387,7 @@ class QuickBaseClass {
      */
     abstract class MVPFragmentDialog<P : BasePresenterInterface<*>>(private val layoutId: Int, private val lockOrientation: Boolean = false) : AbstractDialogFragment() {
 
-        @Inject lateinit var mQuickClickGuard: QuickClickGuard
+        @Inject lateinit var mClickGuard: QuickClickGuard
         @Inject lateinit var mPresenter: P
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
