@@ -1,12 +1,18 @@
 package com.rzahr.quicktools.utils
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.net.Uri
 import android.webkit.MimeTypeMap
 import com.rzahr.quicktools.QuickInjectable
 import com.rzahr.quicktools.QuickLogWriter
 import com.rzahr.quicktools.R
 import java.io.File
+import java.io.FileInputStream
+import java.io.FileNotFoundException
 import java.io.IOException
+import java.lang.Exception
 
 @Suppress("unused")
 object QuickFileUtils {
@@ -24,6 +30,7 @@ object QuickFileUtils {
 
             return if (mimRegex.isNotEmpty()) "application/$mimRegex" else ""
         }
+
         return mimeType.toLowerCase()
     }
 
@@ -31,6 +38,7 @@ object QuickFileUtils {
      * delete file
      */
     fun deleteFile(path: String) {
+
         val fileToDelete = File(path)
 
         if (fileToDelete.exists()) fileToDelete.delete()
@@ -73,8 +81,8 @@ object QuickFileUtils {
 
             val noMedia = File(
                 "$path/" + QuickInjectable.applicationContext().resources.getString(
-                R.string.NO_MEDIA
-            ))
+                    R.string.NO_MEDIA
+                ))
 
             if (!noMedia.exists() && withNoMedia) {
                 try {
@@ -88,5 +96,42 @@ object QuickFileUtils {
         }
 
         else return "Failure"
+    }
+
+    /**
+     * get the bitmap from the image file
+     */
+    private fun decodeFile(f: String, width: Int, height: Int): Bitmap? {
+
+        try {
+
+            //decode image size
+            val o = BitmapFactory.Options()
+            o.inJustDecodeBounds = true
+            BitmapFactory.decodeStream(FileInputStream(f), null, o)
+            var scale = 1
+            while (o.outWidth / scale / 2 >= width && o.outHeight / scale / 2 >= height)
+                scale *= 2
+
+            //decode with inSampleSize
+            val o2 = BitmapFactory.Options()
+            o2.inSampleSize = scale
+            return BitmapFactory.decodeStream(FileInputStream(f), null, o2)
+        } catch (e: FileNotFoundException) {
+        }
+
+        return null
+    }
+
+    @Throws(Exception::class)
+    private fun getResizedBitmap(bitmap: Bitmap?, newHeight: Int, newWidth: Int, rotation: Int): Bitmap {
+
+        val width = bitmap!!.width
+        val height = bitmap.height
+        newWidth.toFloat() / width
+        newHeight.toFloat() / height
+        val matrix = Matrix()
+        matrix.setRotate(rotation.toFloat())
+        return  Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, false)
     }
 }

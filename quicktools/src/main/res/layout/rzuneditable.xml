@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="@dimen/general_padding">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inner_layout"
+                    android:background="@drawable/cornered_layout"
+                    android:padding="@dimen/general_padding_double">
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_gray">
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/general_padding"
+                      android:id="@+id/title_tv"
+                      style="@style/TextAppearance.MaterialComponents.Subtitle2"
+                      android:text=""/>
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="0.5dp"
+                      android:background="@color/gray"
+                      android:layout_below="@+id/title_tv"
+                      android:id="@+id/line"/>
+
+            <FrameLayout android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@id/line"
+                         android:layout_marginTop="@dimen/general_margin_double">
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:id="@+id/value_tv"
+                          android:paddingTop="@dimen/general_padding"
+                          android:paddingBottom="@dimen/general_padding"/>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
