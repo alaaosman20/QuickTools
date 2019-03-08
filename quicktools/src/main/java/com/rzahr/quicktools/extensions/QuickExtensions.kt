@@ -294,7 +294,7 @@ fun String.getIntPrefValue(): Int {
  * @return the Int
  */
 @Suppress("UNCHECKED_CAST")
-fun <I>String.getPrefValue(): I {
+fun <I>String.rzPrefVal(): I {
 
     val a: I? = null
 
