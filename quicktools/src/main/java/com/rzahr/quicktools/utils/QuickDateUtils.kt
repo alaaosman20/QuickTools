@@ -1,9 +1,8 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
 package com.rzahr.quicktools.utils
 
 import android.annotation.SuppressLint
-import com.rzahr.quicktools.QuickLogWriter
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,7 +16,7 @@ object QuickDateUtils {
      * @param date the date
      * @param format the format
      */
-    fun getDateString(date: Date, format: String): String {
+    fun getDateString(date: Date, format: String = DASHED_FORMAT): String {
 
         val calendar = Calendar.getInstance()
         calendar.time = date
@@ -25,7 +24,7 @@ object QuickDateUtils {
     }
 
     @SuppressLint("SimpleDateFormat")
-    fun getCurrentDate(english: Boolean, format: String = DASHED_FORMAT): String {
+    fun getCurrentDate(english: Boolean = true, format: String = DASHED_FORMAT): String {
 
         val now = Date()
         return if (english)

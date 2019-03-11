@@ -5,6 +5,7 @@ package com.rzahr.quicktools
 import android.annotation.SuppressLint
 import android.os.Environment
 import android.util.Log
+import com.rzahr.quicktools.utils.QuickDateUtils
 import com.rzahr.quicktools.utils.QuickUtils
 import java.io.BufferedWriter
 import java.io.File
@@ -106,7 +107,7 @@ object QuickLogWriter {
 
         return try {
             val now = Date()
-            SimpleDateFormat("dd/MM/yyyy hh:mm:ss a", Locale.ENGLISH).format(now)
+            SimpleDateFormat(QuickDateUtils.SLASHED_FORMAT, Locale.ENGLISH).format(now)
         }
         catch (exx: Exception) {
             Log.e(TAG, "Error in GetTodayDateAndTime:$exx")

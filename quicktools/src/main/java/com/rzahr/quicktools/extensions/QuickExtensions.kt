@@ -298,6 +298,22 @@ fun Class<*>.isMyServiceRunning(context: Context): Boolean {
 }
 
 /**
+ * starts the specified service
+ */
+fun Class<*>.startService(context: Context) {
+
+    context.startService(Intent(context, this))
+}
+
+/**
+ * stops the specified service
+ */
+fun Class<*>.stopService(context: Context) {
+
+    context.stopService(Intent(context, this))
+}
+
+/**
  * get shared String value String.
  * @return the String
  */
@@ -312,7 +328,6 @@ fun String.getStringPrefValue(): String {
 fun String.getIntPrefValue(): Int {
     return QuickInjectable.pref().getInt(this)
 }
-
 
 /**
  * get shared Int value Int.
