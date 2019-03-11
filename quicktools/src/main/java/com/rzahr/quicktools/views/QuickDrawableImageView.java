@@ -120,9 +120,4 @@ public class QuickDrawableImageView extends AppCompatImageView implements View.O
         if(paint != null)
             paint.setStrokeWidth(strokeWidth);
     }
-
-    public Bitmap getBitMap() {
-
-        return getBitMap();
-    }
 }

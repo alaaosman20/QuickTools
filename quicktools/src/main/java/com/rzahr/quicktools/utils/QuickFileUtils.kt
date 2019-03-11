@@ -1,3 +1,5 @@
+@file:Suppress("MemberVisibilityCanBePrivate")
+
 package com.rzahr.quicktools.utils
 
 import android.graphics.Bitmap

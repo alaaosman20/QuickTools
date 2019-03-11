@@ -4,16 +4,12 @@ import android.annotation.SuppressLint
 import android.app.*
 import android.content.Context
 import android.content.ContextWrapper
-import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.media.RingtoneManager
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.annotation.RequiresFeature
 import androidx.core.app.NotificationCompat
 import javax.inject.Inject
-import kotlin.random.Random
 
 @Suppress("unused")
 class QuickNotificationUtils @Inject constructor(val context: Context) : ContextWrapper(context) {

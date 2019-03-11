@@ -293,10 +293,11 @@ fun String.getIntPrefValue(): Int {
  * get shared Int value Int.
  * @return the Int
  */
-@Suppress("UNCHECKED_CAST")
-fun <I>String.rzPrefVal(): I {
 
-    return when (String::class.java.simpleName.toLowerCase(Locale.ENGLISH)) {
+@Suppress("UNCHECKED_CAST")
+inline fun <reified I>String.rzPrefVal(): I {
+
+    return when (I::class.java.simpleName.toLowerCase(Locale.ENGLISH)) {
 
          "string" -> QuickInjectable.pref().get(this) as I
          "int" -> QuickInjectable.pref().getInt(this) as I

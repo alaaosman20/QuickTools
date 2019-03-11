@@ -1,2 +1,2 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.rzahr.quicktools"/>
+<manifest
+        package="com.rzahr.quicktools"/>

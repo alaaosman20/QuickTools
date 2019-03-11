@@ -1,5 +1,6 @@
 package com.rzahr.quicktools.views;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.*;
@@ -99,6 +100,7 @@ public class QuickTouchImageView extends AppCompatImageView
         sharedConstructing(context);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void sharedConstructing(Context context) {
         super.setClickable(true);
         this.context = context;
@@ -723,11 +725,8 @@ public class QuickTouchImageView extends AppCompatImageView
         } else if (x >= -1 && direction < 0) {
             return false;
 
-        } else if (Math.abs(x) + viewWidth + 1 >= getImageWidth() && direction > 0) {
-            return false;
-        }
+        } else return !(Math.abs(x) + viewWidth + 1 >= getImageWidth()) || direction <= 0;
 
-        return true;
     }
 
     /**
@@ -809,6 +808,7 @@ public class QuickTouchImageView extends AppCompatImageView
         //
         private PointF last = new PointF();
 
+        @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             mScaleDetector.onTouchEvent(event);

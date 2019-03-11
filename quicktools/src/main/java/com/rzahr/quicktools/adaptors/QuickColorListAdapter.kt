@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.rzahr.quicktools.R
 //
+@Suppress("unused")
 class QuickColorListAdapter  constructor (clickHandler: QuickColorListAdapterOnClickHandler): RecyclerView.Adapter<QuickColorListAdapter.ViewHolder>() {
 
     companion object {

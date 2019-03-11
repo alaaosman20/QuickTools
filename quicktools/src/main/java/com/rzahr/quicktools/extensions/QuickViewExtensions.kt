@@ -71,7 +71,7 @@ fun View.rzClickListener(clickGuard: QuickClickGuard, action: () -> Unit) {
 
 /**
  * used to guard from multiple rapid clicks on a view
- * @param quickClickGuard: the class that prevents the rapid clicks
+ * @param clickGuard: the class that prevents the rapid clicks
  * @param action: passed function upon successful passed clicked
  */
 @Suppress("unused")

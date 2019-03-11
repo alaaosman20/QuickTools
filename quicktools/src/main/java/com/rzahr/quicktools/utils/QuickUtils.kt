@@ -14,7 +14,6 @@ import android.text.Html
 import android.text.Spanned
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.util.LogWriter
 import com.rzahr.quicktools.QuickInjectable
 import com.rzahr.quicktools.QuickLogWriter
 import io.reactivex.Scheduler

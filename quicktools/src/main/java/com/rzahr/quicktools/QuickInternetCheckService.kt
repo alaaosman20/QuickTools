@@ -10,7 +10,6 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.rzahr.quicktools.extensions.addWithId
 import com.rzahr.quicktools.utils.QuickAppUtils
 import com.rzahr.quicktools.utils.QuickDateUtils
-import com.rzahr.quicktools.utils.QuickUtils
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
