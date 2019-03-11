@@ -3,6 +3,7 @@
 package com.rzahr.quicktools.extensions
 
 import android.app.Activity
+import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -15,6 +16,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import androidx.core.content.FileProvider
 import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.QuickLogWriter
 import com.rzahr.quicktools.R
 import java.io.File
 import java.util.*
@@ -270,6 +272,29 @@ fun String.getLongPrefValue(): Long {
  */
 fun String.getBoolPrefValue(): Boolean {
     return QuickInjectable.pref().getBoolean(this)
+}
+
+/**
+ * @param context: the context
+ * @return if service class is running or not
+ */
+fun Class<*>.isMyServiceRunning(context: Context): Boolean {
+    try {
+        @Suppress("DEPRECATION")
+        for (service in (context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager).getRunningServices(
+            Integer.MAX_VALUE
+        ))
+            if (this.name.toLowerCase(Locale.ENGLISH).contains(
+                    service.service.className.toLowerCase(
+                        Locale.ENGLISH
+                    )
+                )
+            ) return true
+    } catch (e: Exception) {
+        QuickLogWriter.errorLogging("Error",e.toString())
+    }
+
+    return false
 }
 
 /**

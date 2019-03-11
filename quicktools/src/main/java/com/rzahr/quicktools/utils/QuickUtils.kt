@@ -14,6 +14,7 @@ import android.text.Html
 import android.text.Spanned
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.util.LogWriter
 import com.rzahr.quicktools.QuickInjectable
 import com.rzahr.quicktools.QuickLogWriter
 import io.reactivex.Scheduler
@@ -201,39 +202,5 @@ object QuickUtils {
         }
     }
 
-    @Throws(Exception::class)
-    private fun isMyServiceRunning(serviceClass: Class<*>, context: Context): Boolean {
 
-            @Suppress("DEPRECATION")
-            for (service in (context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager).getRunningServices(
-                Integer.MAX_VALUE
-            ))
-                if (serviceClass.name.toLowerCase(Locale.ENGLISH).contains(
-                        service.service.className.toLowerCase(
-                            Locale.ENGLISH
-                        )
-                    )
-                ) return true
-
-        return false
-    }
-
-    /**
-     * gets the current date in a specific format
-     */
-    fun getDate(): String {
-        return try {
-            SimpleDateFormat("dd/MM/yyyy hh:mm:ss a", Locale.ENGLISH).format(java.util.Date())
-        } catch (exx: Exception) {
-            QuickLogWriter.errorLogging("Error in getTodayDateAndTime:", exx.toString())
-            ""
-        }
-    }
-
-    fun changeTimeToGMT(lastLocationDate: Long): String {
-
-        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy hh:mm:ss a", Locale.ENGLISH)
-        simpleDateFormat.timeZone = TimeZone.getTimeZone("GMT")
-        return simpleDateFormat.format(java.util.Date(lastLocationDate).time)
-    }
 }

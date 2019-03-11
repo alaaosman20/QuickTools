@@ -3,38 +3,44 @@
 package com.rzahr.quicktools.utils
 
 import android.annotation.SuppressLint
+import com.rzahr.quicktools.QuickLogWriter
 import java.text.SimpleDateFormat
 import java.util.*
 
 object QuickDateUtils {
 
-    /**
-     * changes the time to string
-     */
-    fun changeTimeToString(lastLocationDate: Long, format: String = "dd/MM/yyyy hh:mm:ss a"): String {
-
-        return SimpleDateFormat(format, Locale.ENGLISH).format(java.util.Date(lastLocationDate).time)
-    }
+    const val DASHED_FORMAT = "yyyy-MM-dd HH:mm:ss"
+    const val SLASHED_FORMAT = "dd/MM/yyyy hh:mm:ss a"
 
     /**
      * returns a string date
      * @param date the date
-     * @param dateFormat the format
+     * @param format the format
      */
-    fun getDateString(date: Date, dateFormat: String): String {
+    fun getDateString(date: Date, format: String): String {
 
         val calendar = Calendar.getInstance()
         calendar.time = date
-        return SimpleDateFormat(dateFormat, Locale.ENGLISH).format(calendar.time)
+        return SimpleDateFormat(format, Locale.ENGLISH).format(calendar.time)
     }
 
     @SuppressLint("SimpleDateFormat")
-    fun getCurrentDate(english: Boolean, format: String = "yyyy-MM-dd HH:mm:ss"): String {
+    fun getCurrentDate(english: Boolean, format: String = DASHED_FORMAT): String {
 
         val now = Date()
         return if (english)
             SimpleDateFormat(format, Locale.ENGLISH).format(now)
         else
             SimpleDateFormat(format).format(now)
+    }
+
+    /**
+     * changes the time to string
+     */
+    fun changeTimeToString(lastLocationDate: Long, format: String = SLASHED_FORMAT, timeZone: TimeZone? = null): String {
+
+        val simpleDateFormat = SimpleDateFormat(format, Locale.ENGLISH)
+        if (timeZone != null) simpleDateFormat.timeZone = timeZone
+        return simpleDateFormat.format(Date(lastLocationDate).time)
     }
 }
