@@ -3,7 +3,6 @@
 package com.rzahr.quicktools.utils
 
 import android.app.Activity
-import android.app.ActivityManager
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
@@ -14,9 +13,7 @@ import android.text.Html
 import android.text.Spanned
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.util.LogWriter
 import com.rzahr.quicktools.QuickInjectable
-import com.rzahr.quicktools.QuickLogWriter
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -25,8 +22,6 @@ import org.w3c.dom.Document
 import org.xml.sax.InputSource
 import org.xml.sax.SAXException
 import java.io.*
-import java.text.SimpleDateFormat
-import java.util.*
 import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.parsers.ParserConfigurationException
@@ -201,6 +196,4 @@ object QuickUtils {
             bufferedWriter.close()
         }
     }
-
-
 }
