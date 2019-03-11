@@ -3,8 +3,7 @@ package com.rzahr.quicktools
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import androidx.core.util.LogWriter
-import java.lang.Exception
+import java.util.*
 import javax.inject.Inject
 
 @Suppress("unused", "MemberVisibilityCanBePrivate")
@@ -50,7 +49,7 @@ abstract class QuickDatabase @Inject constructor(val context: Context) {
     }
 
     @Throws(Exception::class)
-    fun singleSelect(query: String, increment: Boolean, delimiter: String, defaultReturn: String, args: Array<String> = emptyArray()): String {
+    open fun singleSelect(query: String, increment: Boolean, delimiter: String, defaultReturn: String, args: Array<String> = emptyArray()): String {
 
         getDatabase()
 
@@ -73,6 +72,114 @@ abstract class QuickDatabase @Inject constructor(val context: Context) {
 
         QuickLogWriter.debugLogging("Class: " + callingMethod[1] + " (" + callingMethod[0] + ") Method: " + callingMethod[2] + " Result Is : " + returnedValue)
 
+
+
         return returnedValue
+    }
+
+    @Throws(Exception::class)
+    open fun multiSelectNonCapital(query: String, onResult: (columnName: String, columnValue: String) -> Unit) {
+
+        getDatabase()
+        val callingMethod = QuickLogWriter.getCallerClass(3)
+
+        val cursor = myDataBase?.rawQuery(query, null)
+
+        if (cursor!!.moveToFirst()) {
+
+            do for (i in 0 until cursor.columnCount) onResult(cursor.getColumnName(i), cursor.getString(i))
+
+            while (cursor.moveToNext())
+        }
+
+        cursor.close()
+
+        QuickLogWriter.debugLogging("Class: " + callingMethod[1] + " (" + callingMethod[0] + ") Method: " + callingMethod[2])
+    }
+
+    @Throws(Exception::class)
+    open fun multiSelect(query: String, onResult: (cursor: Cursor) -> Unit) {
+
+        getDatabase()
+        val callingMethod = QuickLogWriter.getCallerClass(3)
+        val cursor = myDataBase?.rawQuery(query, null)
+
+        if (cursor!!.moveToFirst()) {
+
+            do onResult(cursor)
+
+            while (cursor.moveToNext())
+        }
+
+        cursor.close()
+
+        QuickLogWriter.debugLogging("Class: " + callingMethod[1] + " (" + callingMethod[0] + ") Method: " + callingMethod[2])
+    }
+
+    @Throws(Exception::class)
+    open fun multiSelect(query: String, @Suppress("UNUSED_PARAMETER") any: Any): ArrayList<HashMap<String, String>> {
+
+        getDatabase()
+
+        val callingMethod = QuickLogWriter.getCallerClass(3)
+        val sqlDataResultArray = ArrayList<HashMap<String, String>>()
+        val cursor = myDataBase?.rawQuery(query, null)
+
+        if (cursor!!.moveToFirst()) {
+
+            do {
+
+                val temp: LinkedHashMap<String, String> = LinkedHashMap()
+
+                for (i in 0 until cursor.columnCount) {
+
+                    var value = cursor.getString(i)
+                    if (value == null) value = ""
+                    temp[cursor.columnNames[i].toUpperCase(Locale.ENGLISH)] = value
+                }
+
+                sqlDataResultArray.add(temp)
+            }
+
+            while (cursor.moveToNext())
+        }
+
+        cursor.close()
+
+        QuickLogWriter.debugLogging("Class: " + callingMethod[1] + " (" + callingMethod[0] + ") Method: " + callingMethod[2] + " Result Is : " + sqlDataResultArray)
+
+        return sqlDataResultArray
+    }
+
+    @Throws(Exception::class)
+    open fun multiSelect(query: String): ArrayList<Array<String>> {
+
+        getDatabase()
+
+        val callingMethod = QuickLogWriter.getCallerClass(3)
+        val sqlDataResultArray = ArrayList<Array<String>>()
+        var returnString = ""
+        var temp: Array<String>
+
+        val cursor = myDataBase?.rawQuery(query, null)
+
+        if (cursor!!.moveToFirst()) {
+
+            do {
+
+                for (i in 0 until cursor.columnCount) returnString += cursor.getString(i) + "#RZZZ&%#"
+
+                temp = returnString.split("#RZZZ&%#".toRegex()).toTypedArray()
+                sqlDataResultArray.add(temp)
+                returnString = ""
+
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+
+        QuickLogWriter.debugLogging("Class: " + callingMethod[1] + " (" + callingMethod[0] + ") Method: " + callingMethod[2] + " Result Is : " + sqlDataResultArray)
+
+        return sqlDataResultArray
     }
 }
