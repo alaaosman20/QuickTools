@@ -1,5 +1,7 @@
 # QuickTools
 
+**Kotlin library containing various functions that i use accross android projects**
+
 [![](https://jitpack.io/v/rzahr/QuickTools.svg)](https://jitpack.io/#rzahr/QuickTools)
 
 Packages
