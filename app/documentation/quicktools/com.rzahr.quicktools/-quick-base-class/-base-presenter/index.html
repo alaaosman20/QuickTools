@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickBaseClass.BasePresenter - quicktools</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../../index.html">com.rzahr.quicktools</a>&nbsp;/&nbsp;<a href="../index.html">QuickBaseClass</a>&nbsp;/&nbsp;<a href="./index.html">BasePresenter</a><br/>
+<br/>
+<h1>BasePresenter</h1>
+<code><span class="keyword">class </span><span class="identifier">BasePresenter</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a><span class="symbol">, </span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-model/index.html"><span class="identifier">BaseModel</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-presenter-interface/index.html"><span class="identifier">BasePresenterInterface</span></a><span class="symbol">&lt;</span><a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">LifecycleObserver</span></code>
+<p><strong>Author</strong><br/>
+<p>Rashad Zahr</p>
+
+
+<p>base presenter class</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BasePresenter</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="m-activity.html">mActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">mActivity</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/app/Activity.html"><span class="identifier">Activity</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="m-context.html">mContext</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">mContext</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="model.html">model</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">model</span><span class="symbol">: </span><a href="index.html#M"><span class="identifier">M</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="view.html">view</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">view</span><span class="symbol">: </span><a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="attach-lifecycle.html">attachLifecycle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">attachLifecycle</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.BasePresenter$attachLifecycle(androidx.lifecycle.Lifecycle)/lifecycle">lifecycle</span><span class="symbol">:</span>&nbsp;<span class="identifier">Lifecycle</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="attach-view.html">attachView</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">attachView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.BasePresenter$attachView(com.rzahr.quicktools.QuickBaseClass.BasePresenter.V)/view">view</span><span class="symbol">:</span>&nbsp;<a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="detach-lifecycle.html">detachLifecycle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">detachLifecycle</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.BasePresenter$detachLifecycle(androidx.lifecycle.Lifecycle)/lifecycle">lifecycle</span><span class="symbol">:</span>&nbsp;<span class="identifier">Lifecycle</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="detach-view.html">detachView</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">detachView</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-state-bundle.html">getStateBundle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getStateBundle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-string.html">getString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getString</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.BasePresenter$getString(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-presenter-created.html">onPresenterCreated</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onPresenterCreated</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-presenter-destroy.html">onPresenterDestroy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onPresenterDestroy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

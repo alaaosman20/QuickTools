@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickBaseClass - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools</a>&nbsp;/&nbsp;<a href="./index.html">QuickBaseClass</a><br/>
+<br/>
+<h1>QuickBaseClass</h1>
+<code><span class="keyword">class </span><span class="identifier">QuickBaseClass</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-abstract-activity/index.html">AbstractActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span><span class="symbol">, </span><a href="-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-abstract-dialog-fragment/index.html">AbstractDialogFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractDialogFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DialogFragment</span><span class="symbol">, </span><a href="-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-abstract-fragment/index.html">AbstractFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractFragment</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Fragment</span><span class="symbol">, </span><a href="-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-activity/index.html">BaseActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BaseActivity</span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-presenter-interface/index.html"><span class="identifier">BasePresenterInterface</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-activity/index.html"><span class="identifier">AbstractActivity</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-model/index.html">BaseModel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BaseModel</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-presenter/index.html">BasePresenter</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">BasePresenter</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a><span class="symbol">, </span><span class="identifier">M</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-model/index.html"><span class="identifier">BaseModel</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-presenter-interface/index.html"><span class="identifier">BasePresenterInterface</span></a><span class="symbol">&lt;</span><a href="-base-presenter/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">LifecycleObserver</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-presenter-interface/index.html">BasePresenterInterface</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BasePresenterInterface</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-view-interface/index.html">BaseViewInterface</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BaseViewInterface</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-view-model/index.html">BaseViewModel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BaseViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ViewModel</span><span class="symbol">, </span><span class="identifier">LifecycleObserver</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-v-p-fragment/index.html">MVPFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MVPFragment</span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-presenter-interface/index.html"><span class="identifier">BasePresenterInterface</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-fragment/index.html"><span class="identifier">AbstractFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-v-p-fragment-dialog/index.html">MVPFragmentDialog</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MVPFragmentDialog</span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-presenter-interface/index.html"><span class="identifier">BasePresenterInterface</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-dialog-fragment/index.html"><span class="identifier">AbstractDialogFragment</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-v-v-m-fragment/index.html">MVVMFragment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MVVMFragment</span><span class="symbol">&lt;</span><span class="identifier">VM</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BottomSheetDialogFragment</span><span class="symbol">, </span><a href="-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">QuickBaseClass</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

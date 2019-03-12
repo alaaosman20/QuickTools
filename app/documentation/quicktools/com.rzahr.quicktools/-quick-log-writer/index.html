@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickLogWriter - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools</a>&nbsp;/&nbsp;<a href="./index.html">QuickLogWriter</a><br/>
+<br/>
+<h1>QuickLogWriter</h1>
+<code><span class="keyword">object </span><span class="identifier">QuickLogWriter</span></code>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-t-a-g.html">TAG</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">TAG</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="append-contents.html">appendContents</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">appendContents</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$appendContents(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Boolean)/sFileName">sFileName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$appendContents(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Boolean)/sContent">sContent</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$appendContents(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Boolean)/includeDate">includeDate</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$appendContents(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Boolean)/folderName">folderName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$appendContents(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Boolean)/deleteFileIfExist">deleteFileIfExist</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="debug-logging.html">debugLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">debugLogging</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$debugLogging(kotlin.Any)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="error-logging.html">errorLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">errorLogging</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$errorLogging(kotlin.Any, kotlin.Any)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$errorLogging(kotlin.Any, kotlin.Any)/error">error</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Error logging.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-caller-class.html">getCallerClass</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getCallerClass</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$getCallerClass(kotlin.Int)/level">level</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>get caller class string [ ].</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-today-date-and-time.html">getTodayDateAndTime</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getTodayDateAndTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="log-error-helper.html">logErrorHelper</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">logErrorHelper</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logErrorHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/callingMethod">callingMethod</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logErrorHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/msg">msg</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logErrorHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/logFileNameTemp">logFileNameTemp</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logErrorHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/error">error</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logErrorHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/folderName">folderName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logErrorHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/deleteFileIfExist">deleteFileIfExist</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="log-from-source-class.html">logFromSourceClass</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">logFromSourceClass</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logFromSourceClass(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String)/logName">logName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logFromSourceClass(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logFromSourceClass(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String)/deleteFileIfExist">deleteFileIfExist</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logFromSourceClass(kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String)/folderName">folderName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="log-helper.html">logHelper</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">logHelper</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/callingMethod">callingMethod</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/msg">msg</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/logFileNameTemp">logFileNameTemp</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/error">error</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/folderName">folderName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$logHelper(kotlin.Array((kotlin.String)), kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean)/deleteFileIfExist">deleteFileIfExist</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="print-stack-trace.html">printStackTrace</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">printStackTrace</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickLogWriter$printStackTrace(java.lang.Exception)/e">e</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html"><span class="identifier">Exception</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Print stack trace.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

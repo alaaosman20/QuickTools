@@ -206,45 +206,44 @@ object QuickAppUtils {
         var tasksList: List<*>? = null
         val activityManager = QuickInjectable.applicationContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
 
-        if (Build.VERSION.SDK_INT > 20) {
-            tasksList = activityManager.runningAppProcesses
+        if (Build.VERSION.SDK_INT > 20) tasksList = activityManager.runningAppProcesses
 
-        } else {
+         else {
             try {
                 @Suppress("DEPRECATION")
                 tasksList = activityManager.getRunningTasks(1)
 
             } catch (ignored: Exception) {
             }
-
         }
+
         if (tasksList != null && tasksList.isNotEmpty()) {
+
             when {
+
                 Build.VERSION.SDK_INT > 22 -> {
-                    val runningProcesses = activityManager.runningAppProcesses
-                    for (processInfo in runningProcesses) {
+
+                    for (processInfo in activityManager.runningAppProcesses) {
+
                         if (processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+
                             for (activeProcess in processInfo.pkgList) {
-                                if (activeProcess == QuickInjectable.applicationContext().packageName) {
-                                    isInBackground = false
-                                }
+
+                                if (activeProcess == QuickInjectable.applicationContext().packageName) isInBackground = false
                             }
                         }
                     }
+
                     return isInBackground
                 }
-                Build.VERSION.SDK_INT > 20 -> {
-                    val packageName = activityManager.runningAppProcesses[0].processName
-                    return packageName != QuickInjectable.applicationContext().packageName
-                }
-                else -> {
-                    @Suppress("DEPRECATION") val topActivity = activityManager.getRunningTasks(1)[0].topActivity
-                    return topActivity.packageName != QuickInjectable.applicationContext().packageName
-                }
+
+                Build.VERSION.SDK_INT > 20 -> return activityManager.runningAppProcesses[0].processName != QuickInjectable.applicationContext().packageName
+
+                else -> @Suppress("DEPRECATION") return activityManager.getRunningTasks(1)[0].topActivity.packageName != QuickInjectable.applicationContext().packageName
             }
-        } else {
-            return false
         }
+
+        else return false
     }
 
     /**

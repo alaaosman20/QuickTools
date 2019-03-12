@@ -211,7 +211,6 @@ object QuickUIUtils {
             else {
 
                 dialogView.admin_cancel_mb.rzSetVisible()
-
                 dialogView.admin_cancel_mb.text = negativeButtonTextTemp
 
                 // set the negative button action
@@ -224,7 +223,6 @@ object QuickUIUtils {
                 }
             }
         }
-
 
         if (logo != null) {
 
@@ -246,7 +244,6 @@ object QuickUIUtils {
                 alert.cancel()
             }
         }
-
         // finally, show the alert button
         //showAlert(builder)
     }
