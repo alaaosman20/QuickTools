@@ -5,6 +5,11 @@ package com.rzahr.quicktools.utils
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * @author Rashad Zahr
+ *
+ * object used as a helper for date-related functions
+ */
 object QuickDateUtils {
 
     const val DASHED_FORMAT = "yyyy-MM-dd HH:mm:ss"

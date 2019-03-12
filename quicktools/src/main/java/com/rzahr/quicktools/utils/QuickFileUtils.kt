@@ -16,6 +16,11 @@ import java.io.FileNotFoundException
 import java.io.IOException
 import java.lang.Exception
 
+/**
+ * @author Rashad Zahr
+ *
+ * object used as a helper for file-related functions
+ */
 @Suppress("unused")
 object QuickFileUtils {
 

@@ -14,6 +14,7 @@ import android.text.Spanned
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.rzahr.quicktools.QuickInjectable
+import com.rzahr.quicktools.QuickLogWriter
 import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -26,6 +27,11 @@ import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.parsers.ParserConfigurationException
 
+/**
+ * @author Rashad Zahr
+ *
+ * object used as a helper
+ */
 object QuickUtils {
 
     /**
@@ -57,8 +63,8 @@ object QuickUtils {
         if (places < 0) throw IllegalArgumentException()
         val factor = Math.pow(10.0, places.toDouble()).toLong()
         value *= factor
-        val tmp = Math.round(value)
-        return tmp.toDouble() / factor
+
+        return Math.round(value).toDouble() / factor
     }
 
     /**
@@ -100,7 +106,10 @@ object QuickUtils {
             (QuickInjectable.applicationContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).cancel(notificationId.hashCode())
         }
 
-        catch (e:Exception) { }
+        catch (e:Exception) {
+
+            QuickLogWriter.errorLogging("Error", e.toString())
+        }
     }
 
     private fun canHandleIntent(intent: Intent, activity: Activity): Boolean {
@@ -174,9 +183,8 @@ object QuickUtils {
 
         val documentBuilderFactory = DocumentBuilderFactory.newInstance()
         documentBuilderFactory.isNamespaceAware = true
-        val builder = documentBuilderFactory.newDocumentBuilder()
 
-        return builder.parse(inputSource)
+        return documentBuilderFactory.newDocumentBuilder().parse(inputSource)
     }
 
     /**
