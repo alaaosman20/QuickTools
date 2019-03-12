@@ -23,35 +23,35 @@
 </tr>
 <tr>
 <td>
-<p><a href="com.rzahr.quicktools.adaptors/index.html">com.rzahr.quicktools.adaptors</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.adaptors/index.html">com.rzahr.quicktools.adaptors</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="com.rzahr.quicktools.extensions/index.html">com.rzahr.quicktools.extensions</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.extensions/index.html">com.rzahr.quicktools.extensions</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="com.rzahr.quicktools.models/index.html">com.rzahr.quicktools.models</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.models/index.html">com.rzahr.quicktools.models</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="com.rzahr.quicktools.utils/index.html">com.rzahr.quicktools.utils</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.utils/index.html">com.rzahr.quicktools.utils</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="com.rzahr.quicktools.views/index.html">com.rzahr.quicktools.views</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html">com.rzahr.quicktools.views</a></p>
 </td>
 <td>
 </td>
@@ -59,6 +59,6 @@
 </tbody>
 </table>
 <h3>Index</h3>
-<a href="alltypes/index.html">All Types</a>
+<a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html">All Types</a>
 </BODY>
 </HTML>
