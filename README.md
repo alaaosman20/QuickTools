@@ -25,8 +25,7 @@ Packages
 
 **[QuickUIExtensions]**: Contains other extensions
 
-**[QuickViewExtensions]**: Contains Views extensions
- 
+
  ## **[Models]**
 
 
@@ -71,8 +70,6 @@ Packages
 [QuickNotificationExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickNotificationExtensions.kt
 
 [QuickUIExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickUIExtensions.kt
-
-[QuickViewExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickViewExtensions.kt
 
 [QuickActivityExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickActivityExtensions.kt   
 
