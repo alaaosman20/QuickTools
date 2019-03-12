@@ -10,6 +10,16 @@
 Packages
 ========
 
+
+## **[QuickAppModule]**
+
+**mandatory** to be used as a super type for the application module scoped with the following scope: ```ApplicationScope```:
+
+```@Module
+class FTAppModule constructor(val context: Context, @Suppress("MemberVisibilityCanBePrivate") val rapidIdler: QuickClickGuard, val application: Application): QuickAppModule(context, rapidIdler, application) {}
+```
+ 
+
 ## **[QuickInjectable]**
 
 **mandatory** to be injected in the Application class as follows:
@@ -113,3 +123,5 @@ Packages
 [Views]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html
   
 [All Types]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html
+
+[QuickAppModule]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickAppModule.kt
