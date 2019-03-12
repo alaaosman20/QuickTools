@@ -15,7 +15,7 @@ Packages
 
  ## **[Extensions]**
  
- `Contains 5 different files each containing a set of extensions`
+ `Contains 4 different files each containing a set of extensions`
 
 **[QuickActivityExtensions]**: Contains extensions that can be used on an activity
 
