@@ -10,6 +10,10 @@
 Packages
 ========
 
+## **[QuickInjectable]**
+
+**mandatory** to be injected in the Application class as follows:
+`@Inject lateinit var mInjectable: QuickInjectable`
 
  
  ## **[Base Classes]**
