@@ -68,7 +68,8 @@ Packages
 
  ## **[All Types]**
    
- 
+[QuickInjectable]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickInjectable.kt
+
 [QuickAppUtils]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/utils/QuickAppUtils.kt
 
 [QuickDateUtils]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/utils/QuickDateUtils.kt
