@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
-<a href="./index.html">quicktools</a><br/>
 <br/>
 <h3>Packages</h3>
 <table>
