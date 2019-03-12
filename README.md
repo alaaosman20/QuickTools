@@ -7,7 +7,7 @@ Packages
 
  ## **[com.rzahr.quicktools]**
  
- 
+ ## **[Base Classes]**
    
  ## **[Adaptor Tools]**
 
@@ -66,6 +66,8 @@ Packages
 [QuickUtils]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/utils/QuickUtils.kt
 
 [QuickExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickExtensions.kt
+
+[Base Classes]:https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/-quick-base-class/index.html
 
 [QuickNotificationExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickNotificationExtensions.kt
 
