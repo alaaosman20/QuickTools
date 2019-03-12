@@ -15,6 +15,12 @@ Packages
 **mandatory** to be injected in the Application class as follows:
 `@Inject lateinit var mInjectable: QuickInjectable`
 
+ **pref()**: function used to save and retreive from the shared preference
+ 
+ **clickGuard()**: function used to prevent multi-rapid clicks on a view
+ 
+ **currentActivity**: function used to retrieve the current active activity
+ 
  
  ## **[Base Classes]**
  
