@@ -25,6 +25,7 @@ object QuickAppUtils {
 
     /**
      * used in base classes to change language on demand
+     * @return the ContextWrapper object
      */
     fun getWrapper(newBase: Context?): ContextWrapper? {
 

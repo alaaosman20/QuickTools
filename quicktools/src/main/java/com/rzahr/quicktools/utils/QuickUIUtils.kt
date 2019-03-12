@@ -48,6 +48,9 @@ object QuickUIUtils {
     /**
      * used to animate a background view with colors
      * use example: QuickUIUtils.animateBackgroundWithColors(ValueAnimator.ofObject(ArgbEvaluator(), color1, color3, color4, color1), this)
+     * @param colorAnimation: the color animation value animator
+     * @param views: the views
+     * @return a value animator
      */
     fun animateBackgroundWithColors(colorAnimation: ValueAnimator, vararg views: View): ValueAnimator {
 

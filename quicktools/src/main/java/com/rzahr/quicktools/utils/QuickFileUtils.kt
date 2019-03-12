@@ -20,7 +20,7 @@ import java.lang.Exception
 object QuickFileUtils {
 
     /**
-     * returns the file mipmap
+     * @return the file mipmap
      */
     fun getFileMipMap(fileURi: Uri): String {
 
@@ -38,6 +38,7 @@ object QuickFileUtils {
 
     /**
      * delete file
+     * @param path: the path of the file to be deleted
      */
     fun deleteFile(path: String) {
 
@@ -48,6 +49,7 @@ object QuickFileUtils {
 
     /**
      * delete a complete directory
+     * @param: the path of the directory to be deleted
      */
     fun deleteDirectory(path: String) {
 
@@ -71,6 +73,7 @@ object QuickFileUtils {
      * Create directory.
      * @param path        the path
      * @param withNoMedia the with no media
+     * @return the state if the directory was created or not
      */
     fun createDirectory(path: String, withNoMedia: Boolean): String {
 
@@ -102,6 +105,10 @@ object QuickFileUtils {
 
     /**
      * get the bitmap from the image file
+     * @param f: the file name
+     * @param width: the width needed
+     * @param height: the height needed
+     * @return a bitmap file
      */
     fun decodeFile(f: String, width: Int, height: Int): Bitmap? {
 
@@ -125,6 +132,14 @@ object QuickFileUtils {
         return null
     }
 
+    /**
+     * get a resized bitmap
+     * @param bitmap: the bitmap original file
+     * @param newHeight: the new height
+     * @param newWidth: the new width
+     * @param rotation: the rotation
+     * @return a resized bitmap file
+     */
     @Throws(Exception::class)
     fun getResizedBitmap(bitmap: Bitmap?, newHeight: Int, newWidth: Int, rotation: Int): Bitmap {
 

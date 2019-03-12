@@ -15,9 +15,7 @@ import androidx.appcompat.widget.Toolbar
 
 /**
  * @author Rashad Zahr
- */
-
-/**
+ *
  * used to set the activity to full screen
  */
 fun Activity.setFullScreen() {

@@ -75,7 +75,7 @@ fun <T : Parcelable> Bundle?.getStateOf(id: String): ArrayList<T>? {
 }
 
 /**
- * returns the file URI
+ * @return the file URI
  */
 fun File.getFileURI(): Uri {
 
@@ -84,7 +84,6 @@ fun File.getFileURI(): Uri {
 
 /**
  * converts drawable to bitmap
- *
  * @return the bitmap
  */
 fun Drawable.toBitmap(): Bitmap {
@@ -132,6 +131,7 @@ fun File.openAttachment(attachmentName: String, context: Context, activity: Acti
  * the parcelable attribute is needed to differentiate between this method and the one for the array list of parcelable
  * @param id: the id pointing to this object value
  * @param parcelable: unused parameter
+ * @return parcelable T
  */
 fun <T : Parcelable> Bundle?.getStateOf(id: String, @Suppress("UNUSED_PARAMETER") parcelable: Int): T? {
 
@@ -142,6 +142,7 @@ fun <T : Parcelable> Bundle?.getStateOf(id: String, @Suppress("UNUSED_PARAMETER"
  * gets the saved instance state of a string
  * @param id: the id pointing to this string value
  * @param default: the default value of the string if it does not exist
+ * @return a string value
  */
 fun Bundle?.getStateOf(id: String, default: String = ""): String {
 
@@ -160,6 +161,7 @@ fun Bundle?.getStateOf(id: String, default: String = ""): String {
  * gets the saved instance state of a boolean
  * @param id: the id pointing to this boolean value
  * @param default: the default value of the boolean if it does not exist
+ * @return a boolean value
  */
 fun Bundle?.getStateOf(id: String, default: Boolean = false): Boolean {
 
@@ -231,6 +233,7 @@ fun String.addAsDefaultWithId(id: String) {
 /**
  * gets string from strings.xml
  * @param context: the context used to get the string value. in case the value is not passed then the application context is provided
+ * @return a string value from the resources
  */
 fun Int.get(context: Context = QuickInjectable.applicationContext()): String {
 
@@ -248,7 +251,6 @@ fun Long.addAsDefaultWithId(id: String) {
 
 /**
  * removes duplicates from an array list
- *
  * @return a duplicate free array list
  */
 fun ArrayList<String>.removeDuplicates(): Set<String> {
@@ -330,12 +332,7 @@ fun String.getIntPrefValue(): Int {
 }
 
 /**
- * get shared Int value Int.
- * @return the Int
- */
-
-/**
- * returns the preference value of the key passed
+ * @return the preference value of the key passed
  */
 @Suppress("UNCHECKED_CAST")
 inline fun <reified I>String.rzPrefVal(): I {

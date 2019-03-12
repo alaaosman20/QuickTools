@@ -14,7 +14,6 @@ import com.rzahr.quicktools.QuickClickGuard
  * @author Rashad Zahr
  */
 
-
 /**
  * show or hide a view
  */
@@ -89,6 +88,7 @@ fun View.rzClickGuard(clickGuard: QuickClickGuard, action: () -> Unit) {
  * @param activity: the activity of this view
  * @param description: optional description
  * @param backgroundColorId: the background color of the bubble
+ * @return BubbleShowCaseBuilder object
  */
 fun View.addShowCase(title: String, id: String, activity: Activity, description: String = "", backgroundColorId: Int): BubbleShowCaseBuilder {
 

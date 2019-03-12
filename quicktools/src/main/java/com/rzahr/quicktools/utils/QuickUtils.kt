@@ -47,6 +47,9 @@ object QuickUtils {
 
     /**
      * rounds a number
+     * @param value the value that will be rounded
+     * @param places the number of places after the decimal
+     * @return the rounded number
      */
     fun roundNumber(value: Double, places: Int): Double {
 
@@ -86,6 +89,10 @@ object QuickUtils {
         }
     }
 
+    /**
+     * cancels the notification with the notification id passed
+     * @param notificationId: the notification id that requires cancelling
+     */
     fun cancelPendingNotifications(notificationId: String) {
 
         try {
@@ -103,6 +110,8 @@ object QuickUtils {
 
     /**
      * opens google map application if available
+     * @param uri: the uri of the application
+     * @param activity: the activity requesting
      */
     fun openGoogleMapsApp(uri: String, activity: Activity) {
 
@@ -116,6 +125,9 @@ object QuickUtils {
 
     /**
      * regular expression search
+     * @param patternString: the regular expression pattern
+     * @param word: the word that will be searched in
+     * @return a string value of what was found
      */
     fun regEx(patternString: String, word: String): String {
 
@@ -129,6 +141,7 @@ object QuickUtils {
 
     /**
      * string to html
+     * @param html: the html structure string
      */
     fun fromHtml(html: String): Spanned {
 
@@ -138,6 +151,9 @@ object QuickUtils {
 
     /**
      * request a certain permission
+     * @param currentActivity: the current activity
+     * @param manifestPermission: the manifest permission
+     * @param permissionIdentifier: the permission identifier
      */
     fun requestPermission(currentActivity: Activity, manifestPermission: String, permissionIdentifier: Int) {
 
@@ -148,6 +164,11 @@ object QuickUtils {
         )
     }
 
+    /**
+     * parse an input source to a document object
+     * @param inputSource: the input source
+     * @return a document object
+     */
     @Throws(ParserConfigurationException::class, IOException::class, SAXException::class)
     fun parseDoc(inputSource: InputSource): Document {
 
@@ -158,6 +179,12 @@ object QuickUtils {
         return builder.parse(inputSource)
     }
 
+    /**
+     * converts an input string to a string value
+     * @param inputStream: the input stream
+     * @param newLineSupport: if new line is supported
+     * @return a string from the input stream
+     */
     fun convertStreamToString(inputStream: InputStream, newLineSupport: Boolean): String {
 
         val reader = BufferedReader(InputStreamReader(inputStream))

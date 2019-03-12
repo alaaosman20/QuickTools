@@ -65,6 +65,7 @@ fun RecyclerView.initializeLinear(linearLayoutManager: LinearLayoutManager, cont
 
 /**
  * show the alert dialog
+ * @return an alert dialog
  */
 fun AlertDialog.Builder.showQuickAlert(): AlertDialog? {
 

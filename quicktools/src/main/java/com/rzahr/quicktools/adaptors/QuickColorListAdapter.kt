@@ -9,7 +9,12 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.rzahr.quicktools.R
-//
+
+/**
+ * @author Rashad Zahr
+ *
+ * this class is a recycler view adapter specifically made to show a grid of colors. This can be used in paint views
+ */
 @Suppress("unused")
 class QuickColorListAdapter  constructor (clickHandler: QuickColorListAdapterOnClickHandler): RecyclerView.Adapter<QuickColorListAdapter.ViewHolder>() {
 
@@ -63,5 +68,4 @@ class QuickColorListAdapter  constructor (clickHandler: QuickColorListAdapterOnC
 interface QuickColorListAdapterOnClickHandler {
 
     fun onColorSelected(color: Int)
-
 }

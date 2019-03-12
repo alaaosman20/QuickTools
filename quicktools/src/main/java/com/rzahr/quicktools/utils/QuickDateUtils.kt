@@ -15,6 +15,7 @@ object QuickDateUtils {
      * returns a string date
      * @param date the date
      * @param format the format
+     * @return a date string
      */
     fun getDateString(date: Date, format: String = DASHED_FORMAT): String {
 
@@ -23,6 +24,12 @@ object QuickDateUtils {
         return SimpleDateFormat(format, Locale.ENGLISH).format(calendar.time)
     }
 
+    /**
+     * get the current date in a string format
+     * @param english the language if english
+     * @param format the format
+     * @return a date string
+     */
     @SuppressLint("SimpleDateFormat")
     fun getCurrentDate(english: Boolean = true, format: String = DASHED_FORMAT): String {
 
@@ -35,11 +42,15 @@ object QuickDateUtils {
 
     /**
      * changes the time to string
+     * @param dateLong the date
+     * @param format the format
+     * @param timeZone the timezone
+     * @return date string
      */
-    fun changeTimeToString(lastLocationDate: Long, format: String = SLASHED_FORMAT, timeZone: TimeZone? = null): String {
+    fun changeTimeToString(dateLong: Long, format: String = SLASHED_FORMAT, timeZone: TimeZone? = null): String {
 
         val simpleDateFormat = SimpleDateFormat(format, Locale.ENGLISH)
         if (timeZone != null) simpleDateFormat.timeZone = timeZone
-        return simpleDateFormat.format(Date(lastLocationDate).time)
+        return simpleDateFormat.format(Date(dateLong).time)
     }
 }
