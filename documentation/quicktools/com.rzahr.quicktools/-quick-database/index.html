@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickDatabase - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools</a>&nbsp;/&nbsp;<a href="./index.html">QuickDatabase</a><br/>
+<br/>
+<h1>QuickDatabase</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">QuickDatabase</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">QuickDatabase</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="context.html">context</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">context</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="my-data-base.html">myDataBase</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">myDataBase</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html"><span class="identifier">SQLiteDatabase</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="close-database.html">closeDatabase</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">closeDatabase</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-d-b-path.html">getDBPath</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getDBPath</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$getDBPath(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-database.html">getDatabase</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getDatabase</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html"><span class="identifier">SQLiteDatabase</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-database-instance.html">getDatabaseInstance</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getDatabaseInstance</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$getDatabaseInstance(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html"><span class="identifier">SQLiteDatabase</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="multi-select.html">multiSelect</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">multiSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelect(kotlin.String, kotlin.Function1((android.database.Cursor, kotlin.Unit)))/query">query</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelect(kotlin.String, kotlin.Function1((android.database.Cursor, kotlin.Unit)))/onResult">onResult</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">cursor</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/database/Cursor.html"><span class="identifier">Cursor</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">multiSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelect(kotlin.String, kotlin.Any)/query">query</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelect(kotlin.String, kotlin.Any)/any">any</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/java/util/ArrayList.html"><span class="identifier">ArrayList</span></a><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/java/util/HashMap.html"><span class="identifier">HashMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">multiSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelect(kotlin.String)/query">query</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/java/util/ArrayList.html"><span class="identifier">ArrayList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="multi-select-non-capital.html">multiSelectNonCapital</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">multiSelectNonCapital</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelectNonCapital(kotlin.String, kotlin.Function2((kotlin.String, , kotlin.Unit)))/query">query</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$multiSelectNonCapital(kotlin.String, kotlin.Function2((kotlin.String, , kotlin.Unit)))/onResult">onResult</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">columnName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">columnValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="single-select.html">singleSelect</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">singleSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$singleSelect(kotlin.String, kotlin.Boolean, kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/query">query</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$singleSelect(kotlin.String, kotlin.Boolean, kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/increment">increment</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$singleSelect(kotlin.String, kotlin.Boolean, kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/delimiter">delimiter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$singleSelect(kotlin.String, kotlin.Boolean, kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/defaultReturn">defaultReturn</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickDatabase$singleSelect(kotlin.String, kotlin.Boolean, kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">=</span>&nbsp;emptyArray()<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

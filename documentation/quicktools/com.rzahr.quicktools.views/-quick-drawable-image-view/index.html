@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickDrawableImageView - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools.views</a>&nbsp;/&nbsp;<a href="./index.html">QuickDrawableImageView</a><br/>
+<br/>
+<h1>QuickDrawableImageView</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">QuickDrawableImageView</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatImageView</span><span class="symbol">, </span><a href="https://developer.android.com/reference/android/view/View/OnTouchListener.html"><span class="identifier">OnTouchListener</span></a></code>
+<p>this class is used to enable drawing on top of an image view</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">QuickDrawableImageView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">QuickDrawableImageView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$<init>(android.content.Context, android.util.AttributeSet)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$<init>(android.content.Context, android.util.AttributeSet)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">QuickDrawableImageView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/defStyleAttr">defStyleAttr</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="change-drawing-color.html">changeDrawingColor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">changeDrawingColor</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$changeDrawingColor(kotlin.Int)/color">color</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="change-drawing-stroke.html">changeDrawingStroke</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">changeDrawingStroke</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$changeDrawingStroke(kotlin.Int)/strokeWidth">strokeWidth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="clear-image.html">clearImage</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clearImage</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$clearImage(android.graphics.Bitmap, android.graphics.Bitmap)/originalBitmap">originalBitmap</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/graphics/Bitmap.html"><span class="identifier">Bitmap</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$clearImage(android.graphics.Bitmap, android.graphics.Bitmap)/bmp">bmp</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/graphics/Bitmap.html"><span class="identifier">Bitmap</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-touch.html">onTouch</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onTouch</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$onTouch(android.view.View, android.view.MotionEvent)/v">v</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$onTouch(android.view.View, android.view.MotionEvent)/event">event</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/MotionEvent.html"><span class="identifier">MotionEvent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-new-image.html">setNewImage</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setNewImage</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$setNewImage(android.graphics.Bitmap, android.graphics.Bitmap, kotlin.Int, kotlin.Int)/alteredBitmap">alteredBitmap</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/graphics/Bitmap.html"><span class="identifier">Bitmap</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$setNewImage(android.graphics.Bitmap, android.graphics.Bitmap, kotlin.Int, kotlin.Int)/bmp">bmp</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/graphics/Bitmap.html"><span class="identifier">Bitmap</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$setNewImage(android.graphics.Bitmap, android.graphics.Bitmap, kotlin.Int, kotlin.Int)/color">color</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickDrawableImageView$setNewImage(android.graphics.Bitmap, android.graphics.Bitmap, kotlin.Int, kotlin.Int)/width">width</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

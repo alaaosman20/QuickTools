@@ -1,0 +1,58 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:com.rzahr.quicktools.extensions$addAnimationOnLayout(androidx.constraintlayout.widget.ConstraintLayout, kotlin.Int, android.app.Activity)com.rzahr.quicktools.extensions/androidx.constraintlayout.widget.-constraint-layout/add-animation-on-layout.html
+$dokka.location:com.rzahr.quicktools.extensions$addAsDefaultWithId(kotlin.Long, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-long/add-as-default-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$addAsDefaultWithId(kotlin.String, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/add-as-default-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$addShowCase(android.view.View, kotlin.String, kotlin.String, android.app.Activity, kotlin.String, kotlin.Int)com.rzahr.quicktools.extensions/android.view.-view/add-show-case.html
+$dokka.location:com.rzahr.quicktools.extensions$addWithId(kotlin.Boolean, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-boolean/add-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$addWithId(kotlin.Double, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-double/add-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$addWithId(kotlin.Int, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-int/add-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$addWithId(kotlin.Long, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-long/add-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$addWithId(kotlin.String, kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/add-with-id.html
+$dokka.location:com.rzahr.quicktools.extensions$createToolbar(androidx.appcompat.app.AppCompatActivity, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.Boolean, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)com.rzahr.quicktools.extensions/androidx.appcompat.app.-app-compat-activity/create-toolbar.html
+$dokka.location:com.rzahr.quicktools.extensions$get(kotlin.Int, android.content.Context)com.rzahr.quicktools.extensions/kotlin.-int/get.html
+$dokka.location:com.rzahr.quicktools.extensions$getBoolPrefValue(kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/get-bool-pref-value.html
+$dokka.location:com.rzahr.quicktools.extensions$getFileURI(java.io.File)com.rzahr.quicktools.extensions/java.io.-file/get-file-u-r-i.html
+$dokka.location:com.rzahr.quicktools.extensions$getIntPrefValue(kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/get-int-pref-value.html
+$dokka.location:com.rzahr.quicktools.extensions$getLongPrefValue(kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/get-long-pref-value.html
+$dokka.location:com.rzahr.quicktools.extensions$getStateOf(android.os.Bundle, kotlin.String)com.rzahr.quicktools.extensions/android.os.-bundle/get-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$getStateOf(android.os.Bundle, kotlin.String, kotlin.Boolean)com.rzahr.quicktools.extensions/android.os.-bundle/get-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$getStateOf(android.os.Bundle, kotlin.String, kotlin.Int)com.rzahr.quicktools.extensions/android.os.-bundle/get-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$getStateOf(android.os.Bundle, kotlin.String, kotlin.String)com.rzahr.quicktools.extensions/android.os.-bundle/get-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$getStringPrefValue(kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/get-string-pref-value.html
+$dokka.location:com.rzahr.quicktools.extensions$hideKeyboard(android.app.Activity)com.rzahr.quicktools.extensions/android.app.-activity/hide-keyboard.html
+$dokka.location:com.rzahr.quicktools.extensions$hideKeyboard(android.content.Context, android.view.View)com.rzahr.quicktools.extensions/android.content.-context/hide-keyboard.html
+$dokka.location:com.rzahr.quicktools.extensions$hideKeyboard(androidx.fragment.app.Fragment)com.rzahr.quicktools.extensions/androidx.fragment.app.-fragment/hide-keyboard.html
+$dokka.location:com.rzahr.quicktools.extensions$initializeLinear(androidx.recyclerview.widget.RecyclerView, androidx.recyclerview.widget.LinearLayoutManager, android.content.Context)com.rzahr.quicktools.extensions/androidx.recyclerview.widget.-recycler-view/initialize-linear.html
+$dokka.location:com.rzahr.quicktools.extensions$isMyServiceRunning(java.lang.Class((kotlin.Any)), android.content.Context)com.rzahr.quicktools.extensions/java.lang.-class/is-my-service-running.html
+$dokka.location:com.rzahr.quicktools.extensions$lockOrientation(android.app.Activity, kotlin.Int)com.rzahr.quicktools.extensions/android.app.-activity/lock-orientation.html
+$dokka.location:com.rzahr.quicktools.extensions$openAttachment(java.io.File, kotlin.String, android.content.Context, android.app.Activity, kotlin.String)com.rzahr.quicktools.extensions/java.io.-file/open-attachment.html
+$dokka.location:com.rzahr.quicktools.extensions$openTopActivityOnClick(androidx.core.app.NotificationCompat.Builder, android.content.Context, java.lang.Class((kotlin.Any)))com.rzahr.quicktools.extensions/androidx.core.app.-notification-compat.-builder/open-top-activity-on-click.html
+$dokka.location:com.rzahr.quicktools.extensions$removeDuplicates(java.util.ArrayList((kotlin.String)))com.rzahr.quicktools.extensions/java.util.-array-list/remove-duplicates.html
+$dokka.location:com.rzahr.quicktools.extensions$rzBackgroundColor(com.google.android.material.button.MaterialButton, kotlin.Int)com.rzahr.quicktools.extensions/com.google.android.material.button.-material-button/rz-background-color.html
+$dokka.location:com.rzahr.quicktools.extensions$rzClickGuard(android.view.View, com.rzahr.quicktools.QuickClickGuard, kotlin.Function0((kotlin.Unit)))com.rzahr.quicktools.extensions/android.view.-view/rz-click-guard.html
+$dokka.location:com.rzahr.quicktools.extensions$rzClickListener(android.view.View, com.rzahr.quicktools.QuickClickGuard, kotlin.Function0((kotlin.Unit)))com.rzahr.quicktools.extensions/android.view.-view/rz-click-listener.html
+$dokka.location:com.rzahr.quicktools.extensions$rzHideShow(android.view.View)com.rzahr.quicktools.extensions/android.view.-view/rz-hide-show.html
+$dokka.location:com.rzahr.quicktools.extensions$rzPrefVal(kotlin.String)com.rzahr.quicktools.extensions/kotlin.-string/rz-pref-val.html
+$dokka.location:com.rzahr.quicktools.extensions$rzSetVisibilityGone(android.view.View)com.rzahr.quicktools.extensions/android.view.-view/rz-set-visibility-gone.html
+$dokka.location:com.rzahr.quicktools.extensions$rzSetVisibilityInvisible(android.view.View)com.rzahr.quicktools.extensions/android.view.-view/rz-set-visibility-invisible.html
+$dokka.location:com.rzahr.quicktools.extensions$rzSetVisible(android.view.View)com.rzahr.quicktools.extensions/android.view.-view/rz-set-visible.html
+$dokka.location:com.rzahr.quicktools.extensions$rzVisible(android.view.View)com.rzahr.quicktools.extensions/android.view.-view/rz-visible.html
+$dokka.location:com.rzahr.quicktools.extensions$saveStateOf(android.os.Parcelable, kotlin.String, android.os.Bundle)com.rzahr.quicktools.extensions/android.os.-parcelable/save-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$saveStateOf(java.util.ArrayList((android.os.Parcelable)), kotlin.String, android.os.Bundle)com.rzahr.quicktools.extensions/java.util.-array-list/save-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$saveStateOf(kotlin.Boolean, kotlin.String, android.os.Bundle)com.rzahr.quicktools.extensions/kotlin.-boolean/save-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$saveStateOf(kotlin.String, kotlin.String, android.os.Bundle)com.rzahr.quicktools.extensions/kotlin.-string/save-state-of.html
+$dokka.location:com.rzahr.quicktools.extensions$setFullScreen(android.app.Activity)com.rzahr.quicktools.extensions/android.app.-activity/set-full-screen.html
+$dokka.location:com.rzahr.quicktools.extensions$setSoundAndVibrate(androidx.core.app.NotificationCompat.Builder)com.rzahr.quicktools.extensions/androidx.core.app.-notification-compat.-builder/set-sound-and-vibrate.html
+$dokka.location:com.rzahr.quicktools.extensions$showQuickAlert(androidx.appcompat.app.AlertDialog.Builder)com.rzahr.quicktools.extensions/androidx.appcompat.app.-alert-dialog.-builder/show-quick-alert.html
+$dokka.location:com.rzahr.quicktools.extensions$showToolbar(android.app.Activity)com.rzahr.quicktools.extensions/android.app.-activity/show-toolbar.html
+$dokka.location:com.rzahr.quicktools.extensions$startService(java.lang.Class((kotlin.Any)), android.content.Context)com.rzahr.quicktools.extensions/java.lang.-class/start-service.html
+$dokka.location:com.rzahr.quicktools.extensions$stopService(java.lang.Class((kotlin.Any)), android.content.Context)com.rzahr.quicktools.extensions/java.lang.-class/stop-service.html
+$dokka.location:com.rzahr.quicktools.extensions$toBitmap(android.graphics.drawable.Drawable)com.rzahr.quicktools.extensions/android.graphics.drawable.-drawable/to-bitmap.html
+$dokka.location:com.rzahr.quicktools.extensions$unLockOrientation(android.app.Activity)com.rzahr.quicktools.extensions/android.app.-activity/un-lock-orientation.html
+com.rzahr.quicktools
+com.rzahr.quicktools.adaptors
+com.rzahr.quicktools.extensions
+com.rzahr.quicktools.models
+com.rzahr.quicktools.utils
+com.rzahr.quicktools.views

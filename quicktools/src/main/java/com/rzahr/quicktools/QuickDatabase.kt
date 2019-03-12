@@ -34,7 +34,6 @@ abstract class QuickDatabase @Inject constructor(val context: Context) {
         }
     }
 
-
     fun getDBPath(context: Context): String {
 
         return context.applicationInfo.dataDir + "/databases/"

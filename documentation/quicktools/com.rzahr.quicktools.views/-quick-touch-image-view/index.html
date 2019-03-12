@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickTouchImageView - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools.views</a>&nbsp;/&nbsp;<a href="./index.html">QuickTouchImageView</a><br/>
+<br/>
+<h1>QuickTouchImageView</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">QuickTouchImageView</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatImageView</span></code>
+<p>this class is used to enable zooming and panning in an image view</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-on-touch-image-view-listener/index.html">OnTouchImageViewListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OnTouchImageViewListener</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">QuickTouchImageView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">QuickTouchImageView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$<init>(android.content.Context, android.util.AttributeSet)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$<init>(android.content.Context, android.util.AttributeSet)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">QuickTouchImageView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/defStyle">defStyle</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="can-scroll-horizontally.html">canScrollHorizontally</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">canScrollHorizontally</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$canScrollHorizontally(kotlin.Int)/direction">direction</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="can-scroll-horizontally-froyo.html">canScrollHorizontallyFroyo</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">canScrollHorizontallyFroyo</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$canScrollHorizontallyFroyo(kotlin.Int)/direction">direction</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-current-zoom.html">getCurrentZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCurrentZoom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code>
+<p>Get the current zoom. This is the zoom relative to the initial scale, not the original resource.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-zoom.html">getMaxZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxZoom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code>
+<p>Get the max zoom multiplier.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-min-zoom.html">getMinZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMinZoom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code>
+<p>Get the min zoom multiplier.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scale-type.html">getScaleType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScaleType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/widget/ImageView/ScaleType.html"><span class="identifier">ScaleType</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scroll-position.html">getScrollPosition</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScrollPosition</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/graphics/PointF.html"><span class="identifier">PointF</span></a></code>
+<p>Return the point at the center of the zoomed image. The PointF coordinates range in value between 0 and 1 and the focus point is denoted as a fraction from the left and top of the view. For example, the top left corner of the image would be (0, 0). And the bottom right corner would be (1, 1).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-zoomed-rect.html">getZoomedRect</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getZoomedRect</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/graphics/RectF.html"><span class="identifier">RectF</span></a></code>
+<p>Return a Rect representing the zoomed image.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-zoomed.html">isZoomed</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isZoomed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns false if image is in initial, unzoomed state. False, otherwise.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-configuration-changed.html">onConfigurationChanged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onConfigurationChanged</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$onConfigurationChanged(android.content.res.Configuration)/newConfig">newConfig</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/res/Configuration.html"><span class="identifier">Configuration</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-restore-instance-state.html">onRestoreInstanceState</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onRestoreInstanceState</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$onRestoreInstanceState(android.os.Parcelable)/state">state</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-save-instance-state.html">onSaveInstanceState</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onSaveInstanceState</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="reset-zoom.html">resetZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resetZoom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Reset zoom and translation to initial state.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-image-bitmap.html">setImageBitmap</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setImageBitmap</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setImageBitmap(android.graphics.Bitmap)/bm">bm</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/graphics/Bitmap.html"><span class="identifier">Bitmap</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-image-drawable.html">setImageDrawable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setImageDrawable</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setImageDrawable(android.graphics.drawable.Drawable)/drawable">drawable</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/graphics/drawable/Drawable.html"><span class="identifier">Drawable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-image-resource.html">setImageResource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setImageResource</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setImageResource(kotlin.Int)/resId">resId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-image-u-r-i.html">setImageURI</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setImageURI</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setImageURI(android.net.Uri)/uri">uri</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/net/Uri.html"><span class="identifier">Uri</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-zoom.html">setMaxZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxZoom</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setMaxZoom(kotlin.Float)/max">max</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the max zoom multiplier. Default value: 3.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-min-zoom.html">setMinZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMinZoom</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setMinZoom(kotlin.Float)/min">min</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the min zoom multiplier. Default value: 1.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-on-touch-listener.html">setOnTouchListener</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOnTouchListener</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setOnTouchListener(android.view.View.OnTouchListener)/l">l</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View/OnTouchListener.html"><span class="identifier">OnTouchListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-scale-type.html">setScaleType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setScaleType</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setScaleType(android.widget.ImageView.ScaleType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/widget/ImageView/ScaleType.html"><span class="identifier">ScaleType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-scroll-position.html">setScrollPosition</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setScrollPosition</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setScrollPosition(kotlin.Float, kotlin.Float)/focusX">focusX</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setScrollPosition(kotlin.Float, kotlin.Float)/focusY">focusY</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the focus point of the zoomed image. The focus points are denoted as a fraction from the left and top of the view. The focus points can range in value between 0 and 1.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-zoom.html">setZoom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setZoom</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float)/scale">scale</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set zoom to the specified scale. Image will be centered by default.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setZoom</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float)/scale">scale</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float)/focusX">focusX</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float)/focusY">focusY</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setZoom</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float, android.widget.ImageView.ScaleType)/scale">scale</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float, android.widget.ImageView.ScaleType)/focusX">focusX</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float, android.widget.ImageView.ScaleType)/focusY">focusY</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(kotlin.Float, kotlin.Float, kotlin.Float, android.widget.ImageView.ScaleType)/scaleType">scaleType</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/widget/ImageView/ScaleType.html"><span class="identifier">ScaleType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set zoom to the specified scale. Image will be centered around the point (focusX, focusY). These floats range from 0 to 1 and denote the focus point as a fraction from the left and top of the view. For example, the top left corner of the image would be (0, 0). And the bottom right corner would be (1, 1).</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setZoom</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.views.QuickTouchImageView$setZoom(com.rzahr.quicktools.views.QuickTouchImageView)/img">img</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">QuickTouchImageView</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set zoom parameters equal to another QuickTouchImageView. Including scale, position, and ScaleType.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

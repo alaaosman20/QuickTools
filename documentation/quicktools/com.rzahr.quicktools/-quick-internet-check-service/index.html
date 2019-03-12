@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickInternetCheckService - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools</a>&nbsp;/&nbsp;<a href="./index.html">QuickInternetCheckService</a><br/>
+<br/>
+<h1>QuickInternetCheckService</h1>
+<code><span class="keyword">class </span><span class="identifier">QuickInternetCheckService</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Service.html"><span class="identifier">Service</span></a></code>
+<p><strong>Author</strong><br/>
+<p>Rashad Zahr</p>
+
+
+<p>service used to check for a valid internet connection by calling a simple url call every 15 seconds</p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-local-binder/index.html">LocalBinder</a></p>
+</td>
+<td>
+<code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">LocalBinder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Binder.html"><span class="identifier">Binder</span></a></code>
+<p>Class used for the client Binder.  Because we know this service always
+runs in the same process as its clients, we don't need to deal with IPC.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">QuickInternetCheckService</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="on-bind.html">onBind</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onBind</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickInternetCheckService$onBind(android.content.Intent)/intent">intent</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Intent.html"><span class="identifier">Intent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/os/IBinder.html"><span class="identifier">IBinder</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-destroy.html">onDestroy</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onDestroy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>cancel the timer task</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="perform-checks.html">performChecks</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">performChecks</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickInternetCheckService$performChecks(java.util.Timer, android.app.Service)/timer">timer</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/java/util/Timer.html"><span class="identifier">Timer</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickInternetCheckService$performChecks(java.util.Timer, android.app.Service)/service">service</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Service.html"><span class="identifier">Service</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-i-s_-o-n-l-i-n-e_-k-e-y.html">IS_ONLINE_KEY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">IS_ONLINE_KEY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-k-e-y.html">KEY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">KEY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-o-f-f-l-i-n-e_-s-i-n-c-e_-k-e-y.html">OFFLINE_SINCE_KEY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">OFFLINE_SINCE_KEY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-o-n-l-i-n-e_-s-i-n-c-e_-k-e-y.html">ONLINE_SINCE_KEY</a></p>
+</td>
+<td>
+<code><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">ONLINE_SINCE_KEY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="s-timer.html">sTimer</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">sTimer</span><span class="symbol">: </span><a href="https://developer.android.com/reference/java/util/Timer.html"><span class="identifier">Timer</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-is-online.html">getIsOnline</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getIsOnline</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-offline-since.html">getOfflineSince</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getOfflineSince</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-online-since.html">getOnlineSince</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getOnlineSince</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="init-service-connection.html">initServiceConnection</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">initServiceConnection</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickInternetCheckService.Companion$initServiceConnection(kotlin.Function1((com.rzahr.quicktools.QuickInternetCheckService.LocalBinder, kotlin.Unit)), kotlin.Function0((kotlin.Unit)))/onServiceConnected">onServiceConnected</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">binder</span><span class="symbol">:</span>&nbsp;<a href="-local-binder/index.html"><span class="identifier">LocalBinder</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickInternetCheckService.Companion$initServiceConnection(kotlin.Function1((com.rzahr.quicktools.QuickInternetCheckService.LocalBinder, kotlin.Unit)), kotlin.Function0((kotlin.Unit)))/onServiceDisconnected">onServiceDisconnected</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/content/ServiceConnection.html"><span class="identifier">ServiceConnection</span></a></code>
+<p>initialize the service connection object</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../com.rzahr.quicktools.extensions/android.content.-context/hide-keyboard.html">hideKeyboard</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">.</span><span class="identifier">hideKeyboard</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.extensions$hideKeyboard(android.content.Context, android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>hiding keyboard anywhere</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

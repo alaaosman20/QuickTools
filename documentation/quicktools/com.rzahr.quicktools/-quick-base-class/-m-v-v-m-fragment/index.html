@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickBaseClass.MVVMFragment - quicktools</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../../index.html">com.rzahr.quicktools</a>&nbsp;/&nbsp;<a href="../index.html">QuickBaseClass</a>&nbsp;/&nbsp;<a href="./index.html">MVVMFragment</a><br/>
+<br/>
+<h1>MVVMFragment</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MVVMFragment</span><span class="symbol">&lt;</span><span class="identifier">VM</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BottomSheetDialogFragment</span><span class="symbol">, </span><a href="../-base-view-interface/index.html"><span class="identifier">BaseViewInterface</span></a></code>
+<p><strong>Author</strong><br/>
+<p>Rashad Zahr</p>
+
+
+<p>base MVVM structure fragment</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MVVMFragment</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$<init>(kotlin.Int, kotlin.Boolean, kotlin.Boolean)/layoutId">layoutId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$<init>(kotlin.Int, kotlin.Boolean, kotlin.Boolean)/lockOrientation">lockOrientation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$<init>(kotlin.Int, kotlin.Boolean, kotlin.Boolean)/hideToolbar">hideToolbar</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="m-click-guard.html">mClickGuard</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">mClickGuard</span><span class="symbol">: </span><a href="../../-quick-click-guard/index.html"><span class="identifier">QuickClickGuard</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="m-view-model.html">mViewModel</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">mViewModel</span><span class="symbol">: </span><a href="index.html#VM"><span class="identifier">VM</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="view-model-factory.html">viewModelFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">viewModelFactory</span><span class="symbol">: </span><span class="identifier">Factory</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-view-model.html">getViewModel</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getViewModel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-create-view.html">onCreateView</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onCreateView</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)/inflater">inflater</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/LayoutInflater.html"><span class="identifier">LayoutInflater</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)/container">container</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/ViewGroup.html"><span class="identifier">ViewGroup</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-resume.html">onResume</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onResume</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-save-instance-state.html">onSaveInstanceState</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onSaveInstanceState</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$onSaveInstanceState(android.os.Bundle)/outState">outState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="on-stop.html">onStop</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onStop</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-g-v-view-model.html">setGVViewModel</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ViewModel</span><span class="symbol">&gt;</span> <span class="identifier">setGVViewModel</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$setGVViewModel(android.os.Bundle, java.lang.Class((com.rzahr.quicktools.QuickBaseClass.MVVMFragment.setGVViewModel.T)), kotlin.Boolean)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$setGVViewModel(android.os.Bundle, java.lang.Class((com.rzahr.quicktools.QuickBaseClass.MVVMFragment.setGVViewModel.T)), kotlin.Boolean)/modelClass">modelClass</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="set-g-v-view-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$setGVViewModel(android.os.Bundle, java.lang.Class((com.rzahr.quicktools.QuickBaseClass.MVVMFragment.setGVViewModel.T)), kotlin.Boolean)/triggerRestoreState">triggerRestoreState</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-presenter.html">setPresenter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPresenter</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.QuickBaseClass.MVVMFragment$setPresenter(com.rzahr.quicktools.QuickBaseClass.BasePresenter((com.rzahr.quicktools.QuickBaseClass.BaseViewInterface, com.rzahr.quicktools.QuickBaseClass.BaseModel)))/presenter">presenter</span><span class="symbol">:</span>&nbsp;<a href="../-base-presenter/index.html"><span class="identifier">BasePresenter</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

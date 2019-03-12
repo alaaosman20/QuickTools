@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickUtils - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools.utils</a>&nbsp;/&nbsp;<a href="./index.html">QuickUtils</a><br/>
+<br/>
+<h1>QuickUtils</h1>
+<code><span class="keyword">object </span><span class="identifier">QuickUtils</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-r-z-background-updater/index.html">RZBackgroundUpdater</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">RZBackgroundUpdater</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>uses rx java to perform a background task</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="background-updater.html">backgroundUpdater</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">backgroundUpdater</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$backgroundUpdater(kotlin.Function0((kotlin.Any)), kotlin.Function1((kotlin.Any, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/backgroundFunction">backgroundFunction</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$backgroundUpdater(kotlin.Function0((kotlin.Any)), kotlin.Function1((kotlin.Any, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/ForegroundFunction">ForegroundFunction</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">it</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$backgroundUpdater(kotlin.Function0((kotlin.Any)), kotlin.Function1((kotlin.Any, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/ErrorFunction">ErrorFunction</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">it</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>uses rx java to perform a background task</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="cancel-pending-notifications.html">cancelPendingNotifications</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">cancelPendingNotifications</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$cancelPendingNotifications(kotlin.String)/notificationId">notificationId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="convert-stream-to-string.html">convertStreamToString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">convertStreamToString</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$convertStreamToString(java.io.InputStream, kotlin.Boolean)/inputStream">inputStream</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$convertStreamToString(java.io.InputStream, kotlin.Boolean)/newLineSupport">newLineSupport</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="from-html.html">fromHtml</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">fromHtml</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$fromHtml(kotlin.String)/html">html</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/text/Spanned.html"><span class="identifier">Spanned</span></a></code>
+<p>string to html</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="open-google-maps-app.html">openGoogleMapsApp</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">openGoogleMapsApp</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$openGoogleMapsApp(kotlin.String, android.app.Activity)/uri">uri</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$openGoogleMapsApp(kotlin.String, android.app.Activity)/activity">activity</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Activity.html"><span class="identifier">Activity</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>opens google map application if available</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="parse-doc.html">parseDoc</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">parseDoc</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$parseDoc(org.xml.sax.InputSource)/inputSource">inputSource</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/org/xml/sax/InputSource.html"><span class="identifier">InputSource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://developer.android.com/reference/org/w3c/dom/Document.html"><span class="identifier">Document</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="reg-ex.html">regEx</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">regEx</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$regEx(kotlin.String, kotlin.String)/patternString">patternString</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$regEx(kotlin.String, kotlin.String)/word">word</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>regular expression search</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-illegal-s-q-l-chars.html">removeIllegalSQLChars</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">removeIllegalSQLChars</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$removeIllegalSQLChars(kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>remove illegal sql characters</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="request-permission.html">requestPermission</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">requestPermission</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$requestPermission(android.app.Activity, kotlin.String, kotlin.Int)/currentActivity">currentActivity</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Activity.html"><span class="identifier">Activity</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$requestPermission(android.app.Activity, kotlin.String, kotlin.Int)/manifestPermission">manifestPermission</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$requestPermission(android.app.Activity, kotlin.String, kotlin.Int)/permissionIdentifier">permissionIdentifier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>request a certain permission</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="round-number.html">roundNumber</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">roundNumber</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$roundNumber(kotlin.Double, kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$roundNumber(kotlin.Double, kotlin.Int)/places">places</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code>
+<p>rounds a number</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="safe-close-buffered-writer.html">safeCloseBufferedWriter</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">safeCloseBufferedWriter</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickUtils$safeCloseBufferedWriter(java.io.BufferedWriter)/bufferedWriter">bufferedWriter</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/java/io/BufferedWriter.html"><span class="identifier">BufferedWriter</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>safe close buffered writer.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

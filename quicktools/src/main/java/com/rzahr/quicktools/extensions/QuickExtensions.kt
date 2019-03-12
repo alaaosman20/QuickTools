@@ -334,6 +334,9 @@ fun String.getIntPrefValue(): Int {
  * @return the Int
  */
 
+/**
+ * returns the preference value of the key passed
+ */
 @Suppress("UNCHECKED_CAST")
 inline fun <reified I>String.rzPrefVal(): I {
 

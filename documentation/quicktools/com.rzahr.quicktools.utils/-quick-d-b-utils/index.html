@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>QuickDBUtils - quicktools</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">quicktools</a>&nbsp;/&nbsp;<a href="../index.html">com.rzahr.quicktools.utils</a>&nbsp;/&nbsp;<a href="./index.html">QuickDBUtils</a><br/>
+<br/>
+<h1>QuickDBUtils</h1>
+<code><span class="keyword">object </span><span class="identifier">QuickDBUtils</span></code>
+<p><strong>Author</strong><br/>
+<p>Rashad Zahr</p>
+
+
+<p>object used as a helper to build queries and to copy the database to the internal application directory</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="complex-select.html">complexSelect</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">complexSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$complexSelect(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)), kotlin.String, kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$complexSelect(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)), kotlin.String, kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$complexSelect(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)), kotlin.String, kotlin.String)/joins">joins</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$complexSelect(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)), kotlin.String, kotlin.String)/whereClause">whereClause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$complexSelect(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)), kotlin.String, kotlin.String)/groupByClause">groupByClause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>a complex SQL query select helper</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="copy-database-from-external-directory.html">copyDatabaseFromExternalDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">copyDatabaseFromExternalDirectory</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$copyDatabaseFromExternalDirectory(kotlin.String, kotlin.String)/dbExternalPath">dbExternalPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$copyDatabaseFromExternalDirectory(kotlin.String, kotlin.String)/downloadedDbName">downloadedDbName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>copies the database to the internal application directory</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="database-exist.html">databaseExist</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">databaseExist</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="distinct-select.html">distinctSelect</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">distinctSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$distinctSelect(kotlin.String, kotlin.String, kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$distinctSelect(kotlin.String, kotlin.String, kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$distinctSelect(kotlin.String, kotlin.String, kotlin.String)/whereClause">whereClause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>a simple distinct SQL query select helper</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-d-b-path.html">getDBPath</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getDBPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="simple-select.html">simpleSelect</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">simpleSelect</span><span class="symbol">(</span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$simpleSelect(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String)/columns">columns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$simpleSelect(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String)/table">table</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$simpleSelect(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String)/whereClause">whereClause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$simpleSelect(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String)/groupByClause">groupByClause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">, </span><span class="identifier" id="com.rzahr.quicktools.utils.QuickDBUtils$simpleSelect(kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.String)/orderByClause">orderByClause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;""<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>a simple SQL query select helper</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
