@@ -13,7 +13,7 @@ Packages
 ## **[QuickInjectable]**
 
 **mandatory** to be injected in the Application class as follows:
-`@Inject lateinit var mInjectable: QuickInjectable`
+```@Inject lateinit var mInjectable: QuickInjectable```
 
  **pref()**: function used to save and retreive from the shared preference
  
