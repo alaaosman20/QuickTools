@@ -4,4 +4,4 @@
 
 
 
-[![](http://htmlpreview.github.io/?https://github.com/RZahr/QuickTools/blob/master/documentation/quicktools/index.html)
+http://htmlpreview.github.io/?https://github.com/RZahr/QuickTools/blob/master/documentation/quicktools/index.html
