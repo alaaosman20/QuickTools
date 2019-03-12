@@ -15,7 +15,17 @@ Packages
 
  ## **[Extensions]**
  
- 
+ `Contains 5 different files each containing a set of extensions`
+
+**QuickActivityExtensions**: Contains extensions that can be used on an activity
+
+**QuickExtensions**: Contains general extensions like shared preference saving and retreiving
+
+**QuickNotificationExtensions**: Contains NotificationCompat.Builder extensions
+
+**QuickUIExtensions**: Contains other extensions
+
+**QuickViewExtensions**: Contains Views extensions
  
  ## **[Models]**
 
