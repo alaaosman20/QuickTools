@@ -8,6 +8,26 @@ Packages
  ## **[com.rzahr.quicktools]**
  
  ## **[Base Classes]**
+ 
+ 
+ `Contains 4 different files each containing a set of extensions`
+
+**[BaseModel]**: base model class used as a supert type which helps in accessing the SQLITE database functions
+
+**[BasePresenter]**: presenter class in MVP architecture used to as a super type defined with a BaseViewInterface class and a BaseModel Class 
+
+**[BaseViewInterface]**: view class in MVP architecture used as a super type on an interface class
+
+**[BaseActivity]**: activity class defined with a BasePresenter and implements a BaseViewInterface as per the MVP architecture
+
+**[BaseViewModel]**: view-model class which implements the LifecycleObserver
+
+**[MVVMFragment]**: fragment class defined with a BaseViewModel 
+
+**[MVPFragment]**: fragment class defined with a BasePresenter class and implements a BaseViewInterface
+
+**[MVPFragmentDialog]**: fragment class defined with a BasePresenter class and implements a BaseViewInterface
+
    
  ## **[Adaptor Tools]**
 
