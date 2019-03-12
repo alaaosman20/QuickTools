@@ -5,9 +5,9 @@
 Packages
 ========
 
-A [link][example].
+com.rzahr.quicktools [link][example].
 
-  [example]: http://example.com
+  [example]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html" target="_blank"
   
   
 <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html" target="_blank">com.rzahr.quicktools</a></p>
