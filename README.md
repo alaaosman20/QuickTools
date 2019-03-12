@@ -69,7 +69,7 @@ Packages
 
 [QuickNotificationExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickNotificationExtensions.kt
 
-[QuickUIExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickUIExtensions.kt
+[QuickUIExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickUIExtentions.kt
 
 [QuickActivityExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickActivityExtensions.kt   
 
