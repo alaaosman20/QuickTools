@@ -10,6 +10,16 @@
 Packages
 ========
 
+
+## **[QuickAppModuke]**
+
+**mandatory** to be used as a super type for the application module scoped with the following scope: ```ApplicationScope```:
+
+```@Module
+class FTAppModule constructor(val context: Context, @Suppress("MemberVisibilityCanBePrivate") val rapidIdler: QuickClickGuard, val application: Application): QuickAppModule(context, rapidIdler, application) {}
+```
+ 
+
 ## **[QuickInjectable]**
 
 **mandatory** to be injected in the Application class as follows:
