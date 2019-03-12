@@ -6,7 +6,6 @@
 <HTML>
 <HEAD>
 <meta charset="UTF-8">
-<title>quicktools</title>
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
