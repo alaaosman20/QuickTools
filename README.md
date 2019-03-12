@@ -22,35 +22,35 @@
 </tr>
 <tr>
 <td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.adaptors/index.html" target="_blank">com.rzahr.quicktools.adaptors</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.adaptors/index.html" target="_blank">Adaptor Tools</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.extensions/index.html" target="_blank">com.rzahr.quicktools.extensions</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.extensions/index.html" target="_blank">Extensions</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.models/index.html" target="_blank">com.rzahr.quicktools.models</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.models/index.html" target="_blank">Models</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.utils/index.html" target="_blank">com.rzahr.quicktools.utils</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.utils/index.html" target="_blank">Utils</a></p>
 </td>
 <td>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html" target="_blank">com.rzahr.quicktools.views</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html" target="_blank">Views</a></p>
 </td>
 <td>
 </td>
