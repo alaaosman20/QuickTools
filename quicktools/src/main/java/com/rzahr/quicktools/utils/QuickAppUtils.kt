@@ -1,5 +1,6 @@
 package com.rzahr.quicktools.utils
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
@@ -11,6 +12,7 @@ import android.os.BatteryManager
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
+import androidx.annotation.RequiresPermission
 import com.rzahr.quicktools.*
 import com.rzahr.quicktools.extensions.addWithId
 import java.util.*
@@ -39,7 +41,7 @@ object QuickAppUtils {
      * gets if the device has wifi or 3g
      * @return if the device is connected to a wifi or 3g
      */
-    @SuppressLint("MissingPermission")
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     fun isOnline(): Boolean {
 
         val networkInfo = (QuickInjectable.applicationContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetworkInfo
