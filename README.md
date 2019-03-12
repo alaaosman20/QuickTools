@@ -27,6 +27,16 @@ Contains 6 different util object each containing a set of functions related to a
 
 **QuickAppUtils**: Contains general functions related to the device Example: isNetworkAvailable, VersionName...
 
+**QuickDateUtils**: Contains general functions related to fetching the current date
+
+**QuickDBUtils**: Contains general functions related to initializing an SQLITE database file from the assets folder and performing select queries 
+
+**QuickFileUtils**: Contains general functions related to working with files and directories
+
+**QuickUIUtils**: Contains general functions related showing an alert dialog, notifications, animate background...
+
+**QuickUtils**: Contains general functions
+
  ## **[Views]**
 
 
