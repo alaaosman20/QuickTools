@@ -23,7 +23,7 @@ Packages
 
  ## **[Utils]**
 
-Contains 6 different util object each containing a set of functions related to a certain aspect
+`Contains 6 different util object each containing a set of functions related to a certain aspect`
 
 **QuickAppUtils**: Contains general functions related to the device Example: isNetworkAvailable, VersionName...
 
