@@ -17,7 +17,7 @@ Packages
  
  `Contains 5 different files each containing a set of extensions`
 
-**QuickActivityExtensions**: Contains extensions that can be used on an activity
+**[QuickActivityExtensions]**: Contains extensions that can be used on an activity
 
 **QuickExtensions**: Contains general extensions like shared preference saving and retreiving
 
@@ -54,7 +54,8 @@ Packages
  ## **[All Types]**
    
    
-   
+[QuickActivityExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickActivityExtensions.kt   
+
 [com.rzahr.quicktools]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html
 
 [Adaptor Tools]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.adaptors/index.html
