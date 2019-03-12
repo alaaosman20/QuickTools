@@ -12,7 +12,7 @@ annotation class ApplicationScope
 
 @Suppress("unused", "MemberVisibilityCanBePrivate")
 @Module
-class QuickAppModule constructor(val context: Context, @Suppress("MemberVisibilityCanBePrivate") val rapidIdler: QuickClickGuard, val application: Application) {
+open class QuickAppModule constructor(val context: Context, @Suppress("MemberVisibilityCanBePrivate") val rapidIdler: QuickClickGuard, val application: Application) {
 
     @Provides
     @ApplicationScope
