@@ -23,7 +23,7 @@ Packages
 
 **[QuickNotificationExtensions]**: Contains NotificationCompat.Builder extensions
 
-**[QuickUIExtensions]**: Contains other extensions
+**[QuickUIExtensions]**: Contains UI helper extensions
 
 
  ## **[Models]**
