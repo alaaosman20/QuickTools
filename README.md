@@ -11,7 +11,7 @@ Packages
 ========
 
 
-## **[QuickAppModuke]**
+## **[QuickAppModule]**
 
 **mandatory** to be used as a super type for the application module scoped with the following scope: ```ApplicationScope```:
 
@@ -123,3 +123,5 @@ class FTAppModule constructor(val context: Context, @Suppress("MemberVisibilityC
 [Views]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html
   
 [All Types]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html
+
+[QuickAppModule]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickAppModule.kt
