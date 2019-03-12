@@ -33,10 +33,6 @@ Packages
 
 **MVPFragmentDialog**: fragment class defined with a BasePresenter class and implements a BaseViewInterface
 
-   
- ## **[Adaptor Tools]**
-
-
 
  ## **[Extensions]**
  
@@ -47,10 +43,6 @@ Packages
 **[QuickNotificationExtensions]**: Contains NotificationCompat.Builder extensions
 
 **[QuickUIExtensions]**: Contains UI helper extensions
-
-
- ## **[Models]**
-
 
 
  ## **[Utils]**
@@ -68,9 +60,6 @@ Packages
 **[QuickUIUtils]**: Contains general functions related showing an alert dialog, notifications, animate background...
 
 **[QuickUtils]**: Contains general functions
-
- ## **[Views]**
-
 
 
  ## **[All Types]**
