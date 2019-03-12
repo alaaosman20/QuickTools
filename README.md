@@ -5,19 +5,19 @@
 Packages
 ========
 
- **[com.rzahr.quicktools]**
+ ##**[com.rzahr.quicktools]**
    
- **[Adaptor Tools]**
+ ##**[Adaptor Tools]**
 
- **[Extensions]**
+ ##**[Extensions]**
  
- **[Models]**
+ ##**[Models]**
 
- **[Utils]**
+ ##**[Utils]**
 
- **[Views]**
+ ##**[Views]**
 
- **[All Types]**
+ ##**[All Types]**
    
 [com.rzahr.quicktools]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html
 
