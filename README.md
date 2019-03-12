@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
-  <a href="https://www.w3schools.com" target="_blank">Visit W3Schools.com!</a> 
 <br/>
 <h3>Packages</h3>
 <table>
