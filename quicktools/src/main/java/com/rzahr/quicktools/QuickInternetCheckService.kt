@@ -75,7 +75,7 @@ class QuickInternetCheckService : Service() {
         const val IS_ONLINE_KEY = "isOnline"
         const val ONLINE_SINCE_KEY = "onlineSince"
         const val OFFLINE_SINCE_KEY = "offlineSince"
-        const val KEY = "com.rzahr.quciktools.CONNECTION_CHECKER_BROAD_CAST_IDENTIFIER"
+        const val KEY = "com.rzahr.quicktools.CONNECTION_CHECKER_BROAD_CAST_IDENTIFIER"
 
         /**
          * initialize the service connection object

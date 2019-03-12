@@ -55,11 +55,7 @@ class QuickPref @Inject constructor(val context: Context) {
      */
     fun checkSharedPrefValueIfExist(value: String): Boolean {
 
-        if (PreferenceManager.getDefaultSharedPreferences(context).contains(value)) {
-            return true
-        }
-
-        return false
+        return PreferenceManager.getDefaultSharedPreferences(context).contains(value)
     }
 
     /**
@@ -70,10 +66,10 @@ class QuickPref @Inject constructor(val context: Context) {
     fun setStringDefault(id: String, value: String) {
 
         if (!checkSharedPrefValueIfExist(id)) {
+
             val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
             editor.putString(id, value)
             editor.apply()
-
         }
     }
 
@@ -85,6 +81,7 @@ class QuickPref @Inject constructor(val context: Context) {
     fun setLongDefault(id: String, value: Long?) {
 
         if (!checkSharedPrefValueIfExist(id)) {
+
             val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
             editor.putLong(id, value!!)
             editor.apply()
@@ -105,6 +102,7 @@ class QuickPref @Inject constructor(val context: Context) {
      */
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     fun get(id: String): String {
+
         return PreferenceManager.getDefaultSharedPreferences(context).getString(id, "")
     }
 
@@ -115,6 +113,7 @@ class QuickPref @Inject constructor(val context: Context) {
      */
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     fun getInt(id: String): Int {
+
         return PreferenceManager.getDefaultSharedPreferences(context).getInt(id, -1)
     }
 
@@ -124,6 +123,7 @@ class QuickPref @Inject constructor(val context: Context) {
      * @return the boolean
      */
     fun getBoolean(id: String): Boolean {
+
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(id, false)
     }
 

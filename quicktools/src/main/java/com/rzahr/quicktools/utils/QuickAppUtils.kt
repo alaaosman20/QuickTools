@@ -36,6 +36,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if the device has wifi or 3g
      * @return if the device is connected to a wifi or 3g
      */
     @SuppressLint("MissingPermission")
@@ -47,6 +48,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets the battery level
      * @return the battery level
      */
     fun getBatteryLevel(): Int {
@@ -68,6 +70,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if the device is plugged in or not
      * @return boolean value representing if the device is plugged in or not
      */
     fun isPluggedIn(): Boolean {
@@ -89,6 +92,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets the current language set on the device if english or arabic
      * @returns the current language symbol
      */
     fun getLanguageIdentifier(): String {
@@ -103,6 +107,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if the application is white-listed
      * @return boolean value identifying if the application is white-listed
      */
     fun isInDozeWhiteList(): Boolean? {
@@ -112,6 +117,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if the device has power saver mode enabled
      * @return boolean value representing if the power saver is enabled
      */
     fun isPowerSaverOn(): Boolean {
@@ -121,6 +127,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if the device's screen is turned on
      * @return boolean value representing if the screen is turned on
      */
     fun isScreenOn(): Boolean {
@@ -133,6 +140,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets the device name
      * @return the device name
      */
     fun getDeviceName(): String {
@@ -151,6 +159,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets the operating system name
      * @return the operating system name
      */
     fun getOSName(): String {
@@ -163,6 +172,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets the unique identifier of the device
      * @return the unique identifier
      */
     @SuppressLint("HardwareIds")
@@ -198,6 +208,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if the application is backgrounded by the user
      * @return if the application is in the background
      */
     fun backgrounded(): Boolean {
@@ -247,6 +258,7 @@ object QuickAppUtils {
     }
 
     /**
+     * gets if network is available
      * @return if the device has 3g and wifi enabled
      */
     fun isNetworkAvailable(): Boolean {
