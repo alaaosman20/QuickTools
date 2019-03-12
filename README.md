@@ -16,7 +16,7 @@
 <tbody>
 <tr>
 <td>
-<p><a href="documentation/quicktools/com.rzahr.quicktools/index.html">com.rzahr.quicktools</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html">com.rzahr.quicktools</a></p>
 </td>
 <td>
 </td>
