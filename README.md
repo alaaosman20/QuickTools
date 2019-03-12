@@ -2,62 +2,69 @@
 
 [![](https://jitpack.io/v/rzahr/QuickTools.svg)](https://jitpack.io/#rzahr/QuickTools)
 
+Packages
+========
 
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../style.css">
-</HEAD>
-<BODY>
-<br/>
-<h3>Packages</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html" target="_blank">com.rzahr.quicktools</a></p>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.adaptors/index.html" target="_blank">Adaptor Tools</a></p>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.extensions/index.html" target="_blank">Extensions</a></p>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.models/index.html" target="_blank">Models</a></p>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.utils/index.html" target="_blank">Utils</a></p>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html" target="_blank">Views</a></p>
-</td>
-<td>
-</td>
-</tr>
-</tbody>
-</table>
-<h3>Index</h3>
-<a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html" target="_blank">All Types</a>
-</BODY>
-</HTML>
+ ## **[com.rzahr.quicktools]**
+ 
+ 
+   
+ ## **[Adaptor Tools]**
+
+
+
+ ## **[Extensions]**
+ 
+ `Contains 5 different files each containing a set of extensions`
+
+**QuickActivityExtensions**: Contains extensions that can be used on an activity
+
+**QuickExtensions**: Contains general extensions like shared preference saving and retreiving
+
+**QuickNotificationExtensions**: Contains NotificationCompat.Builder extensions
+
+**QuickUIExtensions**: Contains other extensions
+
+**QuickViewExtensions**: Contains Views extensions
+ 
+ ## **[Models]**
+
+
+
+ ## **[Utils]**
+
+`Contains 6 different util object each containing a set of functions related to a certain aspect`
+
+**QuickAppUtils**: Contains general functions related to the device Example: isNetworkAvailable, VersionName...
+
+**QuickDateUtils**: Contains general functions related to fetching the current date
+
+**QuickDBUtils**: Contains general functions related to initializing an SQLITE database file from the assets folder and performing select queries 
+
+**QuickFileUtils**: Contains general functions related to working with files and directories
+
+**QuickUIUtils**: Contains general functions related showing an alert dialog, notifications, animate background...
+
+**QuickUtils**: Contains general functions
+
+ ## **[Views]**
+
+
+
+ ## **[All Types]**
+   
+   
+   
+[com.rzahr.quicktools]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html
+
+[Adaptor Tools]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.adaptors/index.html
+
+[Extensions]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.extensions/index.html
+  
+[Models]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.models/index.html
+  
+[Utils]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.utils/index.html
+  
+[Views]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools.views/index.html
+  
+[All Types]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html
