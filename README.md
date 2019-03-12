@@ -19,13 +19,13 @@ Packages
 
 **[QuickActivityExtensions]**: Contains extensions that can be used on an activity
 
-**QuickExtensions**: Contains general extensions like shared preference saving and retreiving
+**[QuickExtensions]**: Contains general extensions like shared preference saving and retreiving
 
-**QuickNotificationExtensions**: Contains NotificationCompat.Builder extensions
+**[QuickNotificationExtensions]**: Contains NotificationCompat.Builder extensions
 
-**QuickUIExtensions**: Contains other extensions
+**[QuickUIExtensions]**: Contains other extensions
 
-**QuickViewExtensions**: Contains Views extensions
+**[QuickViewExtensions]**: Contains Views extensions
  
  ## **[Models]**
 
@@ -54,6 +54,14 @@ Packages
  ## **[All Types]**
    
    
+[QuickExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickExtensions.kt
+
+[QuickNotificationExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickNotificationExtensions.kt
+
+[QuickUIExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickUIExtensions.kt
+
+[QuickViewExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickViewExtensions.kt
+
 [QuickActivityExtensions]:https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/extensions/QuickActivityExtensions.kt   
 
 [com.rzahr.quicktools]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/com.rzahr.quicktools/index.html
