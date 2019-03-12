@@ -263,6 +263,7 @@ object QuickAppUtils {
      * gets if network is available
      * @return if the device has 3g and wifi enabled
      */
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     fun isNetworkAvailable(): Boolean {
 
         try {

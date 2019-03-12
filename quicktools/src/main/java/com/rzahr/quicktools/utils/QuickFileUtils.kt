@@ -20,6 +20,7 @@ import java.lang.Exception
 object QuickFileUtils {
 
     /**
+     * gets the file mip-map type
      * @return the file mipmap
      */
     fun getFileMipMap(fileURi: Uri): String {
@@ -37,7 +38,7 @@ object QuickFileUtils {
     }
 
     /**
-     * delete file
+     * delete a file
      * @param path: the path of the file to be deleted
      */
     fun deleteFile(path: String) {
@@ -54,19 +55,20 @@ object QuickFileUtils {
     fun deleteDirectory(path: String) {
 
         val directoryToDelete = File(path)
+
         if (directoryToDelete.exists() && directoryToDelete.isDirectory) {
-            if (directoryToDelete.list().isEmpty())
-                directoryToDelete.delete()
+
+            if (directoryToDelete.list().isEmpty()) directoryToDelete.delete()
+
             else {
-                for (file in directoryToDelete.list())
-                    deleteDirectory(directoryToDelete.path + "/" + file)
 
-                if (directoryToDelete.list().isEmpty())
-                    directoryToDelete.delete()
+                for (file in directoryToDelete.list()) deleteDirectory(directoryToDelete.path + "/" + file)
+
+                if (directoryToDelete.list().isEmpty()) directoryToDelete.delete()
             }
-        } else if (directoryToDelete.exists())
-            directoryToDelete.delete()
+        }
 
+        else if (directoryToDelete.exists()) directoryToDelete.delete()
     }
 
     /**
@@ -79,8 +81,7 @@ object QuickFileUtils {
 
         val folder = File(path)
         var success = true
-        if (!folder.exists())
-            success = folder.mkdir()
+        if (!folder.exists()) success = folder.mkdir()
 
         if (success) {
 
