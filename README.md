@@ -37,7 +37,8 @@ object used to perform logging:
 
 Example use:
 
- ```QuickLogWriter.errorLogging("No results", e.toString())
+ ```
+    QuickLogWriter.errorLogging("No results", e.toString())
     QuickLogWriter.debugLogging("Printing matches")
     QuickLogWriter.getCallerClass(3)// retrieves the calling method, line etc
     QuickLogWriter.logErrorHelper(callingMethod, msg, logFileNameTemp, error, FolderName, false)
