@@ -139,3 +139,5 @@ Example use:
 [QuickAppModule]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickAppModule.kt
 
 [QuickNotificationUtils]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickNotificationUtils.kt
+
+[QuickLogWriter]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickLogWriter.kt
