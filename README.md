@@ -30,6 +30,20 @@ Packages
 
  **```initializer```**: mandatory function that will create a channel notification which can be used then across the application after being initialized from the application module
  
+  
+ ## **[QuickLogWriter]**
+
+object used to perform logging:
+
+Example use:
+
+ ```QuickLogWriter.errorLogging("No results", e.toString())
+    QuickLogWriter.debugLogging("Printing matches")
+    QuickLogWriter.getCallerClass(3)// retrieves the calling method, line etc
+    QuickLogWriter.logErrorHelper(callingMethod, msg, logFileNameTemp, error, FolderName, false)
+    QuickLogWriter.appendContents("$logFileNameTemp.txt", msg, false, FolderName, false)
+ ```
+ 
  
  ## **[Base Classes]**
  
