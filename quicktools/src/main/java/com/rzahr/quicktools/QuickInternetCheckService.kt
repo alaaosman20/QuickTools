@@ -1,11 +1,13 @@
 package com.rzahr.quicktools
 
+import android.Manifest
 import android.app.Service
 import android.content.ComponentName
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Binder
 import android.os.IBinder
+import androidx.annotation.RequiresPermission
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.rzahr.quicktools.extensions.addWithId
 import com.rzahr.quicktools.utils.QuickAppUtils
@@ -36,10 +38,12 @@ class QuickInternetCheckService : Service() {
 
         // Return this instance of LocalService so clients can call public methods
         fun getService(): QuickInternetCheckService = this@QuickInternetCheckService
+
         fun startCheck() {
             sTimer = Timer()
 
             val task = object : TimerTask() {
+                @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
                 override fun run() {
                     setConnectionState(performChecks(sTimer!!, this@QuickInternetCheckService), this@QuickInternetCheckService)
                 }
@@ -83,6 +87,7 @@ class QuickInternetCheckService : Service() {
          * @param onServiceDisconnected: on service disconnected function trigger
          * @return service connection object
          */
+        @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
         fun initServiceConnection (onServiceConnected: (binder: LocalBinder) -> Unit, onServiceDisconnected: () -> Unit): ServiceConnection {
 
             return object : ServiceConnection {
@@ -150,6 +155,7 @@ class QuickInternetCheckService : Service() {
         service.stopSelf()
     }
 
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     fun performChecks(timer: Timer, service: Service): Boolean {
 
         //In case the app brought to background, then stop the service because no need
