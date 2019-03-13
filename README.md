@@ -24,6 +24,13 @@ Packages
  **```currentActivity```**: function used to retrieve the current active activity
  
  
+ ## **[QuickNotificationUtils]**
+
+**mandatory** to be created in the application module:
+
+ **```initializer```**: mandatory function that will create a channel notification which can be used then across the application after being initialized from the application module
+ 
+ 
  ## **[Base Classes]**
  
  
@@ -115,3 +122,5 @@ Packages
 [All Types]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html
 
 [QuickAppModule]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickAppModule.kt
+
+[QuickNotificationUtils]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickNotificationUtils.kt
