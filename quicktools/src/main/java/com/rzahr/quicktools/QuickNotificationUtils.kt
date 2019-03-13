@@ -18,6 +18,13 @@ class QuickNotificationUtils @Inject constructor(val context: Context) : Context
 
     /**
      * initializer function required for the class to function
+     * @param channelId: the channel identifier
+     * @param channelName: the channel name
+     * @param channelDescription: the channel description
+     * @param enableLight: if the notification causes the device to beam
+     * @param enableVibration: if the notification causes the device to vibrate
+     * @param lockScreenVisibility: the visibility defaulted to public
+     * @param importance: the notification importance
      */
     fun initializer(channelId: String, channelName: String, channelDescription: String, enableLight: Boolean = true, enableVibration: Boolean = true, @SuppressLint(
         "InlinedApi"
