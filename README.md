@@ -10,16 +10,6 @@
 Packages
 ========
 
-
-## **[QuickAppModule]**
-
-**mandatory** to be used as a super type for the application module scoped with the following scope: ```ApplicationScope```:
-
-```@Module
-class FTAppModule constructor(val context: Context, @Suppress("MemberVisibilityCanBePrivate") val rapidIdler: QuickClickGuard, val application: Application): QuickAppModule(context, rapidIdler, application) {}
-```
- 
-
 ## **[QuickInjectable]**
 
 **mandatory** to be injected in the Application class as follows:
@@ -32,6 +22,94 @@ class FTAppModule constructor(val context: Context, @Suppress("MemberVisibilityC
  **```clickGuard()```**: function used to prevent multi-rapid clicks on a view
  
  **```currentActivity```**: function used to retrieve the current active activity
+ 
+ 
+ ## **[QuickNotificationUtils]**
+
+**mandatory** to be created in the application module if notifications are used in the project:
+
+ **```initializer```**: mandatory function that will create a channel notification which can be used then across the application after being initialized from the application module
+ 
+  
+ ## **[QuickLogWriter]**
+
+object used to perform logging:
+
+Example use:
+
+ ```
+    QuickLogWriter.errorLogging("No results", e.toString())
+    QuickLogWriter.debugLogging("Printing matches")
+    QuickLogWriter.getCallerClass(3)// retrieves the calling method, line etc
+    QuickLogWriter.logErrorHelper(callingMethod, msg, logFileNameTemp, error, FolderName, false)
+    QuickLogWriter.appendContents("$logFileNameTemp.txt", msg, false, FolderName, false)
+ ```
+ 
+  ## **[QuickInternetCheckService]**
+
+service used to check for a valid internet connection when the application is in foreground:
+
+Example use:
+
+ ```
+        fun unRegisterConnectionCheckerServiceReceiver(bManager: LocalBroadcastManager) {
+            bManager.unregisterReceiver(mConnectionBroadcastReceiver)
+        }
+        
+        private fun initQuickInternetCheckServiceConnection() {
+
+            if (mConnectionCheckerServiceConnection == null) {
+
+                mConnectionCheckerServiceConnection = QuickInternetCheckService.initServiceConnection({ binder ->
+
+                    mService = binder.getService()
+                    mBound = true
+
+                }, {
+                    mBound = false
+                })
+            }
+        }
+
+        fun bindToConnectionCheckerService() {
+
+            initQuickInternetCheckServiceConnection()
+            // Bind to LocalService
+            mConnectionCheckerServiceConnection?.let {Intent(mContext, QuickInternetCheckService::class.java).also { intent ->
+                mContext.bindService(intent,it, Context.BIND_AUTO_CREATE)
+            }}
+        }
+
+        fun unBindToConnectionCheckerService(){
+
+            mConnectionCheckerServiceConnection?.let {mActivity.unbindService(it)}
+            mBound = false
+        }
+
+        fun registerConnectionCheckerServiceReceiver(bManager: LocalBroadcastManager) {
+            val intentFilter = IntentFilter()
+            intentFilter.addAction(QuickInternetCheckService.KEY)
+            bManager.registerReceiver(mConnectionBroadcastReceiver, intentFilter)
+        }
+        
+        private val mConnectionBroadcastReceiver = object : BroadcastReceiver() {
+         override fun onReceive(context: Context, intent: Intent) {
+         when {
+                    intent.action == QuickInternetCheckService.KEY -> when {
+                        intent.getBooleanExtra(QuickInternetCheckService.IS_ONLINE_KEY, true) -> {
+                           view?.setConnectionMenuItem(R.drawable.ic_wifi)
+                        else -> view?.setConnectionMenuItem(R.drawable.ic_offline)
+                    }
+               }}}
+ ```
+ 
+ **Other Tools:**
+ ```
+ QuickInternetCheckService.ONLINE_SINCE_KEY.rzPrefVal<String>()
+ QuickInternetCheckService.OFFLINE_SINCE_KEY.rzPrefVal<String>()
+ QuickInternetCheckService.IS_ONLINE_KEY.rzPrefVal<Boolean>()
+ 
+ ```
  
  
  ## **[Base Classes]**
@@ -125,3 +203,9 @@ class FTAppModule constructor(val context: Context, @Suppress("MemberVisibilityC
 [All Types]: https://htmlpreview.github.io/?https://raw.githubusercontent.com/RZahr/QuickTools/master/documentation/quicktools/alltypes/index.html
 
 [QuickAppModule]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickAppModule.kt
+
+[QuickNotificationUtils]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickNotificationUtils.kt
+
+[QuickLogWriter]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickLogWriter.kt
+
+[QuickInternetCheckService]: https://github.com/RZahr/QuickTools/blob/master/quicktools/src/main/java/com/rzahr/quicktools/QuickInternetCheckService.kt
