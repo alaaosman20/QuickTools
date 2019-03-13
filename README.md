@@ -45,6 +45,71 @@ Example use:
     QuickLogWriter.appendContents("$logFileNameTemp.txt", msg, false, FolderName, false)
  ```
  
+  ## **[QuickInternetCheckService]**
+
+service used to check for a valid internet connection when the application is in foreground:
+
+Example use:
+
+ ```
+        fun unRegisterConnectionCheckerServiceReceiver(bManager: LocalBroadcastManager) {
+            bManager.unregisterReceiver(mConnectionBroadcastReceiver)
+        }
+        
+        private fun initQuickInternetCheckServiceConnection() {
+
+            if (mConnectionCheckerServiceConnection == null) {
+
+                mConnectionCheckerServiceConnection = QuickInternetCheckService.initServiceConnection({ binder ->
+
+                    mService = binder.getService()
+                    mBound = true
+
+                }, {
+                    mBound = false
+                })
+            }
+        }
+
+        fun bindToConnectionCheckerService() {
+
+            initQuickInternetCheckServiceConnection()
+            // Bind to LocalService
+            mConnectionCheckerServiceConnection?.let {Intent(mContext, QuickInternetCheckService::class.java).also { intent ->
+                mContext.bindService(intent,it, Context.BIND_AUTO_CREATE)
+            }}
+        }
+
+        fun unBindToConnectionCheckerService(){
+
+            mConnectionCheckerServiceConnection?.let {mActivity.unbindService(it)}
+            mBound = false
+        }
+
+        fun registerConnectionCheckerServiceReceiver(bManager: LocalBroadcastManager) {
+            val intentFilter = IntentFilter()
+            intentFilter.addAction(QuickInternetCheckService.KEY)
+            bManager.registerReceiver(mConnectionBroadcastReceiver, intentFilter)
+        }
+        
+        private val mConnectionBroadcastReceiver = object : BroadcastReceiver() {
+         override fun onReceive(context: Context, intent: Intent) {
+         when {
+                    intent.action == QuickInternetCheckService.KEY -> when {
+                        intent.getBooleanExtra(QuickInternetCheckService.IS_ONLINE_KEY, true) -> {
+                           view?.setConnectionMenuItem(R.drawable.ic_wifi)
+                        else -> view?.setConnectionMenuItem(R.drawable.ic_offline)
+                    }
+               }}}
+ ```
+ 
+ other tools:
+ ```
+ QuickInjectable.pref().get(QuickInternetCheckService.ONLINE_SINCE_KEY)
+ QuickInjectable.pref().get(QuickInternetCheckService.OFFLINE_SINCE_KEY)
+ 
+ ```
+ 
  
  ## **[Base Classes]**
  
