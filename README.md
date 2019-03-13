@@ -103,10 +103,11 @@ Example use:
                }}}
  ```
  
- other tools:
+ **Other Tools:**
  ```
- QuickInjectable.pref().get(QuickInternetCheckService.ONLINE_SINCE_KEY)
- QuickInjectable.pref().get(QuickInternetCheckService.OFFLINE_SINCE_KEY)
+ QuickInternetCheckService.ONLINE_SINCE_KEY.rzPrefVal<String>()
+ QuickInternetCheckService.OFFLINE_SINCE_KEY.rzPrefVal<String>()
+ QuickInternetCheckService.IS_ONLINE_KEY.rzPrefVal<Boolean>()
  
  ```
  
