@@ -26,7 +26,7 @@ Packages
  
  ## **[QuickNotificationUtils]**
 
-**mandatory** to be created in the application module:
+**mandatory** to be created in the application module if notifications are used in the project:
 
  **```initializer```**: mandatory function that will create a channel notification which can be used then across the application after being initialized from the application module
  
